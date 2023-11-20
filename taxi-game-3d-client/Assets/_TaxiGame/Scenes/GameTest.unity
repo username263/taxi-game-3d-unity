@@ -408,8 +408,8 @@ MonoBehaviour:
       autoControlLength: 0.3
       boundsUpToDate: 0
       bounds:
-        m_Center: {x: 29.311842, y: 1.1329937, z: -2.8652363}
-        m_Extent: {x: 2.7018414, y: 1.2773314, z: 2.8652363}
+        m_Center: {x: 0.9973347, y: 0, z: -7.996172}
+        m_Extent: {x: 6.005724, y: 0, z: 8.00383}
       perAnchorNormalsAngle:
       - 0
       - 0
@@ -1806,13 +1806,13 @@ MonoBehaviour:
   editorData:
     _bezierPath:
       points:
-      - {x: 0, y: 0, z: 0}
-      - {x: 0.0033593327, y: 0, z: 0.72723705}
+      - {x: 0, y: 0, z: -2}
+      - {x: 0.0033593327, y: 0, z: -1.2727629}
       - {x: 0.0037974715, y: 0, z: 9.530246}
       - {x: 0, y: 0, z: 10}
       - {x: -0.0043904656, y: 0, z: 10.543109}
-      - {x: 0.0006468892, y: 0, z: 19.522694}
-      - {x: 0, y: 0, z: 20}
+      - {x: 0.0006468892, y: 0.0000014305115, z: 37.522694}
+      - {x: 0, y: 0.0000014305115, z: 38}
       isClosed: 0
       space: 0
       controlMode: 0
@@ -2819,7 +2819,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a004eaf002324841a4fdc5fee13145b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathCreator: {fileID: 547141548}
+  pathCreator: {fileID: 1709954162}
+  acceleration: 5
+  maxSpeed: 200
+  brakeForce: 10
 --- !u!33 &9029989459449744678
 MeshFilter:
   m_ObjectHideFlags: 0
