@@ -1,14 +1,11 @@
 using PathCreation;
+using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace TaxiGame3D
 {
-    public class Car : MonoBehaviour, InputControls.IPlayerActions
+    public class Car : MonoBehaviour
     {
-        [SerializeField]
-        PathCreator pathCreator;
-        
         /// <summary>
         /// °¡¼Óµµ
         /// </summary>
@@ -25,48 +22,68 @@ namespace TaxiGame3D
         [SerializeField]
         float brakeForce = 1f;
 
-        bool isPressing = false;
+        VertexPath path;
+
         float speed = 1f;
         float movement = 0f;
 
-        InputControls inputControls;
+        Rigidbody rb;
 
-
-        void Start()
+        public bool IsEnableMoving
         {
-            transform.position = pathCreator.path.GetPointAtDistance(movement, EndOfPathInstruction.Stop);
+            get;
+            set;
         }
 
-        void OnEnable()
-        {
-            if (inputControls == null)
-                inputControls = new();
-            inputControls.Player.SetCallbacks(this);
-            inputControls.Player.Enable();
-        }
+        public event EventHandler OnArrive;
 
-        void OnDisable()
+        void Awake()
         {
-            inputControls?.Player.Disable();
+            rb = GetComponent<Rigidbody>();
         }
 
         void Update()
         {
-            var delta = Time.deltaTime;
-            
-            if (isPressing)
-                speed = Mathf.Min(speed + delta * acceleration, maxSpeed);
-            else
-                speed = Mathf.Max(speed - delta * brakeForce, 1f);
+            if (!IsEnableMoving)
+                return;
 
-            movement += delta * speed;
-            transform.position = pathCreator.path.GetPointAtDistance(movement, EndOfPathInstruction.Stop);
-            transform.rotation = pathCreator.path.GetRotationAtDistance(movement, EndOfPathInstruction.Stop);
+            movement += Time.deltaTime * speed;
+            rb.MovePosition(path.GetPointAtDistance(movement, EndOfPathInstruction.Stop));
+            rb.MoveRotation(path.GetRotationAtDistance(movement, EndOfPathInstruction.Stop));
+
+            if (movement >= path.length)
+                OnArrive?.Invoke(this, EventArgs.Empty);
         }
 
-        public void OnAccelerate(InputAction.CallbackContext context)
+        public void SetPath(VertexPath path)
         {
-            isPressing = context.ReadValue<float>() != 0f;
+            this.path = path;
+            rb.position = path.GetPointAtDistance(movement, EndOfPathInstruction.Stop);
+            rb.rotation = path.GetRotationAtDistance(movement, EndOfPathInstruction.Stop);
+        }
+
+        public void PlayMoving()
+        {
+            IsEnableMoving = true;
+            speed = 1f;
+        }
+
+        public void StopMoving()
+        {
+            IsEnableMoving = false;
+            speed = 0f;
+        }
+
+        public void PressAccel()
+        {
+            if (IsEnableMoving)
+                speed = Mathf.Min(speed + Time.deltaTime * acceleration, maxSpeed);
+        }
+
+        public void PressBrake()
+        {
+            if (IsEnableMoving)
+                speed = Mathf.Max(speed - Time.deltaTime * brakeForce, 1f);
         }
     }
 }

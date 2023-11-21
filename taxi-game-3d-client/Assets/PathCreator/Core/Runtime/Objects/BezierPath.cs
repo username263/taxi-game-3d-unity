@@ -131,6 +131,10 @@ namespace PathCreation {
             return points[i];
         }
 
+        public int GetPointCount() {
+            return points?.Count ?? 0;
+        }
+
         /// Get world space position of point
         public void SetPoint (int i, Vector3 localPosition, bool suppressPathModifiedEvent = false) {
             points[i] = localPosition;

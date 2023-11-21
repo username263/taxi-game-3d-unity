@@ -122,7 +122,7 @@ namespace PathCreationEditor {
 
                     // If a point has been selected
                     if (handleIndexToDisplayAsTransform != -1) {
-                        EditorGUILayout.LabelField ("Selected Point:");
+                        EditorGUILayout.LabelField ($"Selected Point: {handleIndexToDisplayAsTransform / 3}");
 
                         using (new EditorGUI.IndentLevelScope ()) {
                             var currentPosition = creator.bezierPath[handleIndexToDisplayAsTransform];
