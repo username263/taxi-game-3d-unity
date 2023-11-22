@@ -297,8 +297,8 @@ MonoBehaviour:
     _bezierPath:
       points:
       - {x: 17, y: 0, z: 17}
-      - {x: 17.5, y: 0, z: 17}
-      - {x: -17.5, y: 0, z: 17}
+      - {x: 16, y: 0.008530617, z: 16.987843}
+      - {x: -16, y: 0, z: 17}
       - {x: -17, y: 0, z: 17}
       isClosed: 0
       space: 0
@@ -309,28 +309,28 @@ MonoBehaviour:
         m_Center: {x: 0, y: 0, z: 0}
         m_Extent: {x: 0, y: 0, z: 0}
       perAnchorNormalsAngle:
-      - 0
-      - 0
-      globalNormalsAngle: 0
+      - 90
+      - 90
+      globalNormalsAngle: 270
       flipNormals: 0
     vertexPathUpToDate: 1
     vertexPathMaxAngleError: 0.3
     vertexPathMinVertexSpacing: 0.01
     showTransformTool: 1
     showPathBounds: 0
-    showPerSegmentBounds: 0
+    showPerSegmentBounds: 1
     displayAnchorPoints: 1
     displayControlPoints: 1
     bezierHandleScale: 1
     globalDisplaySettingsFoldout: 0
-    keepConstantHandleSize: 0
+    keepConstantHandleSize: 1
     showNormalsInVertexMode: 0
     showBezierPathInVertexMode: 0
-    showDisplayOptions: 0
+    showDisplayOptions: 1
     showPathOptions: 1
     showVertexPathDisplayOptions: 0
     showVertexPathOptions: 1
-    showNormals: 0
+    showNormals: 1
     showNormalsHelpInfo: 0
     tabIndex: 0
   initialized: 1
@@ -2800,6 +2800,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3565490488177368254}
+  - component: {fileID: 3738405864027600712}
   m_Layer: 0
   m_Name: NpcPath2
   m_TagString: Untagged
@@ -2815,13 +2816,66 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8689012589388699117}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1462492344305415296}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3738405864027600712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8689012589388699117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e5ac92bc18f545cc84cd886ece82b4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  editorData:
+    _bezierPath:
+      points:
+      - {x: 17, y: 0, z: -5}
+      - {x: 16, y: 0, z: -5}
+      - {x: -16, y: 0, z: -5}
+      - {x: -17, y: 0, z: -5}
+      isClosed: 0
+      space: 0
+      controlMode: 0
+      autoControlLength: 0.3
+      boundsUpToDate: 0
+      bounds:
+        m_Center: {x: 0, y: 0, z: 0}
+        m_Extent: {x: 0, y: 0, z: 0}
+      perAnchorNormalsAngle:
+      - 90
+      - 90
+      globalNormalsAngle: 270
+      flipNormals: 0
+    vertexPathUpToDate: 1
+    vertexPathMaxAngleError: 0.3
+    vertexPathMinVertexSpacing: 0.01
+    showTransformTool: 1
+    showPathBounds: 0
+    showPerSegmentBounds: 0
+    displayAnchorPoints: 1
+    displayControlPoints: 1
+    bezierHandleScale: 1
+    globalDisplaySettingsFoldout: 0
+    keepConstantHandleSize: 1
+    showNormalsInVertexMode: 0
+    showBezierPathInVertexMode: 0
+    showDisplayOptions: 1
+    showPathOptions: 1
+    showVertexPathDisplayOptions: 0
+    showVertexPathOptions: 1
+    showNormals: 1
+    showNormalsHelpInfo: 0
+    tabIndex: 0
+  initialized: 1
 --- !u!1 &9213251858848390366
 GameObject:
   m_ObjectHideFlags: 0

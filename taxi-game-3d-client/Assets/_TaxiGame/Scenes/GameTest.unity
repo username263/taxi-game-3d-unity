@@ -152,7 +152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc463a75fddfbe749aa2b542d289d017, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  path: {fileID: 724950139}
+  playerPath: {fileID: 724950139}
+  npcCarManager: {fileID: 1410484087}
   stateText: {fileID: 1855550274}
   <PlayerCar>k__BackingField: {fileID: 203971862}
 --- !u!4 &144317057
@@ -727,6 +728,62 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!1 &1410484086
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1410484088}
+  - component: {fileID: 1410484087}
+  m_Layer: 0
+  m_Name: NpcCarManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1410484087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410484086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6db2f2893f31933428a9eb3c9823b624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carPrefabs:
+  - {fileID: 8354832325896809825, guid: c8b384b5476927645b01f1ca52c335e1, type: 3}
+  - {fileID: 8354832325896809825, guid: 16001de36a7c5b940ba03acca6206e8e, type: 3}
+  - {fileID: 8354832325896809825, guid: ae681ed64ef5a494b927a01718ca8755, type: 3}
+  - {fileID: 8354832325896809825, guid: f2103f2049d2ac544a9e2ff3f2b7ccce, type: 3}
+  - {fileID: 8354832325896809825, guid: 2e38137db8a649f4499552a5a004aa95, type: 3}
+  paths:
+  - {fileID: 1493860179}
+  - {fileID: 1493860178}
+  minSpawnDelay: 1
+  maxSpawnDelay: 2
+  moveSpeed: 10
+--- !u!4 &1410484088
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410484086}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1493860177
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -795,6 +852,30 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b84f2094229993944b8204b0c8c299f1, type: 3}
+--- !u!114 &1493860178 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3738405864027600712, guid: b84f2094229993944b8204b0c8c299f1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1493860177}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e5ac92bc18f545cc84cd886ece82b4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1493860179 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4645233461075329987, guid: b84f2094229993944b8204b0c8c299f1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1493860177}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e5ac92bc18f545cc84cd886ece82b4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1855550272
 GameObject:
   m_ObjectHideFlags: 0
@@ -1385,6 +1466,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 144317057}
+  - {fileID: 1410484088}
   - {fileID: 731896930}
   - {fileID: 203971865}
   - {fileID: 1493860177}

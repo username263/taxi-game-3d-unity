@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace TaxiGame3D
 {
-    public class Car : MonoBehaviour
+    public class PlayerCar : MonoBehaviour
     {
         /// <summary>
         /// °¡¼Óµµ
@@ -58,8 +58,9 @@ namespace TaxiGame3D
         public void SetPath(VertexPath path)
         {
             this.path = path;
-            rb.position = path.GetPointAtDistance(movement, EndOfPathInstruction.Stop);
-            rb.rotation = path.GetRotationAtDistance(movement, EndOfPathInstruction.Stop);
+            movement = 0f;
+            rb.position = path.GetPoint(0);
+            rb.rotation = path.GetRotation(0f, EndOfPathInstruction.Stop);
         }
 
         public void PlayMoving()

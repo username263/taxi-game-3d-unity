@@ -10,7 +10,9 @@ namespace TaxiGame3D
     public class GameLogic : MonoBehaviour, InputControls.IPlayerActions
     {
         [SerializeField]
-        PathCreator path;
+        PathCreator playerPath;
+        [SerializeField]
+        NpcCarManager npcCarManager; 
         [SerializeField]
         TMP_Text stateText;
 
@@ -26,7 +28,7 @@ namespace TaxiGame3D
         }
 
         [field: SerializeField]
-        public Car PlayerCar
+        public PlayerCar PlayerCar
         {
             get;
             private set;
@@ -39,7 +41,9 @@ namespace TaxiGame3D
 
         IEnumerator Start()
         {
-            PlayerCar.SetPath(path.path);
+            npcCarManager.Play();
+
+            PlayerCar.SetPath(playerPath.path);
             PlayerCar.OnArrive += (sender, args) =>
             {
                 StartCoroutine(EndGame());
