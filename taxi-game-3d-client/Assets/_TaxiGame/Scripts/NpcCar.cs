@@ -9,15 +9,13 @@ public class NpcCar : MonoBehaviour
 
     public bool IsArrive => movement >= path.length;
 
-    void Awake()
-    {
-        rb = GetComponent<Rigidbody>();
-    }
-
     public void SetPath(VertexPath path)
     {
         this.path = path;
         movement = 0;
+
+        if (rb == null)
+            rb = GetComponent<Rigidbody>();
         rb.position = path.GetPoint(0);
         rb.rotation = path.GetRotation(0f, EndOfPathInstruction.Stop);
     }
@@ -25,6 +23,8 @@ public class NpcCar : MonoBehaviour
     public void UpdateMoving(float amount)
     {
         movement += amount;
+        if (rb == null)
+            return;
         rb.MovePosition(path.GetPointAtDistance(movement, EndOfPathInstruction.Stop));
         rb.MoveRotation(path.GetRotationAtDistance(movement, EndOfPathInstruction.Stop));
     }

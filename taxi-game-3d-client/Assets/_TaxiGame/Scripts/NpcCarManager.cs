@@ -12,6 +12,8 @@ namespace TaxiGame3D
         [SerializeField]
         PathCreator[] paths;
         [SerializeField]
+        Transform poolPosition;
+        [SerializeField]
         [Min(0.001f)]
         float minSpawnDelay = 1f;
         [SerializeField]
@@ -40,6 +42,16 @@ namespace TaxiGame3D
         {
             IsPlaying = false;
             StopAllCoroutines();
+        }
+
+        void Start()
+        {
+            foreach (var prefab in carPrefabs)
+            {
+                prefab.transform.SetPositionAndRotation(
+                    poolPosition.position, poolPosition.rotation
+                );
+            }
         }
 
         void Update()
@@ -86,6 +98,9 @@ namespace TaxiGame3D
         void Despawn(NpcCar car)
         {
             car.gameObject.SetActive(false);
+            car.transform.SetPositionAndRotation(
+                poolPosition.position, poolPosition.rotation
+            );
             activeCars.Remove(car);
             carPool.Enqueue(car);
         }

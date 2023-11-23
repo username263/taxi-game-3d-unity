@@ -277,8 +277,8 @@ Transform:
   m_GameObject: {fileID: 4175957034429471991}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1.342}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalPosition: {x: 0, y: 0, z: -1.047}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 929910705382288284}
@@ -476,7 +476,7 @@ GameObject:
   - component: {fileID: 8682215372103787027}
   m_Layer: 0
   m_Name: NpcCar 4
-  m_TagString: Untagged
+  m_TagString: NpcCar
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -489,8 +489,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8354832325896809825}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 17.08}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -2.59, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -543,8 +543,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.9419315, y: 1.108325, z: 2.7990923}
-  m_Center: {x: 0.0062909126, y: 0.5541625, z: -1.4695458}
+  m_Size: {x: 0.7958603, y: 0.9091367, z: 2.1235647}
+  m_Center: {x: -0.00034868717, y: 0.45456836, z: -1.1384215}
 --- !u!114 &8682215372103787027
 MonoBehaviour:
   m_ObjectHideFlags: 0

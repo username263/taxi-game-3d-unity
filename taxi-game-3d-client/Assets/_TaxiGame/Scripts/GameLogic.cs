@@ -44,9 +44,13 @@ namespace TaxiGame3D
             npcCarManager.Play();
 
             PlayerCar.SetPath(playerPath.path);
+            PlayerCar.OnCrashed += (sender, args) =>
+            {
+                StartCoroutine(EndGame(false));
+            };
             PlayerCar.OnArrive += (sender, args) =>
             {
-                StartCoroutine(EndGame());
+                StartCoroutine(EndGame(true));
             };
             yield return new WaitForSeconds(1);
             PlayerCar.PlayMoving();
@@ -108,9 +112,10 @@ namespace TaxiGame3D
             PlayerCar.PlayMoving();
         }
 
-        IEnumerator EndGame()
+        IEnumerator EndGame(bool isGoal)
         {
             PlayerCar.StopMoving();
+            npcCarManager.Stop();
             yield return new WaitForSeconds(3);
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }

@@ -35,6 +35,7 @@ namespace TaxiGame3D
             set;
         }
 
+        public event EventHandler OnCrashed;
         public event EventHandler OnArrive;
 
         void Awake()
@@ -53,6 +54,12 @@ namespace TaxiGame3D
 
             if (movement >= path.length)
                 OnArrive?.Invoke(this, EventArgs.Empty);
+        }
+
+        void OnCollisionEnter(Collision collision)
+        {
+            if (collision.gameObject.CompareTag("NpcCar"))
+                OnCrashed?.Invoke(this, EventArgs.Empty);
         }
 
         public void SetPath(VertexPath path)
