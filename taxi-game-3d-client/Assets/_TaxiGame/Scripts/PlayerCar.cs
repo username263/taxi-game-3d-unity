@@ -9,6 +9,7 @@ namespace TaxiGame3D
         /// <summary>
         /// °¡¼Óµµ
         /// </summary>
+        [Header("Movement")]
         [SerializeField]
         float acceleration = 1f;
         /// <summary>
@@ -25,7 +26,6 @@ namespace TaxiGame3D
         VertexPath path;
 
         float speed = 1f;
-        float movement = 0f;
 
         Rigidbody rb;
 
@@ -33,6 +33,29 @@ namespace TaxiGame3D
         {
             get;
             set;
+        }
+
+        public float Movement
+        {
+            get;
+            private set;
+        }
+
+        public bool IsArrive => Movement >= path.length;
+
+        [field: Header("Points")]
+        [field: SerializeField]
+        public Transform LeftPoint
+        {
+            get;
+            private set;
+        }
+
+        [field: SerializeField]
+        public Transform RightPoint
+        {
+            get;
+            private set;
         }
 
         public event EventHandler OnCrashed;
@@ -48,11 +71,11 @@ namespace TaxiGame3D
             if (!IsEnableMoving)
                 return;
 
-            movement += Time.deltaTime * speed;
-            rb.MovePosition(path.GetPointAtDistance(movement, EndOfPathInstruction.Stop));
-            rb.MoveRotation(path.GetRotationAtDistance(movement, EndOfPathInstruction.Stop));
+            Movement += Time.deltaTime * speed;
+            rb.MovePosition(path.GetPointAtDistance(Movement, EndOfPathInstruction.Stop));
+            rb.MoveRotation(path.GetRotationAtDistance(Movement, EndOfPathInstruction.Stop));
 
-            if (movement >= path.length)
+            if (IsArrive)
                 OnArrive?.Invoke(this, EventArgs.Empty);
         }
 
@@ -65,7 +88,7 @@ namespace TaxiGame3D
         public void SetPath(VertexPath path)
         {
             this.path = path;
-            movement = 0f;
+            Movement = 0f;
             rb.position = path.GetPoint(0);
             rb.rotation = path.GetRotation(0f, EndOfPathInstruction.Stop);
         }

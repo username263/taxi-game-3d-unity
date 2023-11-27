@@ -12,7 +12,9 @@ namespace TaxiGame3D
         [SerializeField]
         PathCreator playerPath;
         [SerializeField]
-        NpcCarManager npcCarManager; 
+        NpcCarManager npcCarManager;
+        [SerializeField]
+        CustomerTrigger[] customerTriggers;
         [SerializeField]
         TMP_Text stateText;
 
@@ -20,6 +22,11 @@ namespace TaxiGame3D
         bool isAccelPressing = false;
 
         bool wasCustomerTaken;
+        float customerTakePos;
+
+        long coin;
+        int stageIndex;
+
 
         public static GameLogic Instance
         {
@@ -42,6 +49,14 @@ namespace TaxiGame3D
         IEnumerator Start()
         {
             npcCarManager.Play();
+
+            foreach (var trigger in customerTriggers)
+            {
+                trigger.OnPlayerEntered += (sender, args) =>
+                {
+                    OnCarEnterTrigger(sender as CustomerTrigger);
+                };
+            }    
 
             PlayerCar.SetPath(playerPath.path);
             PlayerCar.OnCrashed += (sender, args) =>
@@ -71,9 +86,7 @@ namespace TaxiGame3D
 
         void Update()
         {
-            var s = $"Moving: {PlayerCar.IsEnableMoving}\n";
-            s += $"Customer: {wasCustomerTaken}";
-            stateText.text = s;
+            stateText.text = coin.ToString();
 
             if (isAccelPressing)
                 PlayerCar.PressAccel();
@@ -86,7 +99,7 @@ namespace TaxiGame3D
             isAccelPressing = context.ReadValue<float>() != 0f;
         }
 
-        public void OnCarEnterTrigger(CustomerTrigger trigger)
+        void OnCarEnterTrigger(CustomerTrigger trigger)
         {
             if (wasCustomerTaken)
                 StartCoroutine(TakeOut());
@@ -100,6 +113,7 @@ namespace TaxiGame3D
             PlayerCar.StopMoving();
             yield return new WaitForSeconds(3f);
             wasCustomerTaken = true;
+            customerTakePos = PlayerCar.Movement;
             PlayerCar.PlayMoving();
         }
 
@@ -107,8 +121,19 @@ namespace TaxiGame3D
         IEnumerator TakeOut()
         {
             PlayerCar.StopMoving();
+
+            var distance = PlayerCar.Movement - customerTakePos;
+            var reward = Mathf.FloorToInt(
+                distance * ((70f + stageIndex) / 100f)
+            );
+            Debug.Log($"Distance: {distance}, Reward: {reward}");
+            if (reward > 0)
+                coin += reward;
+
             yield return new WaitForSeconds(3f);
-            wasCustomerTaken = false;
+
+            wasCustomerTaken = false;            
+            customerTakePos = 0f;
             PlayerCar.PlayMoving();
         }
 

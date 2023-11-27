@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace TaxiGame3D
 {
@@ -17,10 +19,12 @@ namespace TaxiGame3D
             private set;
         }
 
+        public event EventHandler OnPlayerEntered;
+
         void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Player"))
-                GameLogic.Instance.OnCarEnterTrigger(this);
+                OnPlayerEntered?.Invoke(this, EventArgs.Empty);
         }
     }
 }

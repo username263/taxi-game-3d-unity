@@ -4,15 +4,19 @@ using UnityEngine;
 public class NpcCar : MonoBehaviour
 {
     VertexPath path;
-    float movement;
     Rigidbody rb;
 
-    public bool IsArrive => movement >= path.length;
+    public float Movement
+    {
+        get;
+        private set;
+    }
+    public bool IsArrive => Movement >= path.length;
 
     public void SetPath(VertexPath path)
     {
         this.path = path;
-        movement = 0;
+        Movement = 0;
 
         if (rb == null)
             rb = GetComponent<Rigidbody>();
@@ -22,10 +26,10 @@ public class NpcCar : MonoBehaviour
 
     public void UpdateMoving(float amount)
     {
-        movement += amount;
+        Movement += amount;
         if (rb == null)
             return;
-        rb.MovePosition(path.GetPointAtDistance(movement, EndOfPathInstruction.Stop));
-        rb.MoveRotation(path.GetRotationAtDistance(movement, EndOfPathInstruction.Stop));
+        rb.MovePosition(path.GetPointAtDistance(Movement, EndOfPathInstruction.Stop));
+        rb.MoveRotation(path.GetRotationAtDistance(Movement, EndOfPathInstruction.Stop));
     }
 }
