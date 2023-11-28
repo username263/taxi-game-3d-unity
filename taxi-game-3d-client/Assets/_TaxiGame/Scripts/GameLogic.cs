@@ -14,6 +14,8 @@ namespace TaxiGame3D
         [SerializeField]
         NpcCarManager npcCarManager;
         [SerializeField]
+        CustomerManager customerManager;
+        [SerializeField]
         CustomerTrigger[] customerTriggers;
         [SerializeField]
         TMP_Text stateText;
@@ -21,7 +23,6 @@ namespace TaxiGame3D
         InputControls inputControls;
         bool isAccelPressing = false;
 
-        bool wasCustomerTaken;
         float customerTakePos;
 
         long coin;
@@ -101,24 +102,25 @@ namespace TaxiGame3D
 
         void OnCarEnterTrigger(CustomerTrigger trigger)
         {
-            if (wasCustomerTaken)
-                StartCoroutine(TakeOut());
+            if (customerManager.WasCustomerTaken)
+                StartCoroutine(TakeOut(trigger));
             else
-                StartCoroutine(TakeIn());
+                StartCoroutine(TakeIn(trigger));
         }
 
         /// <summary> ¼Õ´Ô Å¾½Â </summary>
-        IEnumerator TakeIn()
+        IEnumerator TakeIn(CustomerTrigger trigger)
         {
             PlayerCar.StopMoving();
-            yield return new WaitForSeconds(3f);
-            wasCustomerTaken = true;
+            yield return StartCoroutine(
+                customerManager.TakeIn(trigger.CustomerPoint, PlayerCar)
+            );
             customerTakePos = PlayerCar.Movement;
             PlayerCar.PlayMoving();
         }
 
         /// <summary> ¼Õ´Ô ÇÏÂ÷ </summary>
-        IEnumerator TakeOut()
+        IEnumerator TakeOut(CustomerTrigger trigger)
         {
             PlayerCar.StopMoving();
 
@@ -130,9 +132,10 @@ namespace TaxiGame3D
             if (reward > 0)
                 coin += reward;
 
-            yield return new WaitForSeconds(3f);
-
-            wasCustomerTaken = false;            
+            yield return StartCoroutine(
+                customerManager.TakeOut(trigger.CustomerPoint, PlayerCar)
+            );
+        
             customerTakePos = 0f;
             PlayerCar.PlayMoving();
         }

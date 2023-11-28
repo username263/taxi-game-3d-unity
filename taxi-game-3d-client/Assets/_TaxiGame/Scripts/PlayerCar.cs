@@ -116,5 +116,12 @@ namespace TaxiGame3D
             if (IsEnableMoving)
                 speed = Mathf.Max(speed - Time.deltaTime * brakeForce, 1f);
         }
+
+        public Transform SelectNearestPoint(Vector3 poisition)
+        {
+            var left = (LeftPoint.position - poisition).sqrMagnitude;
+            var right = (RightPoint.position - poisition).sqrMagnitude;
+            return left < right ? LeftPoint : RightPoint;
+        }
     }
 }

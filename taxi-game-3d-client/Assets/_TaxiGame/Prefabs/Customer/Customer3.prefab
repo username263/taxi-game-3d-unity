@@ -669,7 +669,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.6000001, y: 1.6000001, z: 1.6000001}
+  m_LocalScale: {x: 2.2, y: 2.2, z: 2.2}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3030982469293618290}
@@ -688,7 +688,7 @@ Animator:
   m_GameObject: {fileID: 4699765477906790197}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: b101062e192ff624ca86a9a855f1ae76, type: 3}
-  m_Controller: {fileID: 9100000, guid: d95c751205426ab4c9607388a5bdc3b8, type: 2}
+  m_Controller: {fileID: 9100000, guid: 15f33081fc4a00948b46419f315b8b56, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -973,14 +973,14 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.15
-  m_Height: 0.6
+  m_Radius: 0.16
+  m_Height: 0.8
   m_Direction: 1
-  m_Center: {x: 0, y: 0.3, z: 0}
+  m_Center: {x: 0, y: 0.4, z: 0}
 --- !u!54 &-203423427234078415
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1003,8 +1003,8 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
@@ -1020,3 +1020,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bba54808fa837e04683a58790dc83f01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 4

@@ -154,6 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPath: {fileID: 724950139}
   npcCarManager: {fileID: 1410484087}
+  customerManager: {fileID: 1733598774}
   customerTriggers:
   - {fileID: 1493860183}
   - {fileID: 1493860182}
