@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 using PathCreation;
 using System.Collections;
 using TMPro;
@@ -45,6 +46,14 @@ namespace TaxiGame3D
         void Awake()
         {
             Instance = this;
+
+            if (TemplateManager.Instance == null)
+                new GameObject("TemplateManager", typeof(TemplateManager));
+
+            foreach (var carTemp in TemplateManager.Instance.Cars)
+                Debug.Log(JsonConvert.SerializeObject(carTemp));
+            foreach (var stageTemp in TemplateManager.Instance.Stages)
+                Debug.Log(JsonConvert.SerializeObject(stageTemp));
         }
 
         IEnumerator Start()
