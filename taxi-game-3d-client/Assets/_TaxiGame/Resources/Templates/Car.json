@@ -1,0 +1,1 @@
+﻿[{"Id": "car1", "Name": {"Table": null, "Key": "차1"}, "Icon": "icons/car1.png", "Prefab": "prefabs/car1", "Cost": 0}, {"Id": "car2", "Name": {"Table": null, "Key": "차2"}, "Icon": "icons/car2.png", "Prefab": "prefabs/car2", "Cost": 1000}, {"Id": "car3", "Name": {"Table": null, "Key": "차3"}, "Icon": "icons/car3.png", "Prefab": "prefabs/car3", "Cost": 2000}]
