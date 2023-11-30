@@ -18,8 +18,6 @@ namespace TaxiGame3D
         CustomerManager customerManager;
         [SerializeField]
         CustomerTrigger[] customerTriggers;
-        [SerializeField]
-        TMP_Text stateText;
 
         InputControls inputControls;
         bool isAccelPressing = false;
@@ -36,7 +34,6 @@ namespace TaxiGame3D
             private set;
         }
 
-        [field: SerializeField]
         public PlayerCar PlayerCar
         {
             get;
@@ -96,8 +93,6 @@ namespace TaxiGame3D
 
         void Update()
         {
-            stateText.text = coin.ToString();
-
             if (isAccelPressing)
                 PlayerCar.PressAccel();
             else
@@ -137,7 +132,7 @@ namespace TaxiGame3D
             var reward = Mathf.FloorToInt(
                 distance * ((70f + stageIndex) / 100f)
             );
-            Debug.Log($"Distance: {distance}, Reward: {reward}");
+
             if (reward > 0)
                 coin += reward;
 
