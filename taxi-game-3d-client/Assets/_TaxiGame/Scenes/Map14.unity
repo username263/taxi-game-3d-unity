@@ -11313,10 +11313,10 @@ MonoBehaviour:
   editorData:
     _bezierPath:
       points:
-      - {x: 17, y: 0, z: -5}
-      - {x: 16, y: 0, z: -5}
-      - {x: -16, y: 0, z: -5}
-      - {x: -17, y: 0, z: -5}
+      - {x: -2, y: 0, z: 0}
+      - {x: -1, y: 0.5, z: 0}
+      - {x: 1, y: -0.5, z: 0}
+      - {x: 2, y: 0, z: 0}
       isClosed: 0
       space: 0
       controlMode: 0
@@ -11326,9 +11326,9 @@ MonoBehaviour:
         m_Center: {x: 0, y: 0, z: 0}
         m_Extent: {x: 0, y: 0, z: 0}
       perAnchorNormalsAngle:
-      - 90
-      - 90
-      globalNormalsAngle: 270
+      - 0
+      - 0
+      globalNormalsAngle: 90
       flipNormals: 0
     vertexPathUpToDate: 1
     vertexPathMaxAngleError: 0.3
@@ -11381,10 +11381,115 @@ MonoBehaviour:
   editorData:
     _bezierPath:
       points:
-      - {x: 0, y: 0, z: -40}
-      - {x: 0, y: 0, z: -39.900005}
-      - {x: 0, y: 0, z: 45.190002}
-      - {x: 0, y: 0, z: 45.29}
+      - {x: -50, y: 0, z: 75}
+      - {x: -50, y: 0, z: 74}
+      - {x: -50, y: 0, z: 52}
+      - {x: -50, y: 0, z: 51}
+      - {x: -50, y: 0, z: 49.25}
+      - {x: -51.25, y: 0, z: 48}
+      - {x: -53, y: 0, z: 48}
+      - {x: -54.75, y: 0, z: 48}
+      - {x: -56, y: 0, z: 49.25}
+      - {x: -56, y: 0, z: 51}
+      - {x: -56, y: 0, z: 52.75}
+      - {x: -54.75, y: 0, z: 54}
+      - {x: -53, y: 0, z: 54}
+      - {x: -52, y: 0, z: 54}
+      - {x: -36, y: 0, z: 54}
+      - {x: -35, y: 0, z: 54}
+      - {x: -33.25, y: 0, z: 54}
+      - {x: -32, y: 0, z: 52.75}
+      - {x: -32, y: 0, z: 51}
+      - {x: -32, y: 0, z: 50}
+      - {x: -32, y: 0.0011076148, z: 20}
+      - {x: -32, y: 0, z: 19}
+      - {x: -32, y: -0.001953125, z: 17.236639}
+      - {x: -33.25, y: 0, z: 16}
+      - {x: -35, y: 0, z: 16}
+      - {x: -36, y: 0, z: 16}
+      - {x: -38, y: 0, z: 16}
+      - {x: -39, y: 0, z: 16}
+      - {x: -40.75, y: 0, z: 16}
+      - {x: -42, y: 0, z: 17.25}
+      - {x: -42, y: 0, z: 19}
+      - {x: -42, y: 0, z: 19.70722}
+      - {x: -42, y: 0, z: 34}
+      - {x: -42, y: 0, z: 35}
+      - {x: -42, y: 0, z: 37.139698}
+      - {x: -40.75, y: 0, z: 38}
+      - {x: -39, y: 0, z: 38}
+      - {x: -37.25, y: 0, z: 38}
+      - {x: -36, y: 0, z: 36.75}
+      - {x: -36, y: 0, z: 35}
+      - {x: -36, y: 0, z: 33.25}
+      - {x: -37.25, y: 0, z: 32}
+      - {x: -39, y: 0, z: 32}
+      - {x: -40, y: 0, z: 32}
+      - {x: -52, y: 0, z: 32}
+      - {x: -53, y: 0, z: 32}
+      - {x: -54.75, y: 0, z: 32}
+      - {x: -56, y: 0, z: 30.75}
+      - {x: -56, y: 0, z: 29}
+      - {x: -56, y: 0, z: 28}
+      - {x: -56, y: 0, z: 12}
+      - {x: -56, y: 0, z: 11}
+      - {x: -56, y: 0, z: 9.25}
+      - {x: -57.25, y: 0, z: 8}
+      - {x: -59, y: 0, z: 8}
+      - {x: -60.75, y: 0, z: 8}
+      - {x: -62, y: 0, z: 9.25}
+      - {x: -62, y: 0, z: 11}
+      - {x: -62, y: 0, z: 12.75}
+      - {x: -60.75, y: 0, z: 14}
+      - {x: -59, y: 0, z: 14}
+      - {x: -58, y: 0, z: 14}
+      - {x: -44, y: 0, z: 14}
+      - {x: -43, y: 0, z: 14}
+      - {x: -41.25, y: 0, z: 14}
+      - {x: -40, y: 0, z: 12.75}
+      - {x: -40, y: 0, z: 11}
+      - {x: -40, y: 0, z: 9.25}
+      - {x: -38.75, y: 0, z: 8}
+      - {x: -37, y: 0, z: 8}
+      - {x: -36, y: 0, z: 8}
+      - {x: -26, y: 0, z: 8}
+      - {x: -25, y: 0, z: 8}
+      - {x: -23.25, y: 0, z: 8}
+      - {x: -22, y: 0, z: 9.25}
+      - {x: -22, y: 0, z: 11}
+      - {x: -22, y: 0, z: 12}
+      - {x: -22, y: 0, z: 22}
+      - {x: -22, y: 0, z: 23}
+      - {x: -22, y: 0, z: 24.75}
+      - {x: -20.75, y: 0, z: 26}
+      - {x: -19, y: 0, z: 26}
+      - {x: -18, y: 0, z: 26}
+      - {x: -16, y: 0, z: 26}
+      - {x: -15, y: 0, z: 26}
+      - {x: -13.25, y: 0, z: 26}
+      - {x: -12, y: 0, z: 27.25}
+      - {x: -12, y: 0, z: 29}
+      - {x: -12, y: 0, z: 30}
+      - {x: -12, y: 0, z: 68}
+      - {x: -12, y: 0, z: 69}
+      - {x: -12, y: 0, z: 70.75}
+      - {x: -10.75, y: 0, z: 72}
+      - {x: -9, y: 0, z: 72}
+      - {x: -7.25, y: 0, z: 72}
+      - {x: -6, y: 0, z: 70.75}
+      - {x: -6, y: 0, z: 69}
+      - {x: -6, y: 0, z: 67.25}
+      - {x: -7.25, y: 0, z: 66}
+      - {x: -9, y: 0, z: 66}
+      - {x: -10, y: 0, z: 66}
+      - {x: -34, y: 0, z: 66}
+      - {x: -35, y: 0, z: 66}
+      - {x: -36.75, y: 0, z: 66}
+      - {x: -38, y: 0, z: 67.25}
+      - {x: -38, y: 0, z: 69}
+      - {x: -38, y: 0, z: 70}
+      - {x: -38, y: 0, z: 82}
+      - {x: -38, y: 0, z: 83}
       isClosed: 0
       space: 0
       controlMode: 0
@@ -11396,9 +11501,44 @@ MonoBehaviour:
       perAnchorNormalsAngle:
       - 0
       - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       globalNormalsAngle: 90
       flipNormals: 0
-    vertexPathUpToDate: 1
+    vertexPathUpToDate: 0
     vertexPathMaxAngleError: 0.3
     vertexPathMinVertexSpacing: 0.01
     showTransformTool: 1
@@ -11408,10 +11548,10 @@ MonoBehaviour:
     displayControlPoints: 1
     bezierHandleScale: 1
     globalDisplaySettingsFoldout: 0
-    keepConstantHandleSize: 0
+    keepConstantHandleSize: 1
     showNormalsInVertexMode: 0
     showBezierPathInVertexMode: 0
-    showDisplayOptions: 0
+    showDisplayOptions: 1
     showPathOptions: 1
     showVertexPathDisplayOptions: 0
     showVertexPathOptions: 1
@@ -11670,10 +11810,10 @@ MonoBehaviour:
   editorData:
     _bezierPath:
       points:
-      - {x: 17, y: 0, z: 17}
-      - {x: 16, y: 0.008530617, z: 16.987843}
-      - {x: -16, y: 0, z: 17}
-      - {x: -17, y: 0, z: 17}
+      - {x: -2, y: 0, z: 0}
+      - {x: -1, y: 0.5, z: 0}
+      - {x: 1, y: -0.5, z: 0}
+      - {x: 2, y: 0, z: 0}
       isClosed: 0
       space: 0
       controlMode: 0
@@ -11683,9 +11823,9 @@ MonoBehaviour:
         m_Center: {x: 0, y: 0, z: 0}
         m_Extent: {x: 0, y: 0, z: 0}
       perAnchorNormalsAngle:
-      - 90
-      - 90
-      globalNormalsAngle: 270
+      - 0
+      - 0
+      globalNormalsAngle: 90
       flipNormals: 0
     vertexPathUpToDate: 1
     vertexPathMaxAngleError: 0.3
@@ -11716,13 +11856,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4037292854024949358}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1462492342811823057}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4851922430832236595
 GameObject:
   m_ObjectHideFlags: 0

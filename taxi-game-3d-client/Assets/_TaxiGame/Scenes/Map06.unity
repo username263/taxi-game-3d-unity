@@ -8261,10 +8261,10 @@ MonoBehaviour:
   editorData:
     _bezierPath:
       points:
-      - {x: 17, y: 0, z: -5}
-      - {x: 16, y: 0, z: -5}
-      - {x: -16, y: 0, z: -5}
-      - {x: -17, y: 0, z: -5}
+      - {x: -2, y: 0, z: 0}
+      - {x: -1, y: 0.5, z: 0}
+      - {x: 1, y: -0.5, z: 0}
+      - {x: 2, y: 0, z: 0}
       isClosed: 0
       space: 0
       controlMode: 0
@@ -8274,9 +8274,9 @@ MonoBehaviour:
         m_Center: {x: 0, y: 0, z: 0}
         m_Extent: {x: 0, y: 0, z: 0}
       perAnchorNormalsAngle:
-      - 90
-      - 90
-      globalNormalsAngle: 270
+      - 0
+      - 0
+      globalNormalsAngle: 90
       flipNormals: 0
     vertexPathUpToDate: 1
     vertexPathMaxAngleError: 0.3
@@ -8329,10 +8329,34 @@ MonoBehaviour:
   editorData:
     _bezierPath:
       points:
-      - {x: 0, y: 0, z: -40}
-      - {x: 0, y: 0, z: -39.900005}
-      - {x: 0, y: 0, z: 45.190002}
-      - {x: 0, y: 0, z: 45.29}
+      - {x: 0, y: 0, z: 59}
+      - {x: 0, y: 0, z: 58}
+      - {x: 0, y: 0, z: -12}
+      - {x: 0, y: 0, z: -13}
+      - {x: 0, y: 0, z: -15.25}
+      - {x: -2.25, y: 0, z: -18}
+      - {x: -5, y: 0, z: -18}
+      - {x: -6, y: 0, z: -18}
+      - {x: -22, y: 0, z: -18}
+      - {x: -23, y: 0, z: -18}
+      - {x: -26.04023, y: 0, z: -18}
+      - {x: -28, y: 0, z: -15.5}
+      - {x: -28, y: 0, z: -13}
+      - {x: -28, y: 0, z: -12}
+      - {x: -28, y: 0, z: 24}
+      - {x: -28, y: 0, z: 25}
+      - {x: -28, y: 0, z: 27.244476}
+      - {x: -30.25, y: 0, z: 30}
+      - {x: -33, y: 0, z: 30}
+      - {x: -34, y: 0, z: 30}
+      - {x: -40, y: 0, z: 30}
+      - {x: -41, y: 0, z: 30}
+      - {x: -43.75, y: 0, z: 30}
+      - {x: -46, y: 0, z: 27.760115}
+      - {x: -46, y: 0, z: 25}
+      - {x: -46, y: 0, z: 24}
+      - {x: -46, y: 0, z: -12.000001}
+      - {x: -46, y: 0, z: -13}
       isClosed: 0
       space: 0
       controlMode: 0
@@ -8342,6 +8366,14 @@ MonoBehaviour:
         m_Center: {x: 0, y: 0, z: 0}
         m_Extent: {x: 0, y: 0, z: 0}
       perAnchorNormalsAngle:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       - 0
       - 0
       globalNormalsAngle: 90
@@ -8356,10 +8388,10 @@ MonoBehaviour:
     displayControlPoints: 1
     bezierHandleScale: 1
     globalDisplaySettingsFoldout: 0
-    keepConstantHandleSize: 0
+    keepConstantHandleSize: 1
     showNormalsInVertexMode: 0
     showBezierPathInVertexMode: 0
-    showDisplayOptions: 0
+    showDisplayOptions: 1
     showPathOptions: 1
     showVertexPathDisplayOptions: 0
     showVertexPathOptions: 1
@@ -8610,10 +8642,10 @@ MonoBehaviour:
   editorData:
     _bezierPath:
       points:
-      - {x: 17, y: 0, z: 17}
-      - {x: 16, y: 0.008530617, z: 16.987843}
-      - {x: -16, y: 0, z: 17}
-      - {x: -17, y: 0, z: 17}
+      - {x: -2, y: 0, z: 0}
+      - {x: -1, y: 0.5, z: 0}
+      - {x: 1, y: -0.5, z: 0}
+      - {x: 2, y: 0, z: 0}
       isClosed: 0
       space: 0
       controlMode: 0
@@ -8623,9 +8655,9 @@ MonoBehaviour:
         m_Center: {x: 0, y: 0, z: 0}
         m_Extent: {x: 0, y: 0, z: 0}
       perAnchorNormalsAngle:
-      - 90
-      - 90
-      globalNormalsAngle: 270
+      - 0
+      - 0
+      globalNormalsAngle: 90
       flipNormals: 0
     vertexPathUpToDate: 1
     vertexPathMaxAngleError: 0.3
@@ -8656,13 +8688,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4037292854024949358}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1462492342811823057}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4851922430832236595
 GameObject:
   m_ObjectHideFlags: 0

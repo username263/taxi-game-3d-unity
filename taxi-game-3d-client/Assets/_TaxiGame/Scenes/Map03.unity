@@ -5129,10 +5129,10 @@ MonoBehaviour:
   editorData:
     _bezierPath:
       points:
-      - {x: 17, y: 0, z: -5}
-      - {x: 16, y: 0, z: -5}
-      - {x: -16, y: 0, z: -5}
-      - {x: -17, y: 0, z: -5}
+      - {x: -2, y: 0, z: 0}
+      - {x: -1, y: 0.5, z: 0}
+      - {x: 1, y: -0.5, z: 0}
+      - {x: 2, y: 0, z: 0}
       isClosed: 0
       space: 0
       controlMode: 0
@@ -5142,9 +5142,9 @@ MonoBehaviour:
         m_Center: {x: 0, y: 0, z: 0}
         m_Extent: {x: 0, y: 0, z: 0}
       perAnchorNormalsAngle:
-      - 90
-      - 90
-      globalNormalsAngle: 270
+      - 0
+      - 0
+      globalNormalsAngle: 90
       flipNormals: 0
     vertexPathUpToDate: 1
     vertexPathMaxAngleError: 0.3
@@ -5198,7 +5198,7 @@ MonoBehaviour:
     _bezierPath:
       points:
       - {x: 0, y: 0, z: -58}
-      - {x: 0, y: 0, z: -57.900005}
+      - {x: 0, y: 0, z: -57}
       - {x: 0, y: 0, z: 7}
       - {x: 0, y: 0, z: 8}
       - {x: 0, y: 0, z: 11}
@@ -5242,7 +5242,7 @@ MonoBehaviour:
       - 0
       globalNormalsAngle: 90
       flipNormals: 0
-    vertexPathUpToDate: 0
+    vertexPathUpToDate: 1
     vertexPathMaxAngleError: 0.3
     vertexPathMinVertexSpacing: 0.01
     showTransformTool: 1
@@ -5252,7 +5252,7 @@ MonoBehaviour:
     displayControlPoints: 1
     bezierHandleScale: 1
     globalDisplaySettingsFoldout: 0
-    keepConstantHandleSize: 0
+    keepConstantHandleSize: 1
     showNormalsInVertexMode: 0
     showBezierPathInVertexMode: 0
     showDisplayOptions: 1
@@ -5539,10 +5539,10 @@ MonoBehaviour:
   editorData:
     _bezierPath:
       points:
-      - {x: 17, y: 0, z: 17}
-      - {x: 16, y: 0.008530617, z: 16.987843}
-      - {x: -16, y: 0, z: 17}
-      - {x: -17, y: 0, z: 17}
+      - {x: -2, y: 0, z: 0}
+      - {x: -1, y: 0.5, z: 0}
+      - {x: 1, y: -0.5, z: 0}
+      - {x: 2, y: 0, z: 0}
       isClosed: 0
       space: 0
       controlMode: 0
@@ -5552,9 +5552,9 @@ MonoBehaviour:
         m_Center: {x: 0, y: 0, z: 0}
         m_Extent: {x: 0, y: 0, z: 0}
       perAnchorNormalsAngle:
-      - 90
-      - 90
-      globalNormalsAngle: 270
+      - 0
+      - 0
+      globalNormalsAngle: 90
       flipNormals: 0
     vertexPathUpToDate: 1
     vertexPathMaxAngleError: 0.3
