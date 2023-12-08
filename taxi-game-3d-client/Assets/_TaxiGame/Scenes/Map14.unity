@@ -3682,6 +3682,127 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 848480295}
   m_Mesh: {fileID: 4709371420837323726, guid: a424da2e77f9d8749b6af7b8d38b0522, type: 3}
+--- !u!1 &854655003
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 854655004}
+  - component: {fileID: 854655005}
+  m_Layer: 0
+  m_Name: NpcPath3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &854655004
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854655003}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1462492342811823057}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &854655005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854655003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e5ac92bc18f545cc84cd886ece82b4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  editorData:
+    _bezierPath:
+      points:
+      - {x: 0, y: 0, z: 48}
+      - {x: -1, y: 0, z: 48}
+      - {x: -8, y: 0, z: 48}
+      - {x: -9, y: 0, z: 48}
+      - {x: -10.75, y: 0, z: 48}
+      - {x: -12, y: 0, z: 49.25}
+      - {x: -12, y: 0, z: 51}
+      - {x: -12, y: 0, z: 52}
+      - {x: -12, y: 0, z: 54}
+      - {x: -12, y: 0, z: 55}
+      - {x: -12, y: 0, z: 56.75}
+      - {x: -13.25, y: 0, z: 58}
+      - {x: -15, y: 0, z: 58}
+      - {x: -16, y: 0, z: 58}
+      - {x: -26, y: 0, z: 58}
+      - {x: -27, y: 0, z: 58}
+      - {x: -28.75, y: 0, z: 58}
+      - {x: -30, y: 0, z: 59.25}
+      - {x: -30, y: 0, z: 61}
+      - {x: -30, y: 0, z: 62}
+      - {x: -30, y: 0, z: 68}
+      - {x: -30, y: 0, z: 69}
+      - {x: -30, y: 0, z: 70.75}
+      - {x: -28.75, y: 0, z: 72}
+      - {x: -27, y: 0, z: 72}
+      - {x: -25.25, y: 0, z: 72}
+      - {x: -24, y: 0, z: 73.25}
+      - {x: -24, y: 0, z: 75}
+      - {x: -24, y: 0, z: 76}
+      - {x: -24, y: 0, z: 85}
+      - {x: -24, y: 0, z: 86}
+      isClosed: 0
+      space: 0
+      controlMode: 0
+      autoControlLength: 0.3
+      boundsUpToDate: 0
+      bounds:
+        m_Center: {x: 0, y: 0, z: 0}
+        m_Extent: {x: 0, y: 0, z: 0}
+      perAnchorNormalsAngle:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      globalNormalsAngle: 90
+      flipNormals: 0
+    vertexPathUpToDate: 1
+    vertexPathMaxAngleError: 0.3
+    vertexPathMinVertexSpacing: 0.01
+    showTransformTool: 1
+    showPathBounds: 0
+    showPerSegmentBounds: 0
+    displayAnchorPoints: 1
+    displayControlPoints: 1
+    bezierHandleScale: 1
+    globalDisplaySettingsFoldout: 0
+    keepConstantHandleSize: 1
+    showNormalsInVertexMode: 0
+    showBezierPathInVertexMode: 0
+    showDisplayOptions: 1
+    showPathOptions: 1
+    showVertexPathDisplayOptions: 0
+    showVertexPathOptions: 1
+    showNormals: 1
+    showNormalsHelpInfo: 0
+    tabIndex: 0
+  initialized: 1
 --- !u!1 &876212053
 GameObject:
   m_ObjectHideFlags: 0
@@ -6199,6 +6320,7 @@ MonoBehaviour:
   paths:
   - {fileID: 4645233462300458130}
   - {fileID: 3738405865218131993}
+  - {fileID: 854655005}
   poolPosition: {fileID: 1292425646}
   minSpawnDelay: 1
   maxSpawnDelay: 2
@@ -10359,6 +10481,7 @@ Transform:
   - {fileID: 4735487974628276773}
   - {fileID: 3584413655419535413}
   - {fileID: 3565490487220691951}
+  - {fileID: 854655004}
   - {fileID: 6355008035060957935}
   - {fileID: 5928193605184533850}
   - {fileID: 2501018847203544487}
@@ -11313,10 +11436,10 @@ MonoBehaviour:
   editorData:
     _bezierPath:
       points:
-      - {x: -2, y: 0, z: 0}
-      - {x: -1, y: 0.5, z: 0}
-      - {x: 1, y: -0.5, z: 0}
-      - {x: 2, y: 0, z: 0}
+      - {x: -68, y: 0, z: 26}
+      - {x: -67, y: 0, z: 26}
+      - {x: -3, y: 0, z: 26}
+      - {x: -2, y: 0, z: 26}
       isClosed: 0
       space: 0
       controlMode: 0
@@ -11538,7 +11661,7 @@ MonoBehaviour:
       - 0
       globalNormalsAngle: 90
       flipNormals: 0
-    vertexPathUpToDate: 0
+    vertexPathUpToDate: 1
     vertexPathMaxAngleError: 0.3
     vertexPathMinVertexSpacing: 0.01
     showTransformTool: 1
@@ -11810,10 +11933,22 @@ MonoBehaviour:
   editorData:
     _bezierPath:
       points:
-      - {x: -2, y: 0, z: 0}
-      - {x: -1, y: 0.5, z: 0}
-      - {x: 1, y: -0.5, z: 0}
-      - {x: 2, y: 0, z: 0}
+      - {x: -62, y: 0, z: 64}
+      - {x: -61, y: 0, z: 64}
+      - {x: -54, y: 0, z: 64}
+      - {x: -53, y: 0, z: 64}
+      - {x: -51.25, y: 0, z: 64}
+      - {x: -50, y: 0, z: 62}
+      - {x: -50, y: 0, z: 61}
+      - {x: -50, y: 0, z: 60}
+      - {x: -50, y: 0, z: 46}
+      - {x: -50, y: 0, z: 45}
+      - {x: -50, y: 0, z: 43.25}
+      - {x: -48.75, y: 0, z: 42}
+      - {x: -47, y: 0, z: 42}
+      - {x: -46, y: 0, z: 42}
+      - {x: -1, y: 0, z: 42}
+      - {x: 0, y: 0, z: 42}
       isClosed: 0
       space: 0
       controlMode: 0
@@ -11825,6 +11960,10 @@ MonoBehaviour:
       perAnchorNormalsAngle:
       - 0
       - 0
+      - 0
+      - 0
+      - 0
+      - 0
       globalNormalsAngle: 90
       flipNormals: 0
     vertexPathUpToDate: 1
@@ -11832,7 +11971,7 @@ MonoBehaviour:
     vertexPathMinVertexSpacing: 0.01
     showTransformTool: 1
     showPathBounds: 0
-    showPerSegmentBounds: 1
+    showPerSegmentBounds: 0
     displayAnchorPoints: 1
     displayControlPoints: 1
     bezierHandleScale: 1
