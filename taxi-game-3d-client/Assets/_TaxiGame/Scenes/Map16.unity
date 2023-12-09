@@ -861,6 +861,7 @@ MonoBehaviour:
   - {fileID: 12565436262789693}
   - {fileID: 9146938912541796866}
   - {fileID: 4620105990264070722}
+  playerCarPrefab: {fileID: 0}
 --- !u!4 &144317057
 Transform:
   m_ObjectHideFlags: 0
@@ -1438,7 +1439,7 @@ MonoBehaviour:
       - 0
       globalNormalsAngle: 90
       flipNormals: 0
-    vertexPathUpToDate: 0
+    vertexPathUpToDate: 1
     vertexPathMaxAngleError: 0.3
     vertexPathMinVertexSpacing: 0.01
     showTransformTool: 1

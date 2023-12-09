@@ -1,7 +1,5 @@
-using Newtonsoft.Json;
 using PathCreation;
 using System.Collections;
-using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -18,6 +16,8 @@ namespace TaxiGame3D
         CustomerManager customerManager;
         [SerializeField]
         CustomerTrigger[] customerTriggers;
+        [SerializeField]
+        GameObject playerCarPrefab;
 
         InputControls inputControls;
         bool isAccelPressing = false;
@@ -46,11 +46,6 @@ namespace TaxiGame3D
 
             if (TemplateManager.Instance == null)
                 new GameObject("TemplateManager", typeof(TemplateManager));
-
-            foreach (var carTemp in TemplateManager.Instance.Cars)
-                Debug.Log(JsonConvert.SerializeObject(carTemp));
-            foreach (var stageTemp in TemplateManager.Instance.Stages)
-                Debug.Log(JsonConvert.SerializeObject(stageTemp));
         }
 
         IEnumerator Start()
@@ -63,8 +58,15 @@ namespace TaxiGame3D
                 {
                     OnCarEnterTrigger(sender as CustomerTrigger);
                 };
-            }    
+            }
 
+            if (playerCarPrefab == null)
+            {
+                Debug.LogError("PlayerCar prefab is null.");
+                yield break;
+            }
+
+            PlayerCar = Instantiate(playerCarPrefab)?.GetComponent<PlayerCar>();
             PlayerCar.SetPath(playerPath.path);
             PlayerCar.OnCrashed += (sender, args) =>
             {
@@ -93,6 +95,8 @@ namespace TaxiGame3D
 
         void Update()
         {
+            if (PlayerCar == null)
+                return;
             if (isAccelPressing)
                 PlayerCar.PressAccel();
             else

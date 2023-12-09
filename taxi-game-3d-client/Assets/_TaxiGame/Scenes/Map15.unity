@@ -1314,6 +1314,7 @@ MonoBehaviour:
   - {fileID: 12565436262789693}
   - {fileID: 9146938912541796866}
   - {fileID: 4620105990264070722}
+  playerCarPrefab: {fileID: 0}
 --- !u!4 &144317057
 Transform:
   m_ObjectHideFlags: 0

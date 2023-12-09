@@ -1420,9 +1420,9 @@ MonoBehaviour:
       perAnchorNormalsAngle:
       - 0
       - 0
-      globalNormalsAngle: 90
+      globalNormalsAngle: 180
       flipNormals: 0
-    vertexPathUpToDate: 0
+    vertexPathUpToDate: 1
     vertexPathMaxAngleError: 0.3
     vertexPathMinVertexSpacing: 0.01
     showTransformTool: 1
@@ -1682,6 +1682,7 @@ MonoBehaviour:
   - {fileID: 12565436262789693}
   - {fileID: 9146938912541796866}
   - {fileID: 4620105990264070722}
+  playerCarPrefab: {fileID: 0}
 --- !u!4 &144317057
 Transform:
   m_ObjectHideFlags: 0
@@ -15486,6 +15487,22 @@ MonoBehaviour:
   paths:
   - {fileID: 4645233462300458130}
   - {fileID: 3738405865218131993}
+  - {fileID: 1492104951}
+  - {fileID: 413216385}
+  - {fileID: 543229945}
+  - {fileID: 1440268862}
+  - {fileID: 1390562701}
+  - {fileID: 169233859}
+  - {fileID: 1838357493}
+  - {fileID: 1580937413}
+  - {fileID: 1879377191}
+  - {fileID: 1013674299}
+  - {fileID: 1027726158}
+  - {fileID: 2081051487}
+  - {fileID: 170447170}
+  - {fileID: 1272536669}
+  - {fileID: 1915123087}
+  - {fileID: 74849397}
   poolPosition: {fileID: 1292425646}
   minSpawnDelay: 1
   maxSpawnDelay: 2
