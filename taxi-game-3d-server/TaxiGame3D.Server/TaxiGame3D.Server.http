@@ -1,0 +1,6 @@
+@TaxiGame3D.Server_HostAddress = http://localhost:5120
+
+GET {{TaxiGame3D.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
