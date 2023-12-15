@@ -2,6 +2,7 @@
 using MongoDB.Bson.Serialization;
 using MongoDB.Driver;
 using System.Text.Json;
+using System.Text.Json.Nodes;
 using TaxiGame3D.Server.Database;
 using TaxiGame3D.Server.Models;
 using TaxiGame3D.Server.Templates;
@@ -22,7 +23,7 @@ public class TemplateService
         templates = context.Templates;
     }
 
-    public async Task Update(string name, JsonDocument datas)
+    public async Task<ulong> Update(string name, JsonArray datas)
     {
         switch (name)
         {
@@ -32,18 +33,21 @@ public class TemplateService
             case "Stage":
                 stages = datas.Deserialize<List<StageTemplate>>();
                 break;
+            default:
+                return 0;
         }
 
-        var version = await versions.Find(e => e.Name == name).FirstOrDefaultAsync();
-        if (version != null)
+        var verModel = await versions.Find(e => e.Name == name).FirstOrDefaultAsync();
+        if (verModel != null)
         {
-            ++version.Version;
-            await versions.ReplaceOneAsync(name, version);
+            ++verModel.Version;
+            await versions.ReplaceOneAsync(e => e.Name == name, verModel);
             await templates.ReplaceOneAsync(e => e.Name == name, new()
             {
                 Name = name,
-                Datas = BsonSerializer.Deserialize<BsonDocument>(datas.ToJson())
+                Datas = BsonSerializer.Deserialize<BsonArray>(datas.ToJsonString())
             });
+            return verModel.Version;
         }
         else
         {
@@ -55,9 +59,16 @@ public class TemplateService
             await templates.InsertOneAsync(new()
             {
                 Name = name,
-                Datas = BsonSerializer.Deserialize<BsonDocument>(datas.ToJson())
+                Datas = BsonSerializer.Deserialize<BsonArray>(datas.ToJsonString())
             });
+            return 1;
         }
+    }
+
+    public async Task Delete(string name)
+    {
+        await versions.DeleteOneAsync(e => e.Name == name);
+        await templates.DeleteOneAsync(e => e.Name == name);
     }
 
     public async Task<Dictionary<string, ulong>> GetVersions()
@@ -72,12 +83,20 @@ public class TemplateService
         return result;
     }
 
+    public async Task<JsonArray?> Get(string name)
+    {
+        var model = await templates.Find(e => e.Name == name).FirstOrDefaultAsync();
+        if (model == null)
+            return null;
+        return JsonSerializer.Deserialize<JsonArray>(model.Datas.ToJson());
+    }
+
     public async Task<List<CarTemplate>> GetCars()
     {
         if (cars == null)
         {
             var model = await templates.Find(e => e.Name == "Car").FirstOrDefaultAsync();
-            cars = BsonSerializer.Deserialize<List<CarTemplate>>(model.Datas);
+            cars = BsonSerializer.Deserialize<List<CarTemplate>>(model.Datas.ToJson());
         }
         return cars;
     }
@@ -87,7 +106,7 @@ public class TemplateService
         if (stages == null)
         {
             var model = await templates.Find(e => e.Name == "Stage").FirstOrDefaultAsync();
-            stages = BsonSerializer.Deserialize<List<StageTemplate>>(model.Datas);
+            stages = BsonSerializer.Deserialize<List<StageTemplate>>(model.Datas.ToJson());
         }
         return stages;
     }
