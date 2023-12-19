@@ -1,6 +1,13 @@
 @TaxiGame3D.Server_HostAddress = http://localhost:5120
 
-GET {{TaxiGame3D.Server_HostAddress}}/weatherforecast/
+GET {{TaxiGame3D.Server_HostAddress}}/auth/tokentest
 Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NTgxMjgwNWJkNTY4N2IwZDFlY2IzMDIiLCJlbWFpbCI6InRlc3RAdGVzdC5jb20iLCJleHAiOjE3MDI5NjY4NjUsImlzcyI6InRheGktZ2FtZS0zZC1pc3N1ZXIiLCJhdWQiOiJ0YXhpLWdhbWUtM2QtYXVkaWVuY2UifQ.l-LcrbWKCy5AMLNATfVk2L-Or-tKEhcwx2-wPCmO040
+
+###
+
+POST {{TaxiGame3D.Server_HostAddress}}/auth/tokentest
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NTgxMjgwNWJkNTY4N2IwZDFlY2IzMDIiLCJlbWFpbCI6InRlc3RAdGVzdC5jb20iLCJleHAiOjE3MDI5NjY4NjUsImlzcyI6InRheGktZ2FtZS0zZC1pc3N1ZXIiLCJhdWQiOiJ0YXhpLWdhbWUtM2QtYXVkaWVuY2UifQ.l-LcrbWKCy5AMLNATfVk2L-Or-tKEhcwx2-wPCmO040
 
 ###

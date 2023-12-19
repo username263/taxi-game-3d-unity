@@ -1,8 +1,9 @@
 ﻿using Microsoft.Extensions.Options;
 using MongoDB.Driver;
+using TaxiGame3D.Server.Database;
 using TaxiGame3D.Server.Models;
 
-namespace TaxiGame3D.Server.Database;
+namespace TaxiGame3D.Server.Services;
 
 public class DatabaseContext
 {
