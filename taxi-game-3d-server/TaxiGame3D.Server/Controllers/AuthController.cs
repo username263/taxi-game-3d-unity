@@ -32,7 +32,7 @@ public class AuthController : ControllerBase
             return Forbid();
 
         var token = tokenService.Generate(user);
-        return Ok(new
+        return Ok(new LoginResponse
         {
             Token = token.token,
             ExpireUtc = token.expireUtc
@@ -58,7 +58,7 @@ public class AuthController : ControllerBase
         await userRepository.Create(user);
 
         var token = tokenService.Generate(user);
-        return StatusCode(StatusCodes.Status201Created, new
+        return StatusCode(StatusCodes.Status201Created, new LoginResponse
         {
             Token = token.token,
             ExpireUtc = token.expireUtc
@@ -79,7 +79,7 @@ public class AuthController : ControllerBase
             return Forbid();
 
         var token = tokenService.Generate(user);
-        return Ok(new
+        return Ok(new LoginResponse
         {
             Token = token.token,
             ExpireUtc = token.expireUtc

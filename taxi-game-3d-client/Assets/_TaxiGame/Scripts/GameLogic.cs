@@ -155,5 +155,11 @@ namespace TaxiGame3D
             yield return new WaitForSeconds(3);
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+
+        [ContextMenu("Print PlayerPath Distance")]
+        void PrintPlayerPathDistance()
+        {
+            Debug.Log(playerPath.path.length);
+        }
     }
 }

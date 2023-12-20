@@ -41,7 +41,9 @@ def generate_stage(file_path, sheet_name):
             continue
         new_temp = {
             'Id': row[0].value,
-            'Scene': row[1].value
+            'Scene': row[1].value,
+            'Distance': row[2].value,
+            'FareRate': row[3].value
         }
         temp_group.append(new_temp)
     return temp_group

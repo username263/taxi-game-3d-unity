@@ -132,8 +132,12 @@ public class UserController : ControllerBase
         if (body.StageIndex < 0 || body.StageIndex >= stageTemps.Count)
             return BadRequest();
 
-        // 현재 스테이지도 아직 클리어 하지 않았을 경우
+        // 현재 스테이지도 아직 클리어하지 않았을 경우
         if (body.StageIndex > user.CurrentStageIndex)
+            return Forbid();
+
+        // 클라이언트에서 계산한 요금이 서버에서 계산한 요금보다 더 큰 경우
+        if (body.Coin >= stageTemps[user.CurrentStageIndex].MaxCoin)
             return Forbid();
 
         // 다음 스테이지 개방
@@ -145,7 +149,6 @@ public class UserController : ControllerBase
             ++user.CurrentStageIndex;
         }
 
-        // TODO: 나중에 보상금 검증하는 기능 추가
         user.Coin += body.Coin;
         await userRepository.Update(user.Id!, user);
 
