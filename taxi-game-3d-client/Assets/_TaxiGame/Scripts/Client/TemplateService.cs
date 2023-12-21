@@ -1,0 +1,114 @@
+using Cysharp.Threading.Tasks;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using UnityEngine;
+
+namespace TaxiGame3D
+{
+    public class TemplateService : MonoBehaviour
+    {
+        string enviroment;
+        HttpContext http;
+
+        public List<CarTemplate> CarTemplates
+        {
+            get;
+            private set;
+        }
+
+        public List<StageTemplate> StageTemplates
+        {
+            get;
+            private set;
+        }
+
+        void Start()
+        {
+            var client = GetComponent<ClientManager>();
+            enviroment = client?.Enviroment;
+            http = client?.Http;
+        }
+
+        public async UniTask<bool> LoadAll()
+        {
+            var res = await http.Get<Dictionary<string, ulong>>("Template/Versions");
+            if (!res.Item1.IsSuccess())
+            {
+                Debug.LogWarning($"Load template versions failed. - {res.Item1}");
+                return false;
+            }
+
+            if (!res.Item2.TryGetValue("Car", out var version))
+                return false;
+            CarTemplates = await Load<List<CarTemplate>>("Car", version);
+            if (CarTemplates == null)
+                return false;
+
+            if (!res.Item2.TryGetValue("Stage", out version))
+                return false;
+            StageTemplates = await Load<List<StageTemplate>>("Stage", version);
+            if (StageTemplates == null)
+                return false;
+
+            return true;
+        }
+
+        async UniTask<T> Load<T>(string name, ulong remoteVersion)
+        {
+            var path = $"{enviroment}/TemplateVersions/{name}";
+            var versionText = PlayerPrefs.GetString(path, "0");
+            ulong.TryParse(versionText, out var localVersion);
+            
+            if (localVersion >= remoteVersion)
+                return LoadFromLocal<T>(name);
+            
+            var res = await http.Get<T>($"Template/{name}");
+            if (!res.Item1.IsSuccess())
+            {
+                Debug.LogWarning($"Load {name} template failed. - {res.Item1}");
+                return res.Item2;
+            }
+            SaveToLocal(name, res.Item2);
+            PlayerPrefs.SetString(path, remoteVersion.ToString());
+            
+            return res.Item2;
+        }
+
+        T LoadFromLocal<T>(string name)
+        {
+            try
+            {
+                var path = $"{Application.persistentDataPath}/{enviroment}/Templates/{name}";
+                var content = File.ReadAllText(path);
+                return JsonConvert.DeserializeObject<T>(content);
+            }
+            catch (Exception ex)
+            {
+                Debug.LogException(ex);
+                return default;
+            }
+        }
+
+        void SaveToLocal(string name, object content)
+        {
+            try
+            {
+                var directory = $"{Application.persistentDataPath}/{enviroment}/Templates";
+                if (!Directory.Exists(directory))
+                    Directory.CreateDirectory(directory);
+                
+                var path = $"{directory}/{name}";
+                if (!File.Exists(path))
+                    File.Create(path);
+                
+                File.WriteAllText(path, JsonConvert.SerializeObject(content));
+            }
+            catch (Exception ex)
+            {
+                Debug.LogException(ex);
+            }
+        }
+    }
+}

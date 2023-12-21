@@ -17,7 +17,7 @@ public class TemplateController : ControllerBase
         this.service = service;
     }
 
-    [HttpGet("versions")]
+    [HttpGet("Versions")]
     public async Task<ActionResult> GetVersions()
     {
         var versions = await service.GetVersions();

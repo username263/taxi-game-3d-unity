@@ -18,7 +18,7 @@ namespace TaxiGame3D
             private set;
         }
 
-        public List<StageTamplate> Stages
+        public List<StageTemplate> Stages
         {
             get;
             private set;
@@ -29,7 +29,7 @@ namespace TaxiGame3D
             DontDestroyOnLoad(gameObject);
 
             Cars = Load<CarTemplate>("Templates/Car");
-            Stages = Load<StageTamplate>("Templates/Stage");
+            Stages = Load<StageTemplate>("Templates/Stage");
         }
         List<T> Load<T>(string path)
         {
