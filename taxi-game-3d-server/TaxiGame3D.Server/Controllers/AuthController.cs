@@ -21,7 +21,7 @@ public class AuthController : ControllerBase
     }
     
     [HttpPost("LoginEmail")]
-    [ProducesResponseType(typeof(LoginResponse), 200)]
+    [ProducesResponseType<LoginResponse>(200)]
     public async Task<ActionResult> LoginWithEmail([FromBody] LoginWithEmailRequest body)
     {
         var user = await userRepository.FindByEmail(body.Email);
@@ -40,7 +40,7 @@ public class AuthController : ControllerBase
     }
 
     [HttpPost("CreateEmail")]
-    [ProducesResponseType(typeof(LoginResponse), 201)]
+    [ProducesResponseType<LoginResponse>(201)]
     public async Task<ActionResult> CreateWithEmail([FromBody] LoginWithEmailRequest body)
     {
         var user = await userRepository.FindByEmail(body.Email);
@@ -66,7 +66,7 @@ public class AuthController : ControllerBase
     }
 
     [HttpGet("RefreshToken")]
-    [ProducesResponseType(typeof(LoginResponse), 200)]
+    [ProducesResponseType<LoginResponse>(200)]
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public async Task<ActionResult> RefreshToken()
     {

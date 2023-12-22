@@ -26,9 +26,8 @@ namespace TaxiGame3D
 
         void Start()
         {
-            var client = GetComponent<ClientManager>();
-            enviroment = client?.Enviroment;
-            http = client?.Http;
+            enviroment = ClientManager.Instance?.Enviroment;
+            http = ClientManager.Instance?.Http;
         }
 
         public async UniTask<bool> LoadAll()
@@ -42,20 +41,24 @@ namespace TaxiGame3D
 
             if (!res.Item2.TryGetValue("Car", out var version))
                 return false;
-            CarTemplates = await Load<List<CarTemplate>>("Car", version);
+            CarTemplates = await Load<CarTemplate>("Car", version);
             if (CarTemplates == null)
                 return false;
+            for (int i = 0; i < CarTemplates.Count; i++)
+                CarTemplates[i].Index = i;
 
             if (!res.Item2.TryGetValue("Stage", out version))
                 return false;
-            StageTemplates = await Load<List<StageTemplate>>("Stage", version);
+            StageTemplates = await Load<StageTemplate>("Stage", version);
             if (StageTemplates == null)
                 return false;
+            for (int i = 0; i < StageTemplates.Count; i++)
+                StageTemplates[i].Index = i;
 
             return true;
         }
 
-        async UniTask<T> Load<T>(string name, ulong remoteVersion)
+        async UniTask<List<T>> Load<T>(string name, ulong remoteVersion)
         {
             var path = $"{enviroment}/TemplateVersions/{name}";
             var versionText = PlayerPrefs.GetString(path, "0");
@@ -64,7 +67,7 @@ namespace TaxiGame3D
             if (localVersion >= remoteVersion)
                 return LoadFromLocal<T>(name);
             
-            var res = await http.Get<T>($"Template/{name}");
+            var res = await http.Get<List<T>>($"Template/{name}");
             if (!res.Item1.IsSuccess())
             {
                 Debug.LogWarning($"Load {name} template failed. - {res.Item1}");
@@ -72,17 +75,17 @@ namespace TaxiGame3D
             }
             SaveToLocal(name, res.Item2);
             PlayerPrefs.SetString(path, remoteVersion.ToString());
-            
+
             return res.Item2;
         }
 
-        T LoadFromLocal<T>(string name)
+        List<T> LoadFromLocal<T>(string name)
         {
             try
             {
                 var path = $"{Application.persistentDataPath}/{enviroment}/Templates/{name}";
                 var content = File.ReadAllText(path);
-                return JsonConvert.DeserializeObject<T>(content);
+                return JsonConvert.DeserializeObject<List<T>>(content);
             }
             catch (Exception ex)
             {

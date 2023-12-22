@@ -9,5 +9,5 @@ public class StageTemplate
     public double FareRate { get; set; }
 
     [JsonIgnore]
-    public double MaxCoin => Distance * FareRate;
+    public long MaxCoin => (long)(Distance * FareRate);
 }

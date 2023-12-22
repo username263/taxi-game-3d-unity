@@ -14,6 +14,7 @@ namespace TaxiGame3D
         const string AuthPasswordKey = "AuthPassword";
 
         HttpContext http;
+        UserService userService;
         DateTime tokenExpireUtc;
 
         public bool WasLoggedIn => http.Headers.ContainsKey(AuthHeaderKey);
@@ -23,7 +24,8 @@ namespace TaxiGame3D
 
         void Start()
         {
-            http = GetComponent<ClientManager>()?.Http;
+            http = ClientManager.Instance?.Http;
+            userService = ClientManager.Instance?.UserService;
         }
 
         void OnApplicationPause(bool pause)
@@ -108,6 +110,7 @@ namespace TaxiGame3D
         public void Logout()
         {
             http.Headers.Remove(AuthHeaderKey);
+            userService.Clear();
             PlayerPrefs.DeleteKey(AuthTypeKey);
             PlayerPrefs.DeleteKey(AuthIdKey);
             PlayerPrefs.DeleteKey(AuthPasswordKey);

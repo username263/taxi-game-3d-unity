@@ -22,6 +22,7 @@ public class UserController : ControllerBase
 
     
     [HttpGet]
+    [ProducesResponseType<UserResponse>(200)]
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public async Task<ActionResult> Get()
     {
@@ -45,11 +46,11 @@ public class UserController : ControllerBase
             }
         }
 
-        return Ok(new
+        return Ok(new UserResponse
         {
-            user.Nickname,
-            user.Coin,
-            user.Cars,
+            Nickname = user.Nickname,
+            Coin = user.Coin,
+            Cars = user.Cars,
             CurrentCar = user.CurrentCarId,
             CurrentStage = user.CurrentStageIndex
         });
@@ -141,14 +142,9 @@ public class UserController : ControllerBase
             return Forbid();
 
         // 다음 스테이지 개방
-        if (
-            body.StageIndex == user.CurrentStageIndex && 
-            user.CurrentStageIndex < stageTemps.Count - 1
-        )
-        {
-            ++user.CurrentStageIndex;
-        }
-
+        // 위에서 범위계산을 했기 때문에 값이 같은지만 계산
+        if (body.StageIndex == user.CurrentStageIndex)
+            user.CurrentStageIndex = body.StageIndex;
         user.Coin += body.Coin;
         await userRepository.Update(user.Id!, user);
 

@@ -55,5 +55,12 @@ namespace TaxiGame3D
             UserService = gameObject.AddComponent<UserService>();
             TemplateService = gameObject.AddComponent<TemplateService>();
         }
+
+        public static void CreateInstance()
+        {
+            if (Instance != null)
+                return;
+            Instantiate(Resources.Load(nameof(ClientManager)));
+        }
     }
 }
