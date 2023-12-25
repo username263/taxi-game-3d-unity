@@ -62,5 +62,8 @@ namespace TaxiGame3D
                 return;
             Instantiate(Resources.Load(nameof(ClientManager)));
         }
+
+        [ContextMenu("Reset Template Versions")]
+        void ResetTemplateVersions() => TemplateService.ResetTemplateVersions(enviroment);
     }
 }

@@ -35,7 +35,7 @@ namespace TaxiGame3D
             var res = await http.Get<Dictionary<string, ulong>>("Template/Versions");
             if (!res.Item1.IsSuccess())
             {
-                Debug.LogWarning($"Load template versions failed. - {res.Item1}");
+                Debug.LogError($"Load template versions failed. - {res.Item1}");
                 return false;
             }
 
@@ -43,7 +43,10 @@ namespace TaxiGame3D
                 return false;
             CarTemplates = await Load<CarTemplate>("Car", version);
             if (CarTemplates == null)
+            {
+                Debug.LogWarning("Load car templates failed.");
                 return false;
+            }
             for (int i = 0; i < CarTemplates.Count; i++)
                 CarTemplates[i].Index = i;
 
@@ -51,7 +54,10 @@ namespace TaxiGame3D
                 return false;
             StageTemplates = await Load<StageTemplate>("Stage", version);
             if (StageTemplates == null)
+            {
+                Debug.LogWarning("Load stage templates failed.");
                 return false;
+            }
             for (int i = 0; i < StageTemplates.Count; i++)
                 StageTemplates[i].Index = i;
 
@@ -104,14 +110,20 @@ namespace TaxiGame3D
                 
                 var path = $"{directory}/{name}";
                 if (!File.Exists(path))
-                    File.Create(path);
-                
+                    File.Create(path).Close();
+
                 File.WriteAllText(path, JsonConvert.SerializeObject(content));
             }
             catch (Exception ex)
             {
                 Debug.LogException(ex);
             }
+        }
+
+        public static void ResetTemplateVersions(string enviroment)
+        {
+            PlayerPrefs.DeleteKey($"{enviroment}/TemplateVersions/Car");
+            PlayerPrefs.DeleteKey($"{enviroment}/TemplateVersions/Stage");
         }
     }
 }

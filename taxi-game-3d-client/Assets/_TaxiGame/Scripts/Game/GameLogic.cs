@@ -1,4 +1,5 @@
 using PathCreation;
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -16,8 +17,6 @@ namespace TaxiGame3D
         CustomerManager customerManager;
         [SerializeField]
         CustomerTrigger[] customerTriggers;
-        [SerializeField]
-        GameObject playerCarPrefab;
 
         InputControls inputControls;
         bool isAccelPressing = false;
@@ -43,9 +42,6 @@ namespace TaxiGame3D
         void Awake()
         {
             Instance = this;
-
-            if (TemplateManager.Instance == null)
-                new GameObject("TemplateManager", typeof(TemplateManager));
         }
 
         IEnumerator Start()
@@ -60,13 +56,14 @@ namespace TaxiGame3D
                 };
             }
 
-            if (playerCarPrefab == null)
+            var carPrefab = ClientManager.Instance.UserService.User.CurrentCar.Prefab;
+            if (carPrefab == null)
             {
-                Debug.LogError("PlayerCar prefab is null.");
+                Debug.LogError("Player car prefab is null.");
                 yield break;
             }
 
-            PlayerCar = Instantiate(playerCarPrefab)?.GetComponent<PlayerCar>();
+            PlayerCar = Instantiate(carPrefab)?.GetComponent<PlayerCar>();
             PlayerCar.SetPath(playerPath.path);
             PlayerCar.OnCrashed += (sender, args) =>
             {
@@ -86,11 +83,17 @@ namespace TaxiGame3D
                 inputControls = new();
             inputControls.Player.SetCallbacks(this);
             inputControls.Player.Enable();
+
+            ClientManager.Instance.AuthService.TokenExpired += OnTokenExpired;
+            ClientManager.Instance.UserService.UserUpdateFailed += OnUserUpdateFailed;
         }
 
         void OnDisable()
         {
             inputControls?.Player.Disable();
+
+            ClientManager.Instance.AuthService.TokenExpired -= OnTokenExpired;
+            ClientManager.Instance.UserService.UserUpdateFailed -= OnUserUpdateFailed;
         }
 
         void Update()
@@ -152,8 +155,23 @@ namespace TaxiGame3D
         {
             PlayerCar.StopMoving();
             npcCarManager.Stop();
+            
             yield return new WaitForSeconds(3);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+            var user = ClientManager.Instance.UserService.User;
+            SceneManager.LoadScene(user.CurrentStage.SceneName);
+        }
+
+        void OnTokenExpired(object sender, EventArgs args)
+        {
+            Debug.LogError("Token was expired.");
+            SceneManager.LoadScene(0);
+        }
+
+        void OnUserUpdateFailed(object sender, EventArgs args)
+        {
+            Debug.LogError("User updating was failed.");
+            SceneManager.LoadScene(0);
         }
 
         [ContextMenu("Print PlayerPath Distance")]

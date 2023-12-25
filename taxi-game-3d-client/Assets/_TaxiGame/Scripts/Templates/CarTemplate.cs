@@ -1,4 +1,5 @@
 using Newtonsoft.Json;
+using UnityEngine;
 
 namespace TaxiGame3D
 {
@@ -12,6 +13,8 @@ namespace TaxiGame3D
         public string IconPath { get; set; }
         [JsonProperty("Prefab")]
         public string PrefabPath { get; set; }
+        [JsonIgnore]
+        public GameObject Prefab => Resources.Load<GameObject>(PrefabPath);
         public int Cost { get; set; }
     }
 }

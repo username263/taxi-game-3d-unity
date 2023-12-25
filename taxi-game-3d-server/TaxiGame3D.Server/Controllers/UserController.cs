@@ -38,11 +38,12 @@ public class UserController : ControllerBase
         if (user.Cars == null || user.Cars.Count == 0)
         {
             var cars = await templateService.GetCars();
-            var newCar = cars.FirstOrDefault(e => e.Cost == 0);
+            var newCar = cars?.FirstOrDefault(e => e.Cost == 0);
             if (newCar != null)
             {
                 user.CurrentCarId = newCar?.Id;
-                user.Cars = [ user.CurrentCarId! ]; 
+                user.Cars = [ user.CurrentCarId! ];
+                _ = userRepository.Update(userId, user);
             }
         }
 
@@ -116,7 +117,7 @@ public class UserController : ControllerBase
         return NoContent();
     }
 
-    [HttpPut]
+    [HttpPut("EndStage")]
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public async Task<ActionResult> EndStage([FromBody] EndStageRequest body)
     {

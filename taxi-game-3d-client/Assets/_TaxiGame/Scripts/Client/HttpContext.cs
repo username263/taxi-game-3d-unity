@@ -20,7 +20,7 @@ namespace TaxiGame3D
         {
             get;
             private set;
-        }
+        } = new();
 
         public HttpContext(string baseUri)
         {

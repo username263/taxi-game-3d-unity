@@ -90,22 +90,22 @@ public class TemplateService
         return JsonSerializer.Deserialize<JsonArray>(model.Datas.ToJson());
     }
 
-    public async Task<List<CarTemplate>> GetCars()
+    public async Task<List<CarTemplate>?> GetCars()
     {
         if (cars == null)
         {
             var model = await templates.Find(e => e.Name == "Car").FirstOrDefaultAsync();
-            cars = BsonSerializer.Deserialize<List<CarTemplate>>(model.Datas.ToJson());
+            cars = JsonSerializer.Deserialize<List<CarTemplate>>(model.Datas.ToJson());
         }
         return cars;
     }
 
-    public async Task<List<StageTemplate>> GetStages()
+    public async Task<List<StageTemplate>?> GetStages()
     {
         if (stages == null)
         {
             var model = await templates.Find(e => e.Name == "Stage").FirstOrDefaultAsync();
-            stages = BsonSerializer.Deserialize<List<StageTemplate>>(model.Datas.ToJson());
+            stages = JsonSerializer.Deserialize<List<StageTemplate>>(model.Datas.ToJson());
         }
         return stages;
     }
