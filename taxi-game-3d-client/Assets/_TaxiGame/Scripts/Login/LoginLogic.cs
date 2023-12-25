@@ -58,7 +58,7 @@ namespace TaxiGame3D
                 return;
             }
 
-            SceneManager.LoadScene(cliMgr.UserService.User.CurrentStage.SceneName);
+            GameLogic.LoadStage(cliMgr.UserService.User.CurrentStage.Index);
         }
     }
 }

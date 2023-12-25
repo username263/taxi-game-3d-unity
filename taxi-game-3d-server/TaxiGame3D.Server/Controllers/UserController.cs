@@ -102,7 +102,7 @@ public class UserController : ControllerBase
             return NoContent();
 
         var carTemps = await templateService.GetCars();
-        var carTemp = carTemps.Find(e => e.Id == carId);
+        var carTemp = carTemps?.Find(e => e.Id == carId);
         if (carTemp == null)
             return NotFound();
 
@@ -130,22 +130,24 @@ public class UserController : ControllerBase
             return Forbid();
 
         var stageTemps = await templateService.GetStages();
+        var stageCount = stageTemps?.Count ?? 0;
+        var stageIndex = body.StageIndex;
         // 템플릿에 등록되지 않은 스테이지
-        if (body.StageIndex < 0 || body.StageIndex >= stageTemps.Count)
+        if (stageIndex < 0 || body.StageIndex >= stageCount)
             return BadRequest();
 
         // 현재 스테이지도 아직 클리어하지 않았을 경우
-        if (body.StageIndex > user.CurrentStageIndex)
+        if (stageIndex > user.CurrentStageIndex)
             return Forbid();
 
         // 클라이언트에서 계산한 요금이 서버에서 계산한 요금보다 더 큰 경우
-        if (body.Coin >= stageTemps[user.CurrentStageIndex].MaxCoin)
+        var maxCoin = stageTemps?[stageIndex]?.MaxCoin ?? 0;
+        if (body.Coin >= maxCoin)
             return Forbid();
 
         // 다음 스테이지 개방
-        // 위에서 범위계산을 했기 때문에 값이 같은지만 계산
-        if (body.StageIndex == user.CurrentStageIndex)
-            user.CurrentStageIndex = body.StageIndex;
+        if (stageIndex == user.CurrentStageIndex && stageIndex < stageCount + 1)
+            user.CurrentStageIndex = stageIndex + 1;
         user.Coin += body.Coin;
         await userRepository.Update(user.Id!, user);
 

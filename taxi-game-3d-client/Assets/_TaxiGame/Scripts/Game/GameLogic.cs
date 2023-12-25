@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using PathCreation;
 using System;
 using System.Collections;
@@ -24,7 +25,7 @@ namespace TaxiGame3D
         float customerTakePos;
 
         long coin;
-        int stageIndex;
+        static int stageIndex;
 
 
         public static GameLogic Instance
@@ -67,11 +68,11 @@ namespace TaxiGame3D
             PlayerCar.SetPath(playerPath.path);
             PlayerCar.OnCrashed += (sender, args) =>
             {
-                StartCoroutine(EndGame(false));
+                EndGame(false);
             };
             PlayerCar.OnArrive += (sender, args) =>
             {
-                StartCoroutine(EndGame(true));
+                EndGame(true);
             };
             yield return new WaitForSeconds(1);
             PlayerCar.PlayMoving();
@@ -151,15 +152,18 @@ namespace TaxiGame3D
             PlayerCar.PlayMoving();
         }
 
-        IEnumerator EndGame(bool isGoal)
+        async void EndGame(bool isGoal)
         {
             PlayerCar.StopMoving();
             npcCarManager.Stop();
-            
-            yield return new WaitForSeconds(3);
 
-            var user = ClientManager.Instance.UserService.User;
-            SceneManager.LoadScene(user.CurrentStage.SceneName);
+            var dt = DateTime.Now;
+            await ClientManager.Instance.UserService.EndStage(stageIndex, coin);
+            var ts = DateTime.Now - dt;
+            if (ts.TotalSeconds < 3)
+                await UniTask.WaitForSeconds(3.0f - (float)ts.TotalSeconds, true);
+
+            LoadStage(ClientManager.Instance.UserService.User.CurrentStage.Index);
         }
 
         void OnTokenExpired(object sender, EventArgs args)
@@ -178,6 +182,13 @@ namespace TaxiGame3D
         void PrintPlayerPathDistance()
         {
             Debug.Log(playerPath.path.length);
+        }
+
+        public static void LoadStage(int index)
+        {
+            stageIndex = index;
+            var template = ClientManager.Instance.TemplateService.StageTemplates[index];
+            SceneManager.LoadScene(template.SceneName);
         }
     }
 }

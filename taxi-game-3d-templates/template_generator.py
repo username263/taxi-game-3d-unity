@@ -21,7 +21,7 @@ def generate_car(file_path, sheet_name):
             },
             'Icon': row[3].value,
             'Prefab': row[4].value,
-            'Cost': row[5].value
+            'Cost': int(row[5].value)
         }
         temp_group.append(new_temp)
     return temp_group
@@ -42,8 +42,8 @@ def generate_stage(file_path, sheet_name):
         new_temp = {
             'Id': row[0].value,
             'Scene': row[1].value,
-            'Distance': row[2].value,
-            'FareRate': row[3].value
+            'Distance': float(row[2].value),
+            'FareRate': float(row[3].value)
         }
         temp_group.append(new_temp)
     return temp_group

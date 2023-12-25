@@ -89,6 +89,7 @@ namespace TaxiGame3D
             {
                 foreach (var h in Headers)
                     req.SetRequestHeader(h.Key, h.Value);
+                req.SetRequestHeader("Content-Type", "application/json");
                 await req.SendWebRequest();
                 return (HttpStatusCode)req.responseCode;
             }
@@ -100,6 +101,7 @@ namespace TaxiGame3D
             {
                 foreach (var h in Headers)
                     req.SetRequestHeader(h.Key, h.Value);
+                req.SetRequestHeader("Content-Type", "application/json");
                 await req.SendWebRequest();
                 return (
                     (HttpStatusCode)req.responseCode,

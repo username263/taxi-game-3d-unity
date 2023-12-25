@@ -125,8 +125,8 @@ namespace TaxiGame3D
                 return HttpStatusCode.Forbidden;
             }
 
-            if (stageIndex == currStageIndex)
-                User.CurrentStage = templateService.StageTemplates[stageIndex];
+            if (stageIndex == currStageIndex && stageIndex < stageCount - 1)
+                User.CurrentStage = templateService.StageTemplates[stageIndex + 1];
             User.Coin += coin;
 
             var res = await http.Put($"User/EndStage", new EndStageRequest
