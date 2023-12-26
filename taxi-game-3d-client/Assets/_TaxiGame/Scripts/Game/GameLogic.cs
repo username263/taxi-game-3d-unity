@@ -158,7 +158,10 @@ namespace TaxiGame3D
             npcCarManager.Stop();
 
             var dt = DateTime.Now;
-            await ClientManager.Instance.UserService.EndStage(stageIndex, coin);
+            
+            if (isGoal)
+                await ClientManager.Instance.UserService.EndStage(stageIndex, coin);
+            
             var ts = DateTime.Now - dt;
             if (ts.TotalSeconds < 3)
                 await UniTask.WaitForSeconds(3.0f - (float)ts.TotalSeconds, true);
