@@ -1,13 +1,23 @@
 using Cysharp.Threading.Tasks;
 using System.Collections;
-using System.Collections.Generic;
+using System.Net;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace TaxiGame3D
 {
     public class LoginLogic : MonoBehaviour
     {
+        public static LoginLogic Instance
+        {
+            get;
+            private set;
+        }
+
+        void Awake()
+        {
+            Instance = this;    
+        }
+
         IEnumerator Start()
         {
             ClientManager.CreateInstance();
@@ -25,29 +35,11 @@ namespace TaxiGame3D
                 return;
             }
 
-            var email = "test@test.com";
-            var password = "12345678";
-
             var statusCode = await cliMgr.AuthService.Relogin();
             if (!statusCode.IsSuccess())
             {
-                statusCode = await cliMgr.AuthService.Login(new()
-                {
-                    Email = email,
-                    Password = password
-                });
-            }
-            if (!statusCode.IsSuccess())
-            {
-                statusCode = await cliMgr.AuthService.CreateUser(new()
-                {
-                    Email = email,
-                    Password = password
-                });
-            }
-            if (!statusCode.IsSuccess())
-            {
-                Debug.LogError("Login and CreateUser failed.");
+                Debug.Log("Relogin failed.");
+                LoginUI.Instance.SetLoginContainerVisible(true);
                 return;
             }
 
@@ -55,10 +47,40 @@ namespace TaxiGame3D
             if (!statusCode.IsSuccess())
             {
                 Debug.LogError("Load user failed.");
+                LoginUI.Instance.SetLoginContainerVisible(true);
                 return;
             }
 
-            GameLogic.LoadStage(cliMgr.UserService.User.CurrentStage.Index);
+            GotoGame();
+        }
+
+        public async UniTask<HttpStatusCode> Login(string email, string password)
+        {
+            var statusCode = await ClientManager.Instance.AuthService.Login(new()
+            {
+                Email = email,
+                Password = password
+            });
+            if (!statusCode.IsSuccess())
+                return statusCode;
+            return await ClientManager.Instance.UserService.Load();
+        }
+
+        public async UniTask<HttpStatusCode> Register(string email, string password)
+        {
+            var statusCode = await ClientManager.Instance.AuthService.CreateUser(new()
+            {
+                Email = email,
+                Password = password
+            });
+            if (!statusCode.IsSuccess())
+                return statusCode;
+            return await ClientManager.Instance.UserService.Load();
+        }
+
+        public void GotoGame()
+        {
+            GameLogic.LoadStage(ClientManager.Instance.UserService.User.CurrentStage.Index);
         }
     }
 }

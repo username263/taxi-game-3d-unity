@@ -65,5 +65,8 @@ namespace TaxiGame3D
 
         [ContextMenu("Reset Template Versions")]
         void ResetTemplateVersions() => TemplateService.ResetTemplateVersions(enviroment);
+
+        [ContextMenu("Reset Saved Auth")]
+        void ResetSavedAuth() => AuthService.ResetSavedAuth();
     }
 }

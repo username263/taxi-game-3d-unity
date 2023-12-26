@@ -131,5 +131,12 @@ namespace TaxiGame3D
             yield return new WaitForSecondsRealtime((float)ts.TotalSeconds);
             RefreshToken();   
         }
+
+        public static void ResetSavedAuth()
+        {
+            PlayerPrefs.DeleteKey(AuthTypeKey);
+            PlayerPrefs.DeleteKey(AuthIdKey);
+            PlayerPrefs.DeleteKey(AuthPasswordKey);
+        }
     }
 }
