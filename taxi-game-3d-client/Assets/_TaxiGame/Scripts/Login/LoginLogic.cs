@@ -15,7 +15,10 @@ namespace TaxiGame3D
 
         void Awake()
         {
-            Instance = this;    
+            Instance = this;
+
+            if (GameUI.Instance != null)
+                GameUI.Instance.HideAll();
         }
 
         IEnumerator Start()

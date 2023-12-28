@@ -2,6 +2,7 @@ using Cysharp.Threading.Tasks;
 using PathCreation;
 using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -45,8 +46,10 @@ namespace TaxiGame3D
             Instance = this;
         }
 
-        IEnumerator Start()
+        void Start()
         {
+            GameUI.CreateInstance();
+
             npcCarManager.Play();
 
             foreach (var trigger in customerTriggers)
@@ -61,7 +64,7 @@ namespace TaxiGame3D
             if (carPrefab == null)
             {
                 Debug.LogError("Player car prefab is null.");
-                yield break;
+                return;
             }
 
             PlayerCar = Instantiate(carPrefab)?.GetComponent<PlayerCar>();
@@ -74,8 +77,6 @@ namespace TaxiGame3D
             {
                 EndGame(true);
             };
-            yield return new WaitForSeconds(1);
-            PlayerCar.PlayMoving();
         }
 
         void OnEnable()
@@ -107,9 +108,15 @@ namespace TaxiGame3D
                 PlayerCar.PressBrake();
         }
 
+        public void PlayGame()
+        {
+            PlayerCar.PlayMoving();
+        }
+
         public void OnAccelerate(InputAction.CallbackContext context)
         {
-            isAccelPressing = context.ReadValue<float>() != 0f;
+            if (PlayerCar != null && PlayerCar.IsEnableMoving)
+                isAccelPressing = context.ReadValue<float>() != 0f;
         }
 
         void OnCarEnterTrigger(CustomerTrigger trigger)
