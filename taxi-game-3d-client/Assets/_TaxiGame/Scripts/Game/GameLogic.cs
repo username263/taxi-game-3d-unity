@@ -60,23 +60,7 @@ namespace TaxiGame3D
                 };
             }
 
-            var carPrefab = ClientManager.Instance.UserService.User.CurrentCar.Prefab;
-            if (carPrefab == null)
-            {
-                Debug.LogError("Player car prefab is null.");
-                return;
-            }
-
-            PlayerCar = Instantiate(carPrefab)?.GetComponent<PlayerCar>();
-            PlayerCar.SetPath(playerPath.path);
-            PlayerCar.OnCrashed += (sender, args) =>
-            {
-                EndGame(false);
-            };
-            PlayerCar.OnArrive += (sender, args) =>
-            {
-                EndGame(true);
-            };
+            RespawnPlayerCar();
         }
 
         void OnEnable()
@@ -111,6 +95,33 @@ namespace TaxiGame3D
         public void PlayGame()
         {
             PlayerCar.PlayMoving();
+        }
+
+        public void RespawnPlayerCar()
+        {
+            if (PlayerCar != null)
+            {
+                Destroy(PlayerCar.gameObject);
+                PlayerCar = null;
+            }
+
+            var carPrefab = ClientManager.Instance.UserService.User.CurrentCar.Prefab;
+            if (carPrefab == null)
+            {
+                Debug.LogError("Player car prefab is null.");
+                return;
+            }
+
+            PlayerCar = Instantiate(carPrefab)?.GetComponent<PlayerCar>();
+            PlayerCar.SetPath(playerPath.path);
+            PlayerCar.OnCrashed += (sender, args) =>
+            {
+                EndGame(false);
+            };
+            PlayerCar.OnArrive += (sender, args) =>
+            {
+                EndGame(true);
+            };
         }
 
         public void OnAccelerate(InputAction.CallbackContext context)

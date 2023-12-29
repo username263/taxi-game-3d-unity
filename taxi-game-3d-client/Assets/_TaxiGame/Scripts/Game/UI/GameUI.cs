@@ -11,6 +11,8 @@ namespace TaxiGame3D
         [SerializeField]
         PlayViewUI playView;
         [SerializeField]
+        CarListViewUI carListView;
+        [SerializeField]
         GameObject eventSystem;
 
 
@@ -23,19 +25,34 @@ namespace TaxiGame3D
         void Awake()
         {
             Instance = this;
+            ShowReadyView();
         }
 
-        public void StartForGame()
+        public void ShowReadyView()
         {
             readyView.gameObject.SetActive(true);
             playView.gameObject.SetActive(false);
+            carListView.gameObject.SetActive(false);
             eventSystem.SetActive(true);
+        }
+
+        public void ShowPlayView()
+        {
+            readyView.gameObject.SetActive(false);
+            playView.gameObject.SetActive(true);
+            carListView.gameObject.SetActive(false);
+        }
+
+        public void ShowCarList()
+        {
+            carListView.gameObject.SetActive(true);
         }
 
         public void HideAll()
         {
             readyView.gameObject.SetActive(false);
             playView.gameObject.SetActive(false);
+            carListView.gameObject.SetActive(false);
             eventSystem.SetActive(false);
         }
 

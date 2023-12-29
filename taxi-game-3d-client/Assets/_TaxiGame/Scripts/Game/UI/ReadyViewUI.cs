@@ -24,8 +24,13 @@ namespace TaxiGame3D
         {
             playButton.onClick.AddListener(() =>
             {
+                GameUI.Instance.ShowPlayView();
                 GameLogic.Instance.PlayGame();
                 gameObject.SetActive(false);
+            });
+            carListButton.onClick.AddListener(() =>
+            {
+                GameUI.Instance.ShowCarList();
             });
         }
 

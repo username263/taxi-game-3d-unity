@@ -11,6 +11,8 @@ namespace TaxiGame3D
         public LocalizationTemplate Name { get; set; }
         [JsonProperty("Icon")]
         public string IconPath { get; set; }
+        [JsonIgnore]
+        public Sprite Icon => Resources.Load<Sprite>(IconPath);
         [JsonProperty("Prefab")]
         public string PrefabPath { get; set; }
         [JsonIgnore]

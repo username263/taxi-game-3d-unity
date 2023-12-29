@@ -57,7 +57,7 @@ public class UserController : ControllerBase
         });
     }
 
-    [HttpPut("SelctCar/{carId}")]
+    [HttpPut("SelectCar/{carId}")]
     public async Task<ActionResult> SelectCar(string carId)
     {
         var userId = ClaimHelper.FindNameIdentifier(User);
