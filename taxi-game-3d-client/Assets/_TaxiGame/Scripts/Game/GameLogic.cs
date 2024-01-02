@@ -23,13 +23,18 @@ namespace TaxiGame3D
         InputControls inputControls;
         bool isAccelPressing = false;
 
+        int numOfCustomers = 0;
         float customerTakePos;
 
         long coin;
-        static int stageIndex;
-
 
         public static GameLogic Instance
+        {
+            get;
+            private set;
+        }
+
+        public static int StageIndex
         {
             get;
             private set;
@@ -40,6 +45,13 @@ namespace TaxiGame3D
             get;
             private set;
         }
+
+        public int CustomerCount => customerTriggers.Length / 2;
+
+        public event EventHandler GamePlayedEvent;
+        public event EventHandler<int> CustomerTakeInEvent;
+        public event EventHandler<int> CustomerTakeOutEvent;
+        public event EventHandler<bool> GameEndedEvent;
 
         void Awake()
         {
@@ -80,6 +92,11 @@ namespace TaxiGame3D
 
             ClientManager.Instance.AuthService.TokenExpired -= OnTokenExpired;
             ClientManager.Instance.UserService.UserUpdateFailed -= OnUserUpdateFailed;
+
+            GamePlayedEvent = null;
+            CustomerTakeInEvent = null;
+            CustomerTakeOutEvent = null;
+            GameEndedEvent = null;
         }
 
         void Update()
@@ -95,6 +112,7 @@ namespace TaxiGame3D
         public void PlayGame()
         {
             PlayerCar.PlayMoving();
+            GamePlayedEvent?.Invoke(this, EventArgs.Empty);
         }
 
         public void RespawnPlayerCar()
@@ -142,10 +160,14 @@ namespace TaxiGame3D
         IEnumerator TakeIn(CustomerTrigger trigger)
         {
             PlayerCar.StopMoving();
+            
             yield return StartCoroutine(
                 customerManager.TakeIn(trigger.CustomerPoint, PlayerCar)
             );
             customerTakePos = PlayerCar.Movement;
+            ++numOfCustomers;
+            CustomerTakeInEvent?.Invoke(this, numOfCustomers);
+            
             PlayerCar.PlayMoving();
         }
 
@@ -156,17 +178,17 @@ namespace TaxiGame3D
 
             var distance = PlayerCar.Movement - customerTakePos;
             var reward = Mathf.FloorToInt(
-                distance * ((70f + stageIndex) / 100f)
+                distance * ((70f + StageIndex) / 100f)
             );
 
             if (reward > 0)
                 coin += reward;
-
+            CustomerTakeOutEvent?.Invoke(this, numOfCustomers);
             yield return StartCoroutine(
                 customerManager.TakeOut(trigger.CustomerPoint, PlayerCar)
             );
-        
             customerTakePos = 0f;
+
             PlayerCar.PlayMoving();
         }
 
@@ -174,11 +196,12 @@ namespace TaxiGame3D
         {
             PlayerCar.StopMoving();
             npcCarManager.Stop();
+            GameEndedEvent?.Invoke(this, isGoal);
 
             var dt = DateTime.Now;
             
             if (isGoal)
-                await ClientManager.Instance.UserService.EndStage(stageIndex, coin);
+                await ClientManager.Instance.UserService.EndStage(StageIndex, coin);
             
             var ts = DateTime.Now - dt;
             if (ts.TotalSeconds < 3)
@@ -207,7 +230,7 @@ namespace TaxiGame3D
 
         public static void LoadStage(int index)
         {
-            stageIndex = index;
+            StageIndex = index;
             var template = ClientManager.Instance.TemplateService.StageTemplates[index];
             SceneManager.LoadScene(template.SceneName);
         }
