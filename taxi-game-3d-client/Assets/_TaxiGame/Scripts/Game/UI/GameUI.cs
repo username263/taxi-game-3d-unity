@@ -28,12 +28,19 @@ namespace TaxiGame3D
             ShowReadyView();
         }
 
+        public void OnGameLoaded()
+        {
+            playView.OnGameLoaded();
+            ShowReadyView();
+        }
+
         public void ShowReadyView()
         {
             readyView.gameObject.SetActive(true);
             playView.gameObject.SetActive(false);
             carListView.gameObject.SetActive(false);
             eventSystem.SetActive(true);
+            readyView.UpdateCointext();
         }
 
         public void ShowPlayView()

@@ -73,6 +73,8 @@ namespace TaxiGame3D
             }
 
             RespawnPlayerCar();
+
+            GameUI.Instance.OnGameLoaded();
         }
 
         void OnEnable()

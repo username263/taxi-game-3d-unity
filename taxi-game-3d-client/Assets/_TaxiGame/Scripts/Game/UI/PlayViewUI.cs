@@ -2,17 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayViewUI : MonoBehaviour
+namespace TaxiGame3D
 {
-    // Start is called before the first frame update
-    void Start()
+    public class PlayViewUI : MonoBehaviour
     {
-        
-    }
+        [SerializeField]
+        StageProgressViewUI stageProgressView;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public void OnGameLoaded()
+        {
+            stageProgressView.Init();
+        }
     }
 }

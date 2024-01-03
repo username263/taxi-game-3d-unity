@@ -52,32 +52,32 @@ namespace TaxiGame3D
         [SerializeField]
         TMP_Text nextStageText;
 
-
-        void Awake()
+        void OnEnable()
         {
-            currentStageText.text = "0";
-            foreach (var p in parts)
-                p.SetState(0);
-            nextStageImage.sprite = nextStageNonSprite;
-            nextStageText.text = "0";
+            StartCoroutine(UpdateLayoutGroup());
         }
 
-        void Start()
+        public void Init()
         {
-            currentStageText.text = GameLogic.StageIndex.ToString();
+            var stage = GameLogic.StageIndex + 1;
+            var stageCount = ClientManager
+                .Instance
+                .TemplateService
+                .StageTemplates
+                .Count;
             var customerCount = GameLogic.Instance.CustomerCount;
+            
+            currentStageText.text = stage.ToString();
+            
             for (int i = 0; i < parts.Length; i++)
             {
                 parts[i].SetVisible(i < customerCount);
                 parts[i].SetState(0);
             }
-            nextStageText.text = ClientManager
-                .Instance
-                .TemplateService
-                .StageTemplates
-                .Count
-                .ToString();
-            StartCoroutine(UpdateLayoutGroup());
+            nextStageText.text = Math.Min(stage + 1, stageCount).ToString();
+
+            if (gameObject.activeInHierarchy)
+                StartCoroutine(UpdateLayoutGroup());
 
             GameLogic.Instance.CustomerTakeInEvent += (sender, customerNumber) =>
             {

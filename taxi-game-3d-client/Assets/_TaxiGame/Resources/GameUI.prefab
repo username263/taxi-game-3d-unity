@@ -4217,6 +4217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd567964074d7d04998f5ecde74f384f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stageProgressView: {fileID: 5830303315644645932}
 --- !u!1 &6138027540170411504
 GameObject:
   m_ObjectHideFlags: 0
