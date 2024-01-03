@@ -6395,9 +6395,9 @@ MonoBehaviour:
   - {fileID: 3738405865218131993}
   - {fileID: 854655005}
   poolPosition: {fileID: 1292425646}
-  minSpawnDelay: 1
-  maxSpawnDelay: 2
-  moveSpeed: 8
+  minSpawnDelay: 2
+  maxSpawnDelay: 3
+  moveSpeed: 7
 --- !u!4 &1410484088
 Transform:
   m_ObjectHideFlags: 0
@@ -13800,8 +13800,8 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 144317057}
-  - {fileID: 244401047}
   - {fileID: 2099754994}
+  - {fileID: 244401047}
   - {fileID: 1410484088}
   - {fileID: 1733598775}
   - {fileID: 731896930}

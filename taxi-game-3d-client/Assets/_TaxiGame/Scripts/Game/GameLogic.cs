@@ -26,8 +26,6 @@ namespace TaxiGame3D
         int numOfCustomers = 0;
         float customerTakePos;
 
-        long coin;
-
         public static GameLogic Instance
         {
             get;
@@ -47,6 +45,12 @@ namespace TaxiGame3D
         }
 
         public int CustomerCount => customerTriggers.Length / 2;
+
+        public int RewardedCoin
+        {
+            get;
+            private set;
+        }
 
         public event EventHandler GamePlayedEvent;
         public event EventHandler<int> CustomerTakeInEvent;
@@ -161,6 +165,7 @@ namespace TaxiGame3D
         /// <summary> ¼Õ´Ô Å¾½Â </summary>
         IEnumerator TakeIn(CustomerTrigger trigger)
         {
+            isAccelPressing = false;
             PlayerCar.StopMoving();
             
             yield return StartCoroutine(
@@ -176,6 +181,7 @@ namespace TaxiGame3D
         /// <summary> ¼Õ´Ô ÇÏÂ÷ </summary>
         IEnumerator TakeOut(CustomerTrigger trigger)
         {
+            isAccelPressing = false;
             PlayerCar.StopMoving();
 
             var distance = PlayerCar.Movement - customerTakePos;
@@ -184,7 +190,7 @@ namespace TaxiGame3D
             );
 
             if (reward > 0)
-                coin += reward;
+                RewardedCoin += reward;
             CustomerTakeOutEvent?.Invoke(this, numOfCustomers);
             yield return StartCoroutine(
                 customerManager.TakeOut(trigger.CustomerPoint, PlayerCar)
@@ -198,18 +204,10 @@ namespace TaxiGame3D
         {
             PlayerCar.StopMoving();
             npcCarManager.Stop();
+            
+            await ClientManager.Instance.UserService.EndStage(StageIndex, isGoal, RewardedCoin);
+
             GameEndedEvent?.Invoke(this, isGoal);
-
-            var dt = DateTime.Now;
-            
-            if (isGoal)
-                await ClientManager.Instance.UserService.EndStage(StageIndex, coin);
-            
-            var ts = DateTime.Now - dt;
-            if (ts.TotalSeconds < 3)
-                await UniTask.WaitForSeconds(3.0f - (float)ts.TotalSeconds, true);
-
-            LoadStage(ClientManager.Instance.UserService.User.CurrentStage.Index);
         }
 
         void OnTokenExpired(object sender, EventArgs args)

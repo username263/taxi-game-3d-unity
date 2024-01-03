@@ -1,4 +1,4 @@
-using Cysharp.Threading.Tasks;
+﻿using Cysharp.Threading.Tasks;
 using Newtonsoft.Json;
 using System;
 using System.Linq;
@@ -101,7 +101,7 @@ namespace TaxiGame3D
             return res;
         }
 
-        public async UniTask<HttpStatusCode> EndStage(int stageIndex, long coin)
+        public async UniTask<HttpStatusCode> EndStage(int stageIndex, bool isGoal, int coin)
         {
             var currStageIndex = User.CurrentStage.Index;
             var stageCount = templateService.StageTemplates.Count;
@@ -111,7 +111,6 @@ namespace TaxiGame3D
                 Debug.LogError($"End stage failed. Because {stageIndex} is out of range.");
                 return HttpStatusCode.BadRequest;
             }
-
             
             if (stageIndex > currStageIndex)
             {
@@ -125,13 +124,17 @@ namespace TaxiGame3D
                 return HttpStatusCode.Forbidden;
             }
 
-            if (stageIndex == currStageIndex && stageIndex < stageCount - 1)
-                User.CurrentStage = templateService.StageTemplates[stageIndex + 1];
+            if (isGoal)
+            {
+                if (stageIndex == currStageIndex && stageIndex < stageCount - 1)
+                    User.CurrentStage = templateService.StageTemplates[stageIndex + 1];
+            }
             User.Coin += coin;
 
             var res = await http.Put($"User/EndStage", new EndStageRequest
             {
                 StageIndex = stageIndex,
+                IsGoal = isGoal,
                 Coin = coin
             });
             if (!res.IsSuccess())

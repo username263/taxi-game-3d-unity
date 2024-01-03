@@ -1,4 +1,4 @@
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace TaxiGame3D
 {
@@ -6,6 +6,7 @@ namespace TaxiGame3D
     {
         [JsonProperty("Stage")]
         public int StageIndex { get; set; }
+        public bool IsGoal { get; set; }
         public long Coin { get; set; }
     }
 }

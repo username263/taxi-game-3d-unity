@@ -2139,7 +2139,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 234212517}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.000000007600948, y: 0.89713734, z: -0.44175175, w: -0.000000015436486}
+  m_LocalRotation: {x: 0.000000007600949, y: 0.89713734, z: -0.44175175, w: 0.00000001543649}
   m_LocalPosition: {x: 70, y: 6.506, z: 71}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7629,7 +7629,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1045819217}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.000000007600948, y: 0.89713734, z: -0.44175175, w: -0.000000015436486}
+  m_LocalRotation: {x: 0.000000007600949, y: 0.89713734, z: -0.44175175, w: 0.00000001543649}
   m_LocalPosition: {x: 70, y: 6.506, z: 71}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10253,9 +10253,9 @@ MonoBehaviour:
   - {fileID: 1535809800}
   - {fileID: 492892249}
   poolPosition: {fileID: 1292425646}
-  minSpawnDelay: 1
-  maxSpawnDelay: 2
-  moveSpeed: 8
+  minSpawnDelay: 2
+  maxSpawnDelay: 3
+  moveSpeed: 7
 --- !u!4 &1410484088
 Transform:
   m_ObjectHideFlags: 0

@@ -145,9 +145,12 @@ public class UserController : ControllerBase
         if (body.Coin >= maxCoin)
             return Forbid();
 
-        // 다음 스테이지 개방
-        if (stageIndex == user.CurrentStageIndex && stageIndex < stageCount + 1)
-            user.CurrentStageIndex = stageIndex + 1;
+        if (body.IsGoal)
+        {
+            // 다음 스테이지 개방
+            if (stageIndex == user.CurrentStageIndex && stageIndex < stageCount + 1)
+                user.CurrentStageIndex = stageIndex + 1;
+        }
         user.Coin += body.Coin;
         await userRepository.Update(user.Id!, user);
 
