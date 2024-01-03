@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Remoting.Lifetime;
 using UnityEngine;
 
 namespace TaxiGame3D
@@ -9,8 +10,15 @@ namespace TaxiGame3D
         [SerializeField]
         StageProgressViewUI stageProgressView;
         [SerializeField]
+        GuideViewUI guideView;
+        [SerializeField]
         ResultViewUI resultView;
 
+
+        void OnEnable()
+        {
+            guideView.gameObject.SetActive(true);
+        }
 
         public void OnGameLoaded()
         {
