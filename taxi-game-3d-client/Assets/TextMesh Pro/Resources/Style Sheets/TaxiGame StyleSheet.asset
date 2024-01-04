@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab2114bdc8544297b417dfefe9f1e410, type: 3}
+  m_Name: TaxiGame StyleSheet
+  m_EditorClassIdentifier: 
+  m_StyleList:
+  - m_Name: Normal
+    m_HashCode: -1183493901
+    m_OpeningDefinition: 
+    m_ClosingDefinition: 
+    m_OpeningTagArray: 
+    m_ClosingTagArray: 
+    m_OpeningTagUnicodeArray: 
+    m_ClosingTagUnicodeArray: 
+  - m_Name: Guide Highlighted
+    m_HashCode: -1271576917
+    m_OpeningDefinition: '<size=120%>
+
+      <b>'
+    m_ClosingDefinition: '</b>
+
+      </size>
+
+      </material>'
+    m_OpeningTagArray: 3c00000073000000690000007a000000650000003d000000310000003200000030000000250000003e0000000a0000003c000000620000003e000000
+    m_ClosingTagArray: 3c0000002f000000620000003e0000000a0000003c0000002f00000073000000690000007a000000650000003e0000000a0000003c0000002f0000006d0000006100000074000000650000007200000069000000610000006c0000003e000000
+    m_OpeningTagUnicodeArray: 3c00000073000000690000007a000000650000003d000000310000002e0000003200000072000000650000006d0000003e0000000a0000003c000000620000003e000000
+    m_ClosingTagUnicodeArray: 3c0000002f000000620000003e0000000a0000003c0000002f00000073000000690000007a000000650000003e0000000a0000003c0000002f0000006d0000006100000074000000650000007200000069000000610000006c0000003e000000

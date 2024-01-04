@@ -38,6 +38,12 @@ namespace TaxiGame3D
             private set;
         }
 
+        public bool IsPlaying
+        {
+            get;
+            private set;
+        }
+
         public PlayerCar PlayerCar
         {
             get;
@@ -60,6 +66,7 @@ namespace TaxiGame3D
         void Awake()
         {
             Instance = this;
+            IsPlaying = false;
         }
 
         void Start()
@@ -107,7 +114,7 @@ namespace TaxiGame3D
 
         void Update()
         {
-            if (PlayerCar == null)
+            if (!IsPlaying || PlayerCar == null)
                 return;
             if (isAccelPressing)
                 PlayerCar.PressAccel();
@@ -117,7 +124,7 @@ namespace TaxiGame3D
 
         public void PlayGame()
         {
-            PlayerCar.PlayMoving();
+            IsPlaying = true;
             GamePlayedEvent?.Invoke(this, EventArgs.Empty);
         }
 
@@ -150,8 +157,11 @@ namespace TaxiGame3D
 
         public void OnAccelerate(InputAction.CallbackContext context)
         {
-            if (PlayerCar != null && PlayerCar.IsEnableMoving)
-                isAccelPressing = context.ReadValue<float>() != 0f;
+            if (!IsPlaying || PlayerCar == null)
+                return;
+            isAccelPressing = context.ReadValue<float>() != 0f;
+            if (isAccelPressing && !PlayerCar.IsEnableMoving)
+                PlayerCar.PlayMoving();
         }
 
         void OnCarEnterTrigger(CustomerTrigger trigger)
@@ -202,6 +212,7 @@ namespace TaxiGame3D
 
         async void EndGame(bool isGoal)
         {
+            IsPlaying = false;
             PlayerCar.StopMoving();
             npcCarManager.Stop();
             

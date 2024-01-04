@@ -25,7 +25,8 @@ namespace TaxiGame3D
 
         VertexPath path;
 
-        float speed = 1f;
+        const float minSpeed = 0.5f;
+        float speed = minSpeed;
 
         Rigidbody rb;
 
@@ -96,7 +97,7 @@ namespace TaxiGame3D
         public void PlayMoving()
         {
             IsEnableMoving = true;
-            speed = 1f;
+            speed = minSpeed;
         }
 
         public void StopMoving()
@@ -114,7 +115,7 @@ namespace TaxiGame3D
         public void PressBrake()
         {
             if (IsEnableMoving)
-                speed = Mathf.Max(speed - Time.deltaTime * brakeForce, 1f);
+                speed = Mathf.Max(speed - Time.deltaTime * brakeForce, minSpeed);
         }
 
         public Transform SelectNearestPoint(Vector3 poisition)
