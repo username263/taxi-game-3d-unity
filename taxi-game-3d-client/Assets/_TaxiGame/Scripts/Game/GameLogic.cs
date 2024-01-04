@@ -1,4 +1,4 @@
-using Cysharp.Threading.Tasks;
+ï»¿using Cysharp.Threading.Tasks;
 using PathCreation;
 using System;
 using System.Collections;
@@ -172,7 +172,7 @@ namespace TaxiGame3D
                 StartCoroutine(TakeIn(trigger));
         }
 
-        /// <summary> ¼Õ´Ô Å¾½Â </summary>
+        /// <summary> ì†ë‹˜ íƒ‘ìŠ¹ </summary>
         IEnumerator TakeIn(CustomerTrigger trigger)
         {
             isAccelPressing = false;
@@ -188,7 +188,7 @@ namespace TaxiGame3D
             PlayerCar.PlayMoving();
         }
 
-        /// <summary> ¼Õ´Ô ÇÏÂ÷ </summary>
+        /// <summary> ì†ë‹˜ í•˜ì°¨ </summary>
         IEnumerator TakeOut(CustomerTrigger trigger)
         {
             isAccelPressing = false;

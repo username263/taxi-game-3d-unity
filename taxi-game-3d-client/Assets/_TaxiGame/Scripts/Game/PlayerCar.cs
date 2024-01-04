@@ -1,4 +1,4 @@
-using PathCreation;
+ï»¿using PathCreation;
 using System;
 using UnityEngine;
 
@@ -7,18 +7,18 @@ namespace TaxiGame3D
     public class PlayerCar : MonoBehaviour
     {
         /// <summary>
-        /// °¡¼Óµµ
+        /// ê°€ì†ë„
         /// </summary>
         [Header("Movement")]
         [SerializeField]
         float acceleration = 1f;
         /// <summary>
-        /// ÃÖ°í ¼Óµµ
+        /// ìµœê³  ì†ë„
         /// </summary>
         [SerializeField]
         float maxSpeed = 5f;
         /// <summary>
-        /// Á¦µ¿·Â
+        /// ì œë™ë ¥
         /// </summary>
         [SerializeField]
         float brakeForce = 1f;

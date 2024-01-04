@@ -1,4 +1,4 @@
-namespace TaxiGame3D
+﻿namespace TaxiGame3D
 {
     public enum AuthType
     {

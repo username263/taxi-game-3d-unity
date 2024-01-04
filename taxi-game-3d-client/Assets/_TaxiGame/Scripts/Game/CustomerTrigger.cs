@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,8 +9,8 @@ namespace TaxiGame3D
     public class CustomerTrigger : MonoBehaviour
     {
         /// <summary>
-        /// ½ÂÂ÷ÇÒ ¼Õ´ÔÀÌ µîÀåÇÏ´Â °÷
-        /// ÇÏÂ÷ÇÑ ¼Õ´ÔÀÌ ÀÌµ¿ÇÏ´Â °÷
+        /// ìŠ¹ì°¨í•  ì†ë‹˜ì´ ë“±ì¥í•˜ëŠ” ê³³
+        /// í•˜ì°¨í•œ ì†ë‹˜ì´ ì´ë™í•˜ëŠ” ê³³
         /// </summary>
         [field: SerializeField]
         public Transform CustomerPoint

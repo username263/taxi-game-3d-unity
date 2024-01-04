@@ -1,4 +1,4 @@
-using Cysharp.Threading.Tasks;
+ï»¿using Cysharp.Threading.Tasks;
 using System;
 using System.Collections;
 using System.Net;
@@ -126,7 +126,7 @@ namespace TaxiGame3D
 
         IEnumerator AutoRefreshToken()
         {
-            // ÅäÅ«ÀÌ ¸¸·áµÇ±â 1ºĞÀü¿¡ ÅäÅ«À» °»½ÅÇÏµµ·Ï Ã³¸®
+            // í† í°ì´ ë§Œë£Œë˜ê¸° 1ë¶„ì „ì— í† í°ì„ ê°±ì‹ í•˜ë„ë¡ ì²˜ë¦¬
             var ts = tokenExpireUtc - DateTime.UtcNow.AddMinutes(1);
             yield return new WaitForSecondsRealtime((float)ts.TotalSeconds);
             RefreshToken();   

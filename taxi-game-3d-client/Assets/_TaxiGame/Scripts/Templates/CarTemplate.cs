@@ -1,4 +1,4 @@
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using UnityEngine;
 
 namespace TaxiGame3D
