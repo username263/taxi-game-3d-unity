@@ -12,13 +12,25 @@ namespace TaxiGame3D
         string enviroment;
         HttpContext http;
 
-        public List<CarTemplate> CarTemplates
+        public List<CarTemplate> Cars
         {
             get;
             private set;
         }
 
-        public List<StageTemplate> StageTemplates
+        public List<CustomerTemplate> Customers
+        {
+            get;
+            private set;
+        }
+
+        public List<StageTemplate> Stages
+        {
+            get;
+            private set;
+        }
+
+        public List<TalkTemplate> Talks
         {
             get;
             private set;
@@ -41,25 +53,43 @@ namespace TaxiGame3D
 
             if (!res.Item2.TryGetValue("Car", out var version))
                 return false;
-            CarTemplates = await Load<CarTemplate>("Car", version);
-            if (CarTemplates == null)
+            Cars = await Load<CarTemplate>("Car", version);
+            if (Cars == null)
             {
                 Debug.LogWarning("Load car templates failed.");
                 return false;
             }
-            for (int i = 0; i < CarTemplates.Count; i++)
-                CarTemplates[i].Index = i;
+            for (int i = 0; i < Cars.Count; i++)
+                Cars[i].Index = i;
+
+            if (!res.Item2.TryGetValue("Customer", out version))
+                return false;
+            Customers = await Load<CustomerTemplate>("Customer", version);
+            if (Customers == null)
+            {
+                Debug.LogWarning("Load customer templates failed.");
+                return false;
+            }
 
             if (!res.Item2.TryGetValue("Stage", out version))
                 return false;
-            StageTemplates = await Load<StageTemplate>("Stage", version);
-            if (StageTemplates == null)
+            Stages = await Load<StageTemplate>("Stage", version);
+            if (Stages == null)
             {
                 Debug.LogWarning("Load stage templates failed.");
                 return false;
             }
-            for (int i = 0; i < StageTemplates.Count; i++)
-                StageTemplates[i].Index = i;
+            for (int i = 0; i < Stages.Count; i++)
+                Stages[i].Index = i;
+
+            if (!res.Item2.TryGetValue("Talk", out version))
+                return false;
+            Talks = await Load<TalkTemplate>("Talk", version);
+            if (Talks == null)
+            {
+                Debug.LogWarning("Load talk templates failed.");
+                return false;
+            }
 
             return true;
         }
@@ -123,7 +153,9 @@ namespace TaxiGame3D
         public static void ResetTemplateVersions(string enviroment)
         {
             PlayerPrefs.DeleteKey($"{enviroment}/TemplateVersions/Car");
+            PlayerPrefs.DeleteKey($"{enviroment}/TemplateVersions/Customer");
             PlayerPrefs.DeleteKey($"{enviroment}/TemplateVersions/Stage");
+            PlayerPrefs.DeleteKey($"{enviroment}/TemplateVersions/Talk");
         }
     }
 }

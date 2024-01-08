@@ -40,11 +40,11 @@ namespace TaxiGame3D
                 Nickname = res.Item2.Nickname,
                 Coin = res.Item2.Coin,
                 Cars = res.Item2.Cars
-                    .Select(id => templateService.CarTemplates.Find(e => e.Id == id))
+                    .Select(id => templateService.Cars.Find(e => e.Id == id))
                     .ToList(),
-                CurrentCar = templateService.CarTemplates
+                CurrentCar = templateService.Cars
                     .Find(e => e.Id == res.Item2.CurrentCar),
-                CurrentStage = templateService.StageTemplates[res.Item2.CurrentStage]
+                CurrentStage = templateService.Stages[res.Item2.CurrentStage]
             };
 
             return res.Item1;
@@ -76,7 +76,7 @@ namespace TaxiGame3D
                 return HttpStatusCode.NoContent;
             }
 
-            var car = templateService.CarTemplates.Find(e => e.Id == carId);
+            var car = templateService.Cars.Find(e => e.Id == carId);
             if (car == null)
             {
                 Debug.LogError($"Buy car failed. Because {carId} is not exist in templates.");
@@ -104,7 +104,7 @@ namespace TaxiGame3D
         public async UniTask<HttpStatusCode> EndStage(int stageIndex, bool isGoal, int coin)
         {
             var currStageIndex = User.CurrentStage.Index;
-            var stageCount = templateService.StageTemplates.Count;
+            var stageCount = templateService.Stages.Count;
 
             if (stageIndex < 0 || stageIndex >= stageCount)
             {
@@ -118,7 +118,7 @@ namespace TaxiGame3D
                 return HttpStatusCode.Forbidden;
             }
 
-            if (coin >= templateService.StageTemplates[stageIndex].MaxCoin)
+            if (coin >= templateService.Stages[stageIndex].MaxCoin)
             {
                 Debug.LogError($"End stage failed. Because {coin} is too much.");
                 return HttpStatusCode.Forbidden;
@@ -127,7 +127,7 @@ namespace TaxiGame3D
             if (isGoal)
             {
                 if (stageIndex == currStageIndex && stageIndex < stageCount - 1)
-                    User.CurrentStage = templateService.StageTemplates[stageIndex + 1];
+                    User.CurrentStage = templateService.Stages[stageIndex + 1];
             }
             User.Coin += coin;
 

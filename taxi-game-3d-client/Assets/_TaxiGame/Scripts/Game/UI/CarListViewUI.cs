@@ -35,7 +35,7 @@ namespace TaxiGame3D
         {
             var cliMgr = ClientManager.Instance;
 
-            var templateCount = cliMgr.TemplateService.CarTemplates.Count;
+            var templateCount = cliMgr.TemplateService.Cars.Count;
             pageCount = templateCount / carEntries.Length;
             if (templateCount % carEntries.Length != 0)
                 ++pageCount;
@@ -118,13 +118,13 @@ namespace TaxiGame3D
             int tempIndex = pageIndex * carEntries.Length;
             for (int i = 0; i < carEntries.Length; i++)
             {
-                if (tempIndex >= cliMgr.TemplateService.CarTemplates.Count)
+                if (tempIndex >= cliMgr.TemplateService.Cars.Count)
                 {
                     carEntries[i].IsSelect = false;
                     carEntries[i].gameObject.SetActive(false);
                     continue;
                 }
-                var template = cliMgr.TemplateService.CarTemplates[tempIndex];
+                var template = cliMgr.TemplateService.Cars[tempIndex];
                 carEntries[i].Template = template;
                 carEntries[i].IsSelect = selectedCar == template;
                 carEntries[i].gameObject.SetActive(true);

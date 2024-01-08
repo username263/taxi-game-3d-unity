@@ -242,7 +242,7 @@ namespace TaxiGame3D
         public static void LoadStage(int index)
         {
             StageIndex = index;
-            var template = ClientManager.Instance.TemplateService.StageTemplates[index];
+            var template = ClientManager.Instance.TemplateService.Stages[index];
             SceneManager.LoadScene(template.SceneName);
         }
     }

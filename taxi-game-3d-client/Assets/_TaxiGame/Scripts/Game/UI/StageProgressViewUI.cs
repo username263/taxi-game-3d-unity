@@ -63,7 +63,7 @@ namespace TaxiGame3D
             var stageCount = ClientManager
                 .Instance
                 .TemplateService
-                .StageTemplates
+                .Stages
                 .Count;
             var customerCount = GameLogic.Instance.CustomerCount;
             
