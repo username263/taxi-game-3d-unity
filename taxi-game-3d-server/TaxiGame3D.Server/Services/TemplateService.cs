@@ -32,6 +32,10 @@ public class TemplateService
             case "Stage":
                 stages = datas.Deserialize<List<StageTemplate>>();
                 break;
+            // 클라이언트 전용
+            case "Customer":
+            case "Talk":
+                break;
             default:
                 return 0;
         }

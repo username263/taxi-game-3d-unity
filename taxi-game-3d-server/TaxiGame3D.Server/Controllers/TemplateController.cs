@@ -37,6 +37,8 @@ public class TemplateController : ControllerBase
     public async Task<ActionResult> Update(string name, [FromBody] JsonArray datas)
     {
         var version = await service.Update(name, datas);
+        if (version <= 0)
+            return BadRequest();
         return Ok(new { Version = version } );
     }
 
