@@ -90,6 +90,8 @@ namespace TaxiGame3D
                 Debug.LogWarning("Load talk templates failed.");
                 return false;
             }
+            for (int i = 0; i < Talks.Count; i++)
+                Talks[i].Index = i;
 
             return true;
         }

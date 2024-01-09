@@ -1,4 +1,6 @@
-﻿namespace TaxiGame3D
+﻿using Newtonsoft.Json;
+
+namespace TaxiGame3D
 {
     public enum TalkType
     {
@@ -9,6 +11,8 @@
 
     public class TalkTemplate
     {
+        [JsonIgnore]
+        public int Index { get; set; }
         public TalkType Type { get; set; }
         public LocalizationTemplate Content { get; set; }
     }

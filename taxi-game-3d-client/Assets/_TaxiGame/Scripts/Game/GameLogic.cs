@@ -50,6 +50,8 @@ namespace TaxiGame3D
             private set;
         }
 
+        public CustomerManager CustomerManager => customerManager;
+
         public int CustomerCount => customerTriggers.Length / 2;
 
         public int RewardedCoin
@@ -178,8 +180,9 @@ namespace TaxiGame3D
             isAccelPressing = false;
             PlayerCar.StopMoving();
             
+            var isLast = numOfCustomers == CustomerCount - 1;
             yield return StartCoroutine(
-                customerManager.TakeIn(trigger.CustomerPoint, PlayerCar)
+                customerManager.TakeIn(trigger.CustomerPoint, PlayerCar,  isLast)
             );
             customerTakePos = PlayerCar.Movement;
             ++numOfCustomers;
