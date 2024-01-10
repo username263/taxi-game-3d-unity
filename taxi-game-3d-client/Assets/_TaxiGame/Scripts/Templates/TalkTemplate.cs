@@ -12,8 +12,20 @@ namespace TaxiGame3D
     public class TalkTemplate
     {
         [JsonIgnore]
-        public int Index { get; set; }
-        public TalkType Type { get; set; }
-        public LocalizationTemplate Content { get; set; }
+        public int Index
+        {
+            get;
+            set;
+        }
+        public TalkType Type
+        {
+            get;
+            set;
+        }
+        public LocalizationTemplate Content
+        {
+            get;
+            set;
+        }
     }
 }

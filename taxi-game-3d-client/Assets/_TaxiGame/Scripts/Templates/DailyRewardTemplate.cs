@@ -1,11 +1,23 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using UnityEngine;
 
 namespace TaxiGame3D
 {
-    public class CustomerTemplate
+    public enum DailyRewardType
     {
-        public string Id
+        Undefined = 0,
+        Coin = 1,
+        Car = 2
+    }
+
+    public class DailyRewardTemplate
+    {
+        public int Index
+        {
+            get;
+            set;
+        }
+        public DailyRewardType Type
         {
             get;
             set;
@@ -18,13 +30,10 @@ namespace TaxiGame3D
         }
         [JsonIgnore]
         public Sprite Icon => Resources.Load<Sprite>(IconPath);
-        [JsonProperty("Prefab")]
-        public string PrefabPath
+        public int Amount
         {
             get;
             set;
         }
-        [JsonIgnore]
-        public GameObject Prefab => Resources.Load<GameObject>(PrefabPath);
     }
 }

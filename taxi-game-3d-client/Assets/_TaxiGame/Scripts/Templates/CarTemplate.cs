@@ -6,17 +6,41 @@ namespace TaxiGame3D
     public class CarTemplate
     {
         [JsonIgnore]
-        public int Index { get; set; }
-        public string Id { get; set; }
-        public LocalizationTemplate Name { get; set; }
+        public int Index 
+        {
+            get;
+            set;
+        }
+        public string Id
+        {
+            get;
+            set;
+        }
+        public LocalizationTemplate Name
+        {
+            get;
+            set;
+        }
         [JsonProperty("Icon")]
-        public string IconPath { get; set; }
+        public string IconPath
+        {
+            get;
+            set;
+        }
         [JsonIgnore]
         public Sprite Icon => Resources.Load<Sprite>(IconPath);
         [JsonProperty("Prefab")]
-        public string PrefabPath { get; set; }
+        public string PrefabPath
+        {
+            get;
+            set;
+        }
         [JsonIgnore]
         public GameObject Prefab => Resources.Load<GameObject>(PrefabPath);
-        public int Cost { get; set; }
+        public int Cost
+        {
+            get;
+            set;
+        }
     }
 }

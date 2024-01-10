@@ -21,7 +21,8 @@ def generate_car(file_path, sheet_name):
             },
             'Icon': row[3].value,
             'Prefab': row[4].value,
-            'Cost': int(row[5].value)
+            'Cost': int(row[5].value),
+            'EnableReward': int(row[6].value)
         }
         temp_group.append(new_temp)
     return temp_group
@@ -46,6 +47,28 @@ def generate_customer(file_path, sheet_name):
         }
         temp_group.append(new_temp)
     return temp_group
+
+def generate_daily_reward(file_path, sheet_name):
+    book = load_workbook(file_path, data_only=True)
+    sheet = book[sheet_name]
+    skip = 0
+    temp_group = []
+    for row in sheet.rows:
+        # 두번째 줄부터 데이터 저장
+        if skip < 1:
+            skip += 1
+            continue   
+        # ID컬럼이 비어 있으면 추가하지 않음
+        if row[0].value == None:
+            continue
+        new_temp = {
+            'Type': int(row[1].value),
+            'Icon': row[2].value,
+            'Amount': int(row[3].value),
+        }
+        temp_group.append(new_temp)
+    return temp_group
+
 
 def generate_stage(file_path, sheet_name):
     book = load_workbook(file_path, data_only=True)

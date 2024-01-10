@@ -24,6 +24,12 @@ namespace TaxiGame3D
             private set;
         }
 
+        public List<DailyRewardTemplate> DailyRewards
+        {
+            get;
+            private set;
+        }
+
         public List<StageTemplate> Stages
         {
             get;
@@ -70,6 +76,17 @@ namespace TaxiGame3D
                 Debug.LogWarning("Load customer templates failed.");
                 return false;
             }
+
+            if (!res.Item2.TryGetValue("DailyReward", out version))
+                return false;
+            DailyRewards = await Load<DailyRewardTemplate>("DailyReward", version);
+            if (DailyRewards == null)
+            {
+                Debug.LogWarning("Load daily reward templates failed.");
+                return false;
+            }
+            for (int i = 0; i < DailyRewards.Count; i++)
+                DailyRewards[i].Index = i;
 
             if (!res.Item2.TryGetValue("Stage", out version))
                 return false;
@@ -156,6 +173,7 @@ namespace TaxiGame3D
         {
             PlayerPrefs.DeleteKey($"{enviroment}/TemplateVersions/Car");
             PlayerPrefs.DeleteKey($"{enviroment}/TemplateVersions/Customer");
+            PlayerPrefs.DeleteKey($"{enviroment}/TemplateVersions/DailyReward");
             PlayerPrefs.DeleteKey($"{enviroment}/TemplateVersions/Stage");
             PlayerPrefs.DeleteKey($"{enviroment}/TemplateVersions/Talk");
         }

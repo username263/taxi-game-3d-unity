@@ -14,6 +14,7 @@ public class TemplateService
     readonly IMongoCollection<TemplateModel> templates;
 
     List<CarTemplate>? cars;
+    List<DailyRewardTemplate>? dailyRewards;
     List<StageTemplate>? stages;
 
     public TemplateService(DatabaseContext context)
@@ -28,6 +29,9 @@ public class TemplateService
         {
             case "Car":
                 cars = datas.Deserialize<List<CarTemplate>>();
+                break;
+            case "DailyReward":
+                dailyRewards = datas.Deserialize<List<DailyRewardTemplate>>();
                 break;
             case "Stage":
                 stages = datas.Deserialize<List<StageTemplate>>();
@@ -102,6 +106,16 @@ public class TemplateService
             cars = JsonSerializer.Deserialize<List<CarTemplate>>(model.Datas.ToJson());
         }
         return cars;
+    }
+
+    public async Task<List<DailyRewardTemplate>?> GetDailyRewards()
+    {
+        if (dailyRewards == null)
+        {
+            var model = await templates.Find(e => e.Name == "DailyReward").FirstOrDefaultAsync();
+            dailyRewards = JsonSerializer.Deserialize<List<DailyRewardTemplate>>(model.Datas.ToJson());
+        }
+        return dailyRewards;
     }
 
     public async Task<List<StageTemplate>?> GetStages()
