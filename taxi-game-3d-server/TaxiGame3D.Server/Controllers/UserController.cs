@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using TaxiGame3D.Server.DTOs;
 using TaxiGame3D.Server.Repositories;
 using TaxiGame3D.Server.Services;
+using TaxiGame3D.Server.Templates;
 
 namespace TaxiGame3D.Server.Controllers;
 
@@ -24,7 +25,7 @@ public class UserController : ControllerBase
     [HttpGet]
     [ProducesResponseType<UserResponse>(200)]
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-    public async Task<ActionResult> Get()
+    public async Task<ActionResult<UserResponse>> Get()
     {
         var userId = ClaimHelper.FindNameIdentifier(User);
         if (string.IsNullOrEmpty(userId))
@@ -34,31 +35,93 @@ public class UserController : ControllerBase
         if (user == null)
             return Forbid();
 
+        var utcToday = DateTime.UtcNow.Date;
+        var rand = new Random((int)DateTime.Now.Ticks);
+        var cars = await templateService.GetCars();
+        var carsForReward = cars
+            .Where(e => e.EnableReward)
+            .OrderBy(e => rand.Next())
+            .ToList();
+        var carIndex = 0;
+        var dailyRewards = await templateService.GetDailyRewards();
+        var needUpdate = false;
+
         // 자동차 지급
         if (user.Cars == null || user.Cars.Count == 0)
         {
-            var cars = await templateService.GetCars();
             var newCar = cars?.FirstOrDefault(e => e.Cost == 0);
             if (newCar != null)
             {
                 user.CurrentCarId = newCar?.Id;
                 user.Cars = [ user.CurrentCarId! ];
-                _ = userRepository.Update(userId, user);
+                needUpdate = true;
             }
         }
 
-        return Ok(new UserResponse
+
+        // 출석보상 생성
+        // 어제 모든 보상을 다 받았다면 보상생성
+        var rewardedAt = user.DailyRewardedAtUtc;
+        if (
+            rewardedAt <= DateTime.UnixEpoch ||
+            (user.NumberOfAttendance >= dailyRewards.Count && utcToday > rewardedAt)
+        )
         {
-            Nickname = user.Nickname,
-            Coin = user.Coin,
-            Cars = user.Cars,
-            CurrentCar = user.CurrentCarId,
-            CurrentStage = user.CurrentStageIndex
-        });
+            user.NumberOfAttendance = 0;
+            if (user.DailyCarRewards == null)
+                user.DailyCarRewards = new();
+            else
+                user.DailyCarRewards.Clear();
+            for (int i = 0; i < dailyRewards.Count; i++)
+            {
+                if (dailyRewards[i].Type == DailyRewardType.Car)
+                {
+                    user.DailyCarRewards[i.ToString()] = carsForReward[carIndex].Id;
+                    carIndex = (carIndex + 1) % carsForReward.Count;
+                }
+            }
+            // 출석체크하기 전까지 계속 데이터 갱신하지 않도록 처리
+            if (rewardedAt <= DateTime.UnixEpoch)
+                user.DailyRewardedAtUtc = utcToday.AddYears(-1);
+            needUpdate = true;
+        }
+
+        if (user.CoinCollectedAtUtc <= DateTime.UnixEpoch)
+        {
+            user.CoinCollectedAtUtc = DateTime.UtcNow;
+            needUpdate = true;
+        }
+
+        // 룰렛 보상 생성
+        // 어제 룰렛을 돌렸다면 보상생성
+        rewardedAt = user.RouletteSpunAtUtc;
+        if (rewardedAt <= DateTime.UnixEpoch || utcToday > rewardedAt)
+        {
+            if (user.RouletteCarRewards == null)
+                user.RouletteCarRewards = new();
+            else
+                user.RouletteCarRewards.Clear();
+            const int rouletteCount = 6;
+            for (int i = 0; i < rouletteCount; i++)
+            {
+                user.RouletteCarRewards.Add(carsForReward[carIndex].Id);
+                carIndex = (carIndex + 1) % carsForReward.Count;
+            }
+            // 룰렛 돌리기 전까지 계속 데이터 갱신하지 않도록 처리
+            if (rewardedAt <= DateTime.UnixEpoch)
+                user.RouletteSpunAtUtc = utcToday.AddYears(-1);
+            needUpdate = true;
+        }
+
+        if (needUpdate)
+            _ = userRepository.Update(userId, user);
+
+        return Ok(new UserResponse(user));
     }
 
     [HttpPut("SelectCar/{carId}")]
-    public async Task<ActionResult> SelectCar(string carId)
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+    public async Task<IActionResult> SelectCar(string carId)
     {
         var userId = ClaimHelper.FindNameIdentifier(User);
         if (string.IsNullOrEmpty(userId))
@@ -84,7 +147,7 @@ public class UserController : ControllerBase
 
     [HttpPut("BuyCar/{carId}")]
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-    public async Task<ActionResult> BuyCar(string carId)
+    public async Task<IActionResult> BuyCar(string carId)
     {
         var userId = ClaimHelper.FindNameIdentifier(User);
         if (string.IsNullOrEmpty(userId))
@@ -154,6 +217,27 @@ public class UserController : ControllerBase
         user.Coin += body.Coin;
         await userRepository.Update(user.Id!, user);
 
+        return NoContent();
+    }
+
+    [HttpPut("Attendance")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+    public async Task<IActionResult> Attendance([FromBody] DateRequest body)
+    {
+        return NoContent();
+    }
+
+    [HttpPut("SpinRoulette")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+    public async Task<IActionResult> SpinRoulette([FromBody] DateRequest body)
+    {
+        return NoContent();
+    }
+
+    [HttpPut("CollectCoin")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+    public async Task<IActionResult> CollectCoin([FromBody] DateRequest body)
+    {
         return NoContent();
     }
 }
