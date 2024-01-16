@@ -224,20 +224,113 @@ public class UserController : ControllerBase
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public async Task<IActionResult> Attendance([FromBody] DateRequest body)
     {
+        var userId = ClaimHelper.FindNameIdentifier(User);
+        if (string.IsNullOrEmpty(userId))
+            return Unauthorized();
+
+        var user = await userRepository.Get(userId);
+        if (user == null)
+            return Forbid();
+
+        var rewards = await templateService.GetDailyRewards();
+        // 출석 완료함
+        if (user.NumberOfAttendance >= rewards.Count)
+            return StatusCode(StatusCodes.Status410Gone);
+
+        // 오늘 이미 출석함
+        if (body.UtcDate >= user.DailyRewardedAtUtc.Date.AddDays(1))
+            return StatusCode(StatusCodes.Status410Gone);
+
+        var r = rewards[user.NumberOfAttendance];
+        if (r.Type == DailyRewardType.Coin)
+        {
+            // 돈 지급
+            user.Coin += r.Amount;
+        }
+        else
+        {
+            var cars = await templateService.GetCars();
+            // 미리 지급할 자동차를 지급
+            if (!user.DailyCarRewards.TryGetValue(user.NumberOfAttendance.ToString(), out var carId))
+                carId = cars.FirstOrDefault(e => e.EnableReward).Id;
+            if (user.Cars.Contains(carId))
+            {
+                // 이미 가지고 있으면, 자동차 가격만큼 돈을 지급
+                var car = cars.Find(e => e.Id == carId);
+                user.Coin += car.Cost;
+            }
+            else
+            {
+                user.Cars.Add(carId);
+            }
+        }
+        ++user.NumberOfAttendance;
+        user.DailyRewardedAtUtc = body.UtcDate;
+        await userRepository.Update(userId, user);
+
         return NoContent();
     }
 
     [HttpPut("SpinRoulette")]
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-    public async Task<IActionResult> SpinRoulette([FromBody] DateRequest body)
+    public async Task<ActionResult<RouletteResponse>> SpinRoulette([FromBody] DateRequest body)
     {
-        return NoContent();
+        var userId = ClaimHelper.FindNameIdentifier(User);
+        if (string.IsNullOrEmpty(userId))
+            return Unauthorized();
+
+        var user = await userRepository.Get(userId);
+        if (user == null)
+            return Forbid();
+
+        // 오늘 이미 룰렛 돌림
+        if (body.UtcDate >= user.RouletteSpunAtUtc.Date.AddDays(1))
+            return StatusCode(StatusCodes.Status410Gone);
+
+        var cars = await templateService.GetCars();
+        var index = new Random((int)DateTime.Now.Ticks).Next(user.RouletteCarRewards.Count);
+        var car = cars.Find(e => e.Id == user.RouletteCarRewards[index]);
+        if (car == null)
+            return NotFound();
+
+        if (user.Cars.Contains(car.Id))
+            user.Coin += car.Cost;
+        else
+            user.Cars.Add(car.Id);
+        user.RouletteSpunAtUtc = body.UtcDate;
+        await userRepository.Update(userId, user);
+
+        return Ok(new RouletteResponse
+        {
+            Index = index
+        });
     }
 
     [HttpPut("CollectCoin")]
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public async Task<IActionResult> CollectCoin([FromBody] DateRequest body)
     {
+        var userId = ClaimHelper.FindNameIdentifier(User);
+        if (string.IsNullOrEmpty(userId))
+            return Unauthorized();
+
+        var user = await userRepository.Get(userId);
+        if (user == null)
+            return Forbid();
+
+        if (body.UtcDate <= user.CoinCollectedAtUtc)
+            return StatusCode(StatusCodes.Status410Gone);
+
+        var stages = await templateService.GetStages();
+        var stage = stages[user.CurrentStageIndex];
+        int minutes = (int)(body.UtcDate - user.CoinCollectedAtUtc).TotalMinutes;
+        if (minutes <= 0)
+            return NoContent();
+
+        user.Coin += Math.Min(minutes, stage.MaxCollect);
+        user.CoinCollectedAtUtc = body.UtcDate;
+        await userRepository.Update(userId, user);
+
         return NoContent();
     }
 }

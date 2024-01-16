@@ -87,7 +87,8 @@ def generate_stage(file_path, sheet_name):
             'Id': row[0].value,
             'Scene': row[1].value,
             'Distance': float(row[2].value),
-            'FareRate': float(row[3].value)
+            'FareRate': float(row[3].value),
+            'MaxCollect': int(row[4].value)
         }
         temp_group.append(new_temp)
     return temp_group
