@@ -1,6 +1,6 @@
 ﻿using Cysharp.Threading.Tasks;
-using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using UnityEngine;
@@ -44,7 +44,20 @@ namespace TaxiGame3D
                     .ToList(),
                 CurrentCar = templateService.Cars
                     .Find(e => e.Id == res.Item2.CurrentCar),
-                CurrentStage = templateService.Stages[res.Item2.CurrentStage]
+                CurrentStage = templateService.Stages[res.Item2.CurrentStage],
+                DailyCarRewards = new(res.Item2.DailyCarRewards.Select(
+                    e => new KeyValuePair<int, CarTemplate>(
+                        int.Parse(e.Key),
+                        templateService.Cars.Find(c => c.Id == e.Value)
+                    )
+                )),
+                DailyRewardedAtUtc = res.Item2.DailyRewardedAt,
+                NumberOfAttendance = res.Item2.NumberOfAttendance,
+                CoinCollectedAtUtc = res.Item2.CoinCollectedAt,
+                RouletteCarRewards = res.Item2.RouletteCarRewards
+                    .Select(id => templateService.Cars.Find(e => e.Id == id))
+                    .ToList(),
+                RouletteSpunAtUtc = res.Item2.RouletteSpunAt
             };
 
             return res.Item1;
@@ -143,6 +156,91 @@ namespace TaxiGame3D
                 UserUpdateFailed?.Invoke(this, EventArgs.Empty);
             }
             return res;
+        }
+
+        public async void Attendance()
+        {
+            var now = DateTime.UtcNow;
+
+            // 출석 완료함
+            if (User.NumberOfAttendance >= templateService.DailyRewards.Count)
+                return;
+
+            // 오늘 이미 출석함
+            if (now >= User.DailyRewardedAtUtc.Date.AddDays(1))
+                return;
+
+            var reward = templateService.DailyRewards[User.NumberOfAttendance];
+            if (reward.Type == DailyRewardType.Coin)
+            {
+                User.Coin += reward.Amount;
+            }
+            else
+            {
+                User.DailyCarRewards.TryGetValue(User.NumberOfAttendance, out var carTemp);
+                if (User.Cars.Contains(carTemp))
+                    User.Coin += carTemp.Cost;
+                else
+                    User.Cars.Add(carTemp);
+            }
+            ++User.NumberOfAttendance;
+            User.DailyRewardedAtUtc = now;
+
+            var res = await http.Put($"User/Attendance", new DateRequest
+            {
+                UtcDate = now
+            });
+            if (!res.IsSuccess())
+            {
+                Debug.LogWarning($"Attendance failed. - {res}");
+                UserUpdateFailed?.Invoke(this, EventArgs.Empty);
+            }
+        }
+
+        public async UniTask<int> SpinRoulette()
+        {
+            var now = DateTime.UtcNow;
+            var res = await http.Put<RouletteResponse>("User/SpinRoulette", new DateRequest
+            {
+                UtcDate = now
+            });
+            if (!res.Item1.IsSuccess())
+            {
+                Debug.LogWarning($"Spin roulette failed. - {res}");
+                UserUpdateFailed?.Invoke(this, EventArgs.Empty);
+                return -1;
+            }
+            User.RouletteSpunAtUtc = now;
+            var car = User.RouletteCarRewards[res.Item2.Index];
+            if (User.Cars.Contains(car))
+                User.Coin += car.Cost;
+            else
+                User.Cars.Add(car);
+            return res.Item2.Index;
+        }
+
+        public async void CollectCoin()
+        {
+            var now = DateTime.UtcNow;
+            if (now <= User.CoinCollectedAtUtc)
+                return;
+
+            var minutes = (int)(now - User.CoinCollectedAtUtc).TotalMinutes;
+            if (minutes <= 0)
+                return;
+
+            User.CoinCollectedAtUtc = now;
+            User.Coin += Math.Min(minutes, User.CurrentStage.MaxCoin);
+
+            var res = await http.Put($"User/CollectCoin", new DateRequest
+            {
+                UtcDate = now
+            });
+            if (!res.IsSuccess())
+            {
+                Debug.LogWarning($"Collect coin failed. - {res}");
+                UserUpdateFailed?.Invoke(this, EventArgs.Empty);
+            }
         }
 
         public void Clear()

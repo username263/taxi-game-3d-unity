@@ -31,7 +31,11 @@ namespace TaxiGame3D
             get;
             set;
         }
-
+        public int MaxCollect
+        {
+            get;
+            set;
+        }
         [JsonIgnore]
         public long MaxCoin => CalcCoin(Distance);
 
