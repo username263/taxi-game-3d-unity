@@ -58,7 +58,6 @@ public class UserController : ControllerBase
             }
         }
 
-
         // 출석보상 생성
         // 어제 모든 보상을 다 받았다면 보상생성
         var rewardedAt = user.DailyRewardedAtUtc;

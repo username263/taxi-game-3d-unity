@@ -74,7 +74,7 @@ namespace TaxiGame3D
             buyButton.onClick.AddListener(() =>
             {
                 _ = ClientManager.Instance.UserService.BuyCar(selectedCar.Id);
-                Refresh();
+                GameUI.Instance.Refresh();
             });
             selectButton.onClick.AddListener(() =>
             {
@@ -100,7 +100,7 @@ namespace TaxiGame3D
                 Refresh();
         }
 
-        void Refresh()
+        public void Refresh()
         {
             coinText.text = ClientManager.Instance.UserService.User.Coin.ToString();
             RefreshEntries();

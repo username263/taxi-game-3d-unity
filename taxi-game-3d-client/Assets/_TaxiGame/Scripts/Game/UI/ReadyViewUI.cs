@@ -14,10 +14,12 @@ namespace TaxiGame3D
         Button playButton;
         [SerializeField]
         Button carListButton;
+        [SerializeField]
+        Button attendanceButton;
 
         void Awake()
         {
-            UpdateCointext();
+            coinText.text = "0";
         }
 
         void Start()
@@ -32,9 +34,18 @@ namespace TaxiGame3D
             {
                 GameUI.Instance.ShowCarList();
             });
+            attendanceButton.onClick.AddListener(() =>
+            {
+                GameUI.Instance.ShowDailyRewardList();
+            });
         }
 
-        public void UpdateCointext()
+        void OnEnable()
+        {
+            Refresh();
+        }
+
+        public void Refresh()
         {
             coinText.text = ClientManager.Instance.UserService.User.Coin.ToString();
         }

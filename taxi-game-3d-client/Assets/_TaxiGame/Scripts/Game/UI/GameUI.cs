@@ -13,6 +13,8 @@ namespace TaxiGame3D
         [SerializeField]
         CarListViewUI carListView;
         [SerializeField]
+        DailyRewardListViewUI dailyRewardListView;
+        [SerializeField]
         GameObject eventSystem;
 
 
@@ -34,13 +36,23 @@ namespace TaxiGame3D
             ShowReadyView();
         }
 
+        public void Refresh()
+        {
+            if (readyView.gameObject.activeInHierarchy)
+                readyView.Refresh();
+            if (carListView.gameObject.activeInHierarchy)
+                carListView.Refresh();
+            if (dailyRewardListView.gameObject.activeInHierarchy)
+                dailyRewardListView.Refresh();
+        }
+
         public void ShowReadyView()
         {
             readyView.gameObject.SetActive(true);
             playView.gameObject.SetActive(false);
             carListView.gameObject.SetActive(false);
+            dailyRewardListView.gameObject.SetActive(false);
             eventSystem.SetActive(true);
-            readyView.UpdateCointext();
         }
 
         public void ShowPlayView()
@@ -48,11 +60,17 @@ namespace TaxiGame3D
             readyView.gameObject.SetActive(false);
             playView.gameObject.SetActive(true);
             carListView.gameObject.SetActive(false);
+            dailyRewardListView.gameObject.SetActive(false);
         }
 
         public void ShowCarList()
         {
             carListView.gameObject.SetActive(true);
+        }
+
+        public void ShowDailyRewardList()
+        {
+            dailyRewardListView.gameObject.SetActive(true);
         }
 
         public void HideAll()
