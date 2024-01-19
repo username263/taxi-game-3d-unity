@@ -164,11 +164,17 @@ namespace TaxiGame3D
 
             // 출석 완료함
             if (User.NumberOfAttendance >= templateService.DailyRewards.Count)
+            {
+                Debug.LogWarning("Attendance failed. Because attendance is already completed.");
                 return;
+            }
 
             // 오늘 이미 출석함
-            if (now >= User.DailyRewardedAtUtc.Date.AddDays(1))
+            if (now <= User.DailyRewardedAtUtc.Date.AddDays(1))
+            {
+                Debug.LogWarning($"Attendance failed. Because of already rewarded today({now}/{User.DailyRewardedAtUtc}).");
                 return;
+            }
 
             var reward = templateService.DailyRewards[User.NumberOfAttendance];
             if (reward.Type == DailyRewardType.Coin)

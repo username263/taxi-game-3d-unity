@@ -237,7 +237,7 @@ public class UserController : ControllerBase
             return StatusCode(StatusCodes.Status410Gone);
 
         // 오늘 이미 출석함
-        if (body.UtcDate >= user.DailyRewardedAtUtc.Date.AddDays(1))
+        if (body.UtcDate <= user.DailyRewardedAtUtc.Date.AddDays(1))
             return StatusCode(StatusCodes.Status410Gone);
 
         var r = rewards[user.NumberOfAttendance];
