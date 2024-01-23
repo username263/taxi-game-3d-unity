@@ -236,7 +236,7 @@ namespace TaxiGame3D
                 return;
 
             User.CoinCollectedAtUtc = now;
-            User.Coin += Math.Min(minutes, User.CurrentStage.MaxCoin);
+            User.Coin += Math.Min(minutes, User.CurrentStage.MaxCollect);
 
             var res = await http.Put($"User/CollectCoin", new DateRequest
             {

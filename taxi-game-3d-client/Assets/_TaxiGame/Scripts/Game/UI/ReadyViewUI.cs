@@ -65,16 +65,16 @@ namespace TaxiGame3D
         {
             var user = ClientManager.Instance.UserService.User;
             var collectMinutes = (DateTime.UtcNow - user.CoinCollectedAtUtc).TotalMinutes;
-            collectButton.interactable = collectMinutes < 1.0;
+            collectButton.interactable = collectMinutes >= 1;
             if (collectMinutes >= user.CurrentStage.MaxCollect)
             {
                 collectAmountText.text = user.CurrentStage.MaxCollect.ToString();
                 collectProgress.fillAmount = 1f;
                 return;
             }
-            var collectAmount = Math.Ceiling(collectMinutes);
+            var collectAmount = Math.Truncate(collectMinutes);
             collectAmountText.text = collectAmount.ToString();
-            collectProgress.fillAmount = (float)(collectMinutes - collectAmount);
+            collectProgress.fillAmount = Convert.ToSingle(collectMinutes - collectAmount);
         }
 
         public void Refresh()
