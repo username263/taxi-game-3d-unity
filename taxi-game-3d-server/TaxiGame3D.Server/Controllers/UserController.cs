@@ -283,7 +283,7 @@ public class UserController : ControllerBase
             return Forbid();
 
         // 오늘 이미 룰렛 돌림
-        if (body.UtcDate >= user.RouletteSpunAtUtc.Date.AddDays(1))
+        if (body.UtcDate <= user.RouletteSpunAtUtc.Date.AddDays(1))
             return StatusCode(StatusCodes.Status410Gone);
 
         var cars = await templateService.GetCars();

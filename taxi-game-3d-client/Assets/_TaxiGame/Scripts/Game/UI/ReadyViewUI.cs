@@ -23,6 +23,8 @@ namespace TaxiGame3D
         TMP_Text collectAmountText;
         [SerializeField]
         Button collectButton;
+        [SerializeField]
+        Button rouletteButton;
 
         void Awake()
         {
@@ -37,10 +39,7 @@ namespace TaxiGame3D
                 GameLogic.Instance.PlayGame();
                 gameObject.SetActive(false);
             });
-            carListButton.onClick.AddListener(() =>
-            {
-                GameUI.Instance.ShowCarList();
-            });
+            carListButton.onClick.AddListener(GameUI.Instance.ShowCarList);
             attendanceButton.onClick.AddListener(() =>
             {
                 GameUI.Instance.ShowDailyRewardList();
@@ -54,6 +53,7 @@ namespace TaxiGame3D
                 userService.CollectCoin();
                 Refresh();
             });
+            rouletteButton.onClick.AddListener(GameUI.Instance.ShowRoulette);
         }
 
         void OnEnable()
