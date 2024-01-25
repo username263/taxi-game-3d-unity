@@ -18,13 +18,19 @@ namespace TaxiGame3D
         [SerializeField]
         Button attendanceButton;
         [SerializeField]
+        GameObject attendanceRedDot;
+        [SerializeField]
         Image collectProgress;
         [SerializeField]
         TMP_Text collectAmountText;
         [SerializeField]
         Button collectButton;
         [SerializeField]
+        GameObject collectRedDot;
+        [SerializeField]
         Button rouletteButton;
+        [SerializeField]
+        GameObject rouletteRedDot;
 
         void Awake()
         {
@@ -70,16 +76,23 @@ namespace TaxiGame3D
             {
                 collectAmountText.text = user.CurrentStage.MaxCollect.ToString();
                 collectProgress.fillAmount = 1f;
+                collectRedDot.SetActive(true);
                 return;
             }
             var collectAmount = Math.Truncate(collectMinutes);
             collectAmountText.text = collectAmount.ToString();
             collectProgress.fillAmount = Convert.ToSingle(collectMinutes - collectAmount);
+            collectRedDot.SetActive(false);
         }
 
         public void Refresh()
         {
-            coinText.text = ClientManager.Instance.UserService.User.Coin.ToString();
+            var user = ClientManager.Instance.UserService.User;
+            coinText.text = user.Coin.ToString();
+
+            var now = DateTime.UtcNow;
+            attendanceRedDot.SetActive(now > user.DailyRewardedAtUtc.Date.AddDays(1));
+            rouletteRedDot.SetActive(now > user.RouletteSpunAtUtc.Date.AddDays(1));
         }
     }
 }

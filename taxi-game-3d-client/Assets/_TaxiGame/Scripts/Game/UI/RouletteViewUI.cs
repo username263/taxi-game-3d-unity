@@ -41,6 +41,7 @@ namespace TaxiGame3D
                     {
                         Debug.Log("Roulette spin end.");
                         tween = null;
+                        GameUI.Instance.Refresh();
                     });
             });
             closeButton.onClick.AddListener(() =>
