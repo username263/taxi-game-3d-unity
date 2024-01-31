@@ -508,7 +508,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1688897509748461824}
   m_Layer: 0
-  m_Name: vz01_black
+  m_Name: vz01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
