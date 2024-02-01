@@ -20,9 +20,10 @@ def generate_car(file_path, sheet_name):
                 'Key': row[2].value
             },
             'Icon': row[3].value,
-            'Prefab': row[4].value,
-            'Cost': int(row[5].value),
-            'EnableReward': int(row[6].value)
+            'PlayerPrefab': row[4].value,
+            'UiPrefab': row[5].value,
+            'Cost': int(row[6].value),
+            'EnableReward': int(row[7].value)
         }
         temp_group.append(new_temp)
     return temp_group

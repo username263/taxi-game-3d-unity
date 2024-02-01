@@ -29,14 +29,22 @@ namespace TaxiGame3D
         }
         [JsonIgnore]
         public Sprite Icon => Resources.Load<Sprite>(IconPath);
-        [JsonProperty("Prefab")]
-        public string PrefabPath
+        [JsonProperty("PlayerPrefab")]
+        public string PlayerPrefabPath
         {
             get;
             set;
         }
         [JsonIgnore]
-        public GameObject Prefab => Resources.Load<GameObject>(PrefabPath);
+        public GameObject PlayerPrefab => Resources.Load<GameObject>(PlayerPrefabPath);
+        [JsonProperty("UiPrefab")]
+        public string UiPrefabPath
+        {
+            get;
+            set;
+        }
+        [JsonIgnore]
+        public GameObject UiPrefab => Resources.Load<GameObject>(UiPrefabPath);
         public int Cost
         {
             get;

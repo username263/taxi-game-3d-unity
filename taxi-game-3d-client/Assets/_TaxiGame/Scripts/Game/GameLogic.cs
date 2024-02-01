@@ -138,7 +138,7 @@ namespace TaxiGame3D
                 PlayerCar = null;
             }
 
-            var carPrefab = ClientManager.Instance.UserService.User.CurrentCar.Prefab;
+            var carPrefab = ClientManager.Instance.UserService.User.CurrentCar.PlayerPrefab;
             if (carPrefab == null)
             {
                 Debug.LogError("Player car prefab is null.");
