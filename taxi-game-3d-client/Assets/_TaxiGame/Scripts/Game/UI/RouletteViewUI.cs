@@ -26,10 +26,11 @@ namespace TaxiGame3D
             {
                 spinButton.interactable = false;
                 closeButton.interactable = false;
-                var index = await ClientManager.Instance.UserService.SpinRoulette();
+                var userService = ClientManager.Instance.UserService;
+                var res = await userService.SpinRoulette();
                 closeButton.interactable = true;
                 var curAngle = 0f;
-                var targetAngle = CalcSpinnerAngle(index);
+                var targetAngle = CalcSpinnerAngle(res.index);
                 tween = DOTween
                     .To(() => curAngle, x => curAngle = x, targetAngle, 3f)
                     .SetEase(Ease.OutQuart)
@@ -39,7 +40,10 @@ namespace TaxiGame3D
                     })
                     .OnComplete(() =>
                     {
-                        Debug.Log("Roulette spin end.");
+                        GameUI.Instance.ShowRewardPopup(
+                            userService.User.RouletteCarRewards[res.index].Id,
+                            res.newCar
+                        );
                         tween = null;
                         GameUI.Instance.Refresh();
                     });

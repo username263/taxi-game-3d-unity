@@ -17,6 +17,8 @@ namespace TaxiGame3D
         [SerializeField]
         RouletteViewUI rouletteView;
         [SerializeField]
+        RewardPopupViewUI rewardPopupView;
+        [SerializeField]
         GameObject eventSystem;
 
 
@@ -55,6 +57,7 @@ namespace TaxiGame3D
             carListView.gameObject.SetActive(false);
             dailyRewardListView.gameObject.SetActive(false);
             rouletteView.gameObject.SetActive(false);
+            rewardPopupView.gameObject.SetActive(false);
             eventSystem.SetActive(true);
         }
 
@@ -65,6 +68,7 @@ namespace TaxiGame3D
             carListView.gameObject.SetActive(false);
             dailyRewardListView.gameObject.SetActive(false);
             rouletteView.gameObject.SetActive(false);
+            rewardPopupView.gameObject.SetActive(false);
         }
 
         public void ShowCarList()
@@ -82,11 +86,24 @@ namespace TaxiGame3D
             rouletteView.gameObject.SetActive(true);
         }
 
+        public void ShowRewardPopup(int coin)
+        {
+            rewardPopupView.Show(coin);
+        }
+
+        public void ShowRewardPopup(string carId, bool newCar)
+        {
+            rewardPopupView.Show(carId, newCar);
+        }
+
         public void HideAll()
         {
             readyView.gameObject.SetActive(false);
             playView.gameObject.SetActive(false);
             carListView.gameObject.SetActive(false);
+            dailyRewardListView.gameObject.SetActive(false);
+            rouletteView.gameObject.SetActive(false);
+            rewardPopupView.gameObject.SetActive(false);
             eventSystem.SetActive(false);
         }
 

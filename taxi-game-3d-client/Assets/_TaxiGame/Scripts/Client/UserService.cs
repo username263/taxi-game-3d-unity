@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace TaxiGame3D
@@ -158,23 +159,29 @@ namespace TaxiGame3D
             return res;
         }
 
-        public async void Attendance()
+        public bool CheckEnableAttendance()
         {
             var now = DateTime.UtcNow;
-
             // 출석 완료함
             if (User.NumberOfAttendance >= templateService.DailyRewards.Count)
             {
                 Debug.LogWarning("Attendance failed. Because attendance is already completed.");
-                return;
+                return false;
             }
 
             // 오늘 이미 출석함
             if (now <= User.DailyRewardedAtUtc.Date.AddDays(1))
             {
                 Debug.LogWarning($"Attendance failed. Because of already rewarded today({now}/{User.DailyRewardedAtUtc}).");
-                return;
+                return false;
             }
+            return true;
+        }
+
+        public async void Attendance()
+        {
+            if (!CheckEnableAttendance())
+                return;
 
             var reward = templateService.DailyRewards[User.NumberOfAttendance];
             if (reward.Type == DailyRewardType.Coin)
@@ -190,11 +197,11 @@ namespace TaxiGame3D
                     User.Cars.Add(carTemp);
             }
             ++User.NumberOfAttendance;
-            User.DailyRewardedAtUtc = now;
+            User.DailyRewardedAtUtc = DateTime.UtcNow;
 
             var res = await http.Put($"User/Attendance", new DateRequest
             {
-                UtcDate = now
+                UtcDate = User.DailyRewardedAtUtc
             });
             if (!res.IsSuccess())
             {
@@ -203,7 +210,7 @@ namespace TaxiGame3D
             }
         }
 
-        public async UniTask<int> SpinRoulette()
+        public async UniTask<(int index, bool newCar)> SpinRoulette()
         {
             var now = DateTime.UtcNow;
             var res = await http.Put<RouletteResponse>("User/SpinRoulette", new DateRequest
@@ -214,15 +221,20 @@ namespace TaxiGame3D
             {
                 Debug.LogWarning($"Spin roulette failed. - {res}");
                 UserUpdateFailed?.Invoke(this, EventArgs.Empty);
-                return -1;
+                return (-1, false);
             }
             User.RouletteSpunAtUtc = now;
             var car = User.RouletteCarRewards[res.Item2.Index];
             if (User.Cars.Contains(car))
+            {
                 User.Coin += car.Cost;
+                return (res.Item2.Index, false);
+            }
             else
+            {
                 User.Cars.Add(car);
-            return res.Item2.Index;
+                return (res.Item2.Index, true);
+            }
         }
 
         public async void CollectCoin()

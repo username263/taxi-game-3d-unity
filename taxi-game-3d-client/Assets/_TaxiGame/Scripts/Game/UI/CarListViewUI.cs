@@ -12,6 +12,10 @@ namespace TaxiGame3D
         [SerializeField]
         RawImage selectedCarImage;
         [SerializeField]
+        UICarManager carManager;
+        [SerializeField]
+        Camera modelCamera;
+        [SerializeField]
         CarEntryViewUI[] carEntries;
         [SerializeField]
         TMP_Text pageText;
@@ -27,12 +31,7 @@ namespace TaxiGame3D
         Button selectButton;
         [SerializeField]
         Button cancelButton;
-        [SerializeField]
-        UICarManager carManager;
-        [SerializeField]
-        Camera modelCamera;
-
-
+  
         bool wasStarted;
         CarTemplate selectedCar;
         int pageIndex;
@@ -82,6 +81,7 @@ namespace TaxiGame3D
             buyButton.onClick.AddListener(() =>
             {
                 _ = ClientManager.Instance.UserService.BuyCar(selectedCar.Id);
+                GameUI.Instance.ShowRewardPopup(selectedCar.Id, true);
                 GameUI.Instance.Refresh();
             });
             selectButton.onClick.AddListener(() =>

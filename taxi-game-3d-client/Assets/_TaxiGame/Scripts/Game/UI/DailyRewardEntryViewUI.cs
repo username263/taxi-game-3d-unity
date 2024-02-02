@@ -67,8 +67,22 @@ namespace TaxiGame3D
 
         void IPointerClickHandler.OnPointerClick(PointerEventData eventData)
         {
-            ClientManager.Instance.UserService.Attendance();
-            GameUI.Instance.Refresh();
+            var gameUi = GameUI.Instance;
+            var userService = ClientManager.Instance.UserService;
+
+            if (!userService.CheckEnableAttendance())
+                return;
+
+            var rewardCar = userService.User.DailyCarRewards[Template.Index];
+            var newCar = !userService.User.Cars.Contains(rewardCar);
+
+            userService.Attendance();
+            if (Template.Type == DailyRewardType.Coin)
+                gameUi.ShowRewardPopup(Template.Amount);
+            else if (Template.Type == DailyRewardType.Car)
+                gameUi.ShowRewardPopup(rewardCar.Id, newCar);
+                
+            gameUi.Refresh();
         }
     }
 }
