@@ -10,11 +10,7 @@ namespace TaxiGame3D
         [SerializeField]
         TMP_Text coinText;
         [SerializeField]
-        RawImage selectedCarImage;
-        [SerializeField]
         UICarManager carManager;
-        [SerializeField]
-        Camera modelCamera;
         [SerializeField]
         CarEntryViewUI[] carEntries;
         [SerializeField]
@@ -95,8 +91,6 @@ namespace TaxiGame3D
             {
                 gameObject.SetActive(false);
             });
-
-            modelCamera.targetTexture = selectedCarImage.texture as RenderTexture;
 
             wasStarted = true;
             Refresh();

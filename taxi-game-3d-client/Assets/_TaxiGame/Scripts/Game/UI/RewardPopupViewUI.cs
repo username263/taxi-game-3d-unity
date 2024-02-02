@@ -16,8 +16,6 @@ namespace TaxiGame3D
         [SerializeField]
         UICarManager carManager;
         [SerializeField]
-        Camera modelCamera;
-        [SerializeField]
         TMP_Text contentText;
         [SerializeField]
         Button closeButton;
@@ -29,7 +27,6 @@ namespace TaxiGame3D
                 carManager.Deselect();
                 gameObject.SetActive(false);
             });
-            modelCamera.targetTexture = carImage.texture as RenderTexture;
         }
 
         public void Show(int coin)
