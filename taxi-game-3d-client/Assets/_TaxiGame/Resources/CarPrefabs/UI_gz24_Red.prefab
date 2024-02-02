@@ -13,10 +13,50 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 4300002, guid: 05fd07a8ada4bd74f88f5181c77bcddc, type: 3}
+    - target: {fileID: 2151151979928710018, guid: 8f8745ab752a35145ba5daa99c8b6163,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2593417738513480549, guid: 8f8745ab752a35145ba5daa99c8b6163,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3191172105338993522, guid: 8f8745ab752a35145ba5daa99c8b6163,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5321676962900362816, guid: 8f8745ab752a35145ba5daa99c8b6163,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5992113490473633819, guid: 8f8745ab752a35145ba5daa99c8b6163,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6000227277341763757, guid: 8f8745ab752a35145ba5daa99c8b6163,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6758022701872434987, guid: 8f8745ab752a35145ba5daa99c8b6163,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7541262372164638498, guid: 8f8745ab752a35145ba5daa99c8b6163,
         type: 3}
       propertyPath: m_Name
       value: UI_gz24_Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 7541262372164638498, guid: 8f8745ab752a35145ba5daa99c8b6163,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8141787887725654197, guid: 8f8745ab752a35145ba5daa99c8b6163,
         type: 3}

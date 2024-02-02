@@ -8,16 +8,56 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 493941663414918487, guid: d7ffaa95bf95a7e4d92c6afdb2efe26d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 541202099674980289, guid: d7ffaa95bf95a7e4d92c6afdb2efe26d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1352844393269593020, guid: d7ffaa95bf95a7e4d92c6afdb2efe26d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962298310601010475, guid: d7ffaa95bf95a7e4d92c6afdb2efe26d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2810273738646729563, guid: d7ffaa95bf95a7e4d92c6afdb2efe26d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3209534443810542399, guid: d7ffaa95bf95a7e4d92c6afdb2efe26d,
         type: 3}
       propertyPath: m_Name
       value: UI_vz02_Gray
+      objectReference: {fileID: 0}
+    - target: {fileID: 3209534443810542399, guid: d7ffaa95bf95a7e4d92c6afdb2efe26d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3736663974697444349, guid: d7ffaa95bf95a7e4d92c6afdb2efe26d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3849226133485811481, guid: d7ffaa95bf95a7e4d92c6afdb2efe26d,
         type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 4300000, guid: 017ce9533635b9a4abc57d6b4ca0697f, type: 3}
+    - target: {fileID: 6418651264074993440, guid: d7ffaa95bf95a7e4d92c6afdb2efe26d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7846755408786653324, guid: d7ffaa95bf95a7e4d92c6afdb2efe26d,
         type: 3}
       propertyPath: m_LocalPosition.x

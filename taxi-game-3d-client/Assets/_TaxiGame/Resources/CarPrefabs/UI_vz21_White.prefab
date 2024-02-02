@@ -8,6 +8,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1316779318037661652, guid: 2e9a2c198e38067448881b221b0bc59c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2828490636062064837, guid: 2e9a2c198e38067448881b221b0bc59c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -63,10 +68,45 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 4300002, guid: 43f7ee757748d4744a290264f9800eea, type: 3}
+    - target: {fileID: 4000337627796937597, guid: 2e9a2c198e38067448881b221b0bc59c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4140251179137389484, guid: 2e9a2c198e38067448881b221b0bc59c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5629968381157239291, guid: 2e9a2c198e38067448881b221b0bc59c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5727554663830006088, guid: 2e9a2c198e38067448881b221b0bc59c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5992324699617101198, guid: 2e9a2c198e38067448881b221b0bc59c,
         type: 3}
       propertyPath: m_Name
       value: UI_vz21_White
+      objectReference: {fileID: 0}
+    - target: {fileID: 5992324699617101198, guid: 2e9a2c198e38067448881b221b0bc59c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7663607322114266794, guid: 2e9a2c198e38067448881b221b0bc59c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8469747885512031935, guid: 2e9a2c198e38067448881b221b0bc59c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

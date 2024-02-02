@@ -10,6 +10,8 @@ namespace TaxiGame3D
         [SerializeField]
         TMP_Text coinText;
         [SerializeField]
+        RawImage selectedCarImage;
+        [SerializeField]
         CarEntryViewUI[] carEntries;
         [SerializeField]
         TMP_Text pageText;
@@ -25,6 +27,11 @@ namespace TaxiGame3D
         Button selectButton;
         [SerializeField]
         Button cancelButton;
+        [SerializeField]
+        UICarManager carManager;
+        [SerializeField]
+        Camera modelCamera;
+
 
         bool wasStarted;
         CarTemplate selectedCar;
@@ -53,6 +60,7 @@ namespace TaxiGame3D
                     if (other != null)
                         other.IsSelect = false;
                     RefreshBuyOrSelect();
+                    carManager.Select(selectedCar.Id);
                 };
             }
 
@@ -88,6 +96,8 @@ namespace TaxiGame3D
                 gameObject.SetActive(false);
             });
 
+            modelCamera.targetTexture = selectedCarImage.texture as RenderTexture;
+
             wasStarted = true;
             Refresh();
         }
@@ -105,6 +115,7 @@ namespace TaxiGame3D
             coinText.text = ClientManager.Instance.UserService.User.Coin.ToString();
             RefreshEntries();
             RefreshBuyOrSelect();
+            carManager.Select(selectedCar.Id);
         }
 
         void RefreshEntries()
@@ -150,7 +161,7 @@ namespace TaxiGame3D
                 buyButton.interactable = enoughCoin;
                 costText.text = selectedCar.Cost.ToString();
                 costText.color = enoughCoin ? Color.white : Color.red;
-            }   
+            }
         }
     }
 }

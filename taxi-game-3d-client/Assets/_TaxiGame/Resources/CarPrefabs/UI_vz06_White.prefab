@@ -8,6 +8,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 991429704772559992, guid: 290891c29a064a549a718d217ec7c6b2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2596644903071658649, guid: 290891c29a064a549a718d217ec7c6b2,
         type: 3}
       propertyPath: m_Mesh
@@ -63,10 +68,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3845163126372876361, guid: 290891c29a064a549a718d217ec7c6b2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5012597072899805816, guid: 290891c29a064a549a718d217ec7c6b2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6465814943178672355, guid: 290891c29a064a549a718d217ec7c6b2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7017278783557402200, guid: 290891c29a064a549a718d217ec7c6b2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7088885792549678236, guid: 290891c29a064a549a718d217ec7c6b2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7925188729352690670, guid: 290891c29a064a549a718d217ec7c6b2,
         type: 3}
       propertyPath: m_Name
       value: UI_vz06_White
+      objectReference: {fileID: 0}
+    - target: {fileID: 7925188729352690670, guid: 290891c29a064a549a718d217ec7c6b2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8816699773670866579, guid: 290891c29a064a549a718d217ec7c6b2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

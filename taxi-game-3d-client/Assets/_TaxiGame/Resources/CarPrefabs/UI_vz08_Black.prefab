@@ -11,7 +11,17 @@ PrefabInstance:
     - target: {fileID: 165046299995436451, guid: 93f41a671c4b4924392ae7205302c162,
         type: 3}
       propertyPath: m_Name
-      value: UI_vz08
+      value: UI_vz08_Black
+      objectReference: {fileID: 0}
+    - target: {fileID: 165046299995436451, guid: 93f41a671c4b4924392ae7205302c162,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1172049018439089992, guid: 93f41a671c4b4924392ae7205302c162,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2059266457725318967, guid: 93f41a671c4b4924392ae7205302c162,
         type: 3}
@@ -62,6 +72,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2284862217863357011, guid: 93f41a671c4b4924392ae7205302c162,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745379818647540422, guid: 93f41a671c4b4924392ae7205302c162,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4578501542299681069, guid: 93f41a671c4b4924392ae7205302c162,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5272395641438405054, guid: 93f41a671c4b4924392ae7205302c162,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5933645931106241744, guid: 93f41a671c4b4924392ae7205302c162,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6119201041291699007, guid: 93f41a671c4b4924392ae7205302c162,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

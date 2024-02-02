@@ -8,11 +8,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 848981694568960784, guid: e5d0a50f0bb593d4dbc680f3a31f885e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1651335739179045792, guid: e5d0a50f0bb593d4dbc680f3a31f885e,
         type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 4300002, guid: 78a2e820e07dcd24dbb0a77c6045ef7f, type: 3}
+    - target: {fileID: 1965881768057820731, guid: e5d0a50f0bb593d4dbc680f3a31f885e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3728085755982265929, guid: e5d0a50f0bb593d4dbc680f3a31f885e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4011698556689035093, guid: e5d0a50f0bb593d4dbc680f3a31f885e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -63,10 +78,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4282682574096749076, guid: e5d0a50f0bb593d4dbc680f3a31f885e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4313765189619679607, guid: e5d0a50f0bb593d4dbc680f3a31f885e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5994455478188920679, guid: e5d0a50f0bb593d4dbc680f3a31f885e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7571135624971168833, guid: e5d0a50f0bb593d4dbc680f3a31f885e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7614482246610661260, guid: e5d0a50f0bb593d4dbc680f3a31f885e,
         type: 3}
       propertyPath: m_Name
       value: UI_vz01_White
+      objectReference: {fileID: 0}
+    - target: {fileID: 7614482246610661260, guid: e5d0a50f0bb593d4dbc680f3a31f885e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

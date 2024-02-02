@@ -8,6 +8,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 366561629297032901, guid: c52e9c5e78526474c8931817628a2dcb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1092450177755208779, guid: c52e9c5e78526474c8931817628a2dcb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1574370177225265412, guid: c52e9c5e78526474c8931817628a2dcb,
         type: 3}
       propertyPath: m_Mesh
@@ -17,6 +27,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UI_gz21_Yellow
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916233715852948397, guid: c52e9c5e78526474c8931817628a2dcb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2292855515182141912, guid: c52e9c5e78526474c8931817628a2dcb,
         type: 3}
@@ -67,6 +82,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3861599142565954337, guid: c52e9c5e78526474c8931817628a2dcb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4136955812104234331, guid: c52e9c5e78526474c8931817628a2dcb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5579796341463363757, guid: c52e9c5e78526474c8931817628a2dcb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6397328643863526322, guid: c52e9c5e78526474c8931817628a2dcb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409093418562348191, guid: c52e9c5e78526474c8931817628a2dcb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

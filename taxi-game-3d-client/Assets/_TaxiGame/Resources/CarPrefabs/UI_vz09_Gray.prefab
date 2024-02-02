@@ -8,6 +8,36 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 158049735691830113, guid: 09302e5fc37cdf94b9c4673add6690a3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1041715304236841156, guid: 09302e5fc37cdf94b9c4673add6690a3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1359189646860338270, guid: 09302e5fc37cdf94b9c4673add6690a3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1642503788011789133, guid: 09302e5fc37cdf94b9c4673add6690a3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3587707448977698493, guid: 09302e5fc37cdf94b9c4673add6690a3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5405863432489454900, guid: 09302e5fc37cdf94b9c4673add6690a3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5990319039104482615, guid: 09302e5fc37cdf94b9c4673add6690a3,
         type: 3}
       propertyPath: m_Mesh
@@ -17,6 +47,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UI_vz09_Gray
+      objectReference: {fileID: 0}
+    - target: {fileID: 7017986301880986166, guid: 09302e5fc37cdf94b9c4673add6690a3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7878163686864868354, guid: 09302e5fc37cdf94b9c4673add6690a3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8011265446237617781, guid: 09302e5fc37cdf94b9c4673add6690a3,
         type: 3}

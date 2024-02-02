@@ -8,6 +8,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 326367268546672793, guid: 7a3a6438332afa84db4117e1f60f82da,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 330387903810912399, guid: 7a3a6438332afa84db4117e1f60f82da,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 334585316916031650, guid: 7a3a6438332afa84db4117e1f60f82da,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -58,6 +68,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1289017638609689060, guid: 7a3a6438332afa84db4117e1f60f82da,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1546627151193327462, guid: 7a3a6438332afa84db4117e1f60f82da,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625667276354000391, guid: 7a3a6438332afa84db4117e1f60f82da,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3509242947137028991, guid: 7a3a6438332afa84db4117e1f60f82da,
         type: 3}
       propertyPath: m_Mesh
@@ -67,6 +92,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UI_vz03_Gray
+      objectReference: {fileID: 0}
+    - target: {fileID: 3888581048664579715, guid: 7a3a6438332afa84db4117e1f60f82da,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5113804056744516686, guid: 7a3a6438332afa84db4117e1f60f82da,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6465912643331137526, guid: 7a3a6438332afa84db4117e1f60f82da,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

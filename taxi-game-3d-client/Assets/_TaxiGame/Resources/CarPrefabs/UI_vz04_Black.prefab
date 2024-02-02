@@ -8,10 +8,45 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2552148568249186284, guid: 1c91427abdba97e4c901a0dd71eefdf8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3467862000286669520, guid: 1c91427abdba97e4c901a0dd71eefdf8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4008573533550687396, guid: 1c91427abdba97e4c901a0dd71eefdf8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5124817651677251457, guid: 1c91427abdba97e4c901a0dd71eefdf8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5336509227342896335, guid: 1c91427abdba97e4c901a0dd71eefdf8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6126147986955545370, guid: 1c91427abdba97e4c901a0dd71eefdf8,
         type: 3}
       propertyPath: m_Name
-      value: UI_vz04
+      value: UI_vz04_Black
+      objectReference: {fileID: 0}
+    - target: {fileID: 6126147986955545370, guid: 1c91427abdba97e4c901a0dd71eefdf8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6547164827844560825, guid: 1c91427abdba97e4c901a0dd71eefdf8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6673623783206232316, guid: 1c91427abdba97e4c901a0dd71eefdf8,
         type: 3}
@@ -62,6 +97,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7268200825224899740, guid: 1c91427abdba97e4c901a0dd71eefdf8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

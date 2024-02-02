@@ -8,10 +8,35 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 117636287841355356, guid: 47247826953c6f84d8dda02a18677d9d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 162220609909686114, guid: 47247826953c6f84d8dda02a18677d9d,
         type: 3}
       propertyPath: m_Name
-      value: UI_vz07
+      value: UI_vz07_Black
+      objectReference: {fileID: 0}
+    - target: {fileID: 162220609909686114, guid: 47247826953c6f84d8dda02a18677d9d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1799796128837546995, guid: 47247826953c6f84d8dda02a18677d9d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4831867386555093513, guid: 47247826953c6f84d8dda02a18677d9d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4985398606031987421, guid: 47247826953c6f84d8dda02a18677d9d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5210736050303312909, guid: 47247826953c6f84d8dda02a18677d9d,
         type: 3}
@@ -62,6 +87,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776842156557234669, guid: 47247826953c6f84d8dda02a18677d9d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6942756648842904537, guid: 47247826953c6f84d8dda02a18677d9d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8315190185750440799, guid: 47247826953c6f84d8dda02a18677d9d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
