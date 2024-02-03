@@ -16,13 +16,16 @@ namespace TaxiGame3D
         void Awake()
         {
             Instance = this;
-
-            if (GameUI.Instance != null)
-                GameUI.Instance.HideAll();
         }
 
         IEnumerator Start()
         {
+            if (GameUI.Instance != null)
+                GameUI.Instance.HideAll();
+            
+            SoundManager.CreateInstance();
+            SoundManager.Instance.StopBgm();
+
             ClientManager.CreateInstance();
             yield return new WaitForEndOfFrame();
             Loading();

@@ -695,6 +695,7 @@ MonoBehaviour:
   - {fileID: 12565436262789693}
   - {fileID: 9146938912541796866}
   - {fileID: 4620105990264070722}
+  bgmClip: {fileID: 8300000, guid: 839847142e8fb4840abd4ebcd3168398, type: 3}
 --- !u!4 &144317057
 Transform:
   m_ObjectHideFlags: 0
@@ -2879,7 +2880,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 667447240}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000007600948, y: 0.89713734, z: -0.44175175, w: 0.000000015436486}
+  m_LocalRotation: {x: -0.000000007600949, y: 0.89713734, z: -0.44175175, w: -0.00000001543649}
   m_LocalPosition: {x: 0, y: 6.506, z: 64}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4387,7 +4388,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1083236051}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000007600948, y: 0.89713734, z: -0.44175175, w: 0.000000015436486}
+  m_LocalRotation: {x: -0.000000007600949, y: 0.89713734, z: -0.44175175, w: -0.00000001543649}
   m_LocalPosition: {x: 0, y: 6.506, z: 64}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5843,12 +5844,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38dcb712448e09c488d6c172d0103cf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customerPrefabs:
-  - {fileID: 8872843023883212453, guid: 561f4d3f0bfa0904fa1f92de61dfcf94, type: 3}
-  - {fileID: 8175101144267774493, guid: ccb356ce7511da241b6774b9298bc577, type: 3}
-  - {fileID: 8189148153180621835, guid: eb64bbfd68dc89f46882994915ac12e5, type: 3}
-  - {fileID: 2164227166817525356, guid: cf7d4258fd1edd64498ec476147ab09e, type: 3}
-  - {fileID: 1316209925916189716, guid: fdf55128dc51e9741bbaf0ca7aa680b2, type: 3}
 --- !u!4 &1733598775
 Transform:
   m_ObjectHideFlags: 0

@@ -1160,6 +1160,7 @@ MonoBehaviour:
   - {fileID: 4620105990264070722}
   - {fileID: 1946737565}
   - {fileID: 989385725}
+  bgmClip: {fileID: 8300000, guid: 839847142e8fb4840abd4ebcd3168398, type: 3}
 --- !u!4 &144317057
 Transform:
   m_ObjectHideFlags: 0
@@ -1441,7 +1442,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 244401045}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000007600949, y: 0.89713734, z: -0.44175175, w: 0.00000001543649}
+  m_LocalRotation: {x: -0.000000007600948, y: 0.89713734, z: -0.44175175, w: -0.000000015436486}
   m_LocalPosition: {x: -50, y: 6.506, z: 80}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -9968,7 +9969,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2099754989}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000007600949, y: 0.89713734, z: -0.44175175, w: 0.00000001543649}
+  m_LocalRotation: {x: -0.000000007600948, y: 0.89713734, z: -0.44175175, w: -0.000000015436486}
   m_LocalPosition: {x: -50, y: 6.506, z: 80}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

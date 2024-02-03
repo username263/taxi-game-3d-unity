@@ -19,6 +19,8 @@ namespace TaxiGame3D
         CustomerManager customerManager;
         [SerializeField]
         CustomerTrigger[] customerTriggers;
+        [SerializeField]
+        AudioClip bgmClip;
 
         InputControls inputControls;
         bool isAccelPressing = false;
@@ -74,6 +76,9 @@ namespace TaxiGame3D
         void Start()
         {
             GameUI.CreateInstance();
+            
+            SoundManager.CreateInstance();
+            SoundManager.Instance.PlayBgm(bgmClip);
 
             npcCarManager.Play();
 
