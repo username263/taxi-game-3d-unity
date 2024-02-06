@@ -475,6 +475,7 @@ MonoBehaviour:
   amountText: {fileID: 1826015120513050167}
   taken: {fileID: 5667409330989015092}
   highlight: {fileID: 2114424834791580101}
+  clickSfx: {fileID: 8300000, guid: 22c7b5d7637681e498139572db101f0c, type: 3}
 --- !u!1 &8518072133394080923
 GameObject:
   m_ObjectHideFlags: 0

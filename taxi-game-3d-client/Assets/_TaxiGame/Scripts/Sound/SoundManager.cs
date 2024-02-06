@@ -73,13 +73,24 @@ namespace TaxiGame3D
                 return;
             if (bgmSource.isPlaying && bgmSource.clip == clip)
                 return;
-            bgmSource.clip = clip;
+            if (bgmSource.clip != clip)
+                bgmSource.clip = clip;
             bgmSource.Play();
         }
 
         public void StopBgm()
         {
             bgmSource.Stop();
+        }
+
+        public void PauseBgm()
+        {
+            bgmSource.Pause();
+        }
+
+        public void ResumeBgm()
+        {
+            bgmSource.UnPause();
         }
 
         public void PlaySfx(AudioClip clip)

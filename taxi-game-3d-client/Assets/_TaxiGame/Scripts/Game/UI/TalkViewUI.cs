@@ -12,13 +12,19 @@ namespace TaxiGame3D
         Image customerIconImage;
         [SerializeField]
         TMP_Text talkContentText;
+        [SerializeField]
+        AudioClip callSfx;
 
 
         public void Show(int customerIndex, int talkIndex)
         {
             var templateService = ClientManager.Instance.TemplateService;
+            var talk = templateService.Talks[talkIndex];
+            if (talk.Type == TalkType.Call)
+                SoundManager.Instance.PlaySfx(callSfx);
             customerIconImage.sprite = templateService.Customers[customerIndex].Icon;
-            talkContentText.text = templateService.Talks[talkIndex].Content.Key;
+            talkContentText.text = talk.Content.Key;
+            gameObject.SetActive(true);
         }
     }
 }

@@ -693,6 +693,7 @@ GameObject:
   - component: {fileID: 3717326241686967378}
   - component: {fileID: 2169854310558709521}
   - component: {fileID: 4928711790941359704}
+  - component: {fileID: -1740841107944503507}
   m_Layer: 0
   m_Name: Player_gz24
   m_TagString: Player
@@ -785,6 +786,18 @@ MonoBehaviour:
   brakeForce: 6
   <LeftPoint>k__BackingField: {fileID: 6956135045689861003}
   <RightPoint>k__BackingField: {fileID: 7094036169964307121}
+--- !u!114 &-1740841107944503507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7541262372164638498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e897d9219ec6c742a49506bf6bf1678, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8910908470789430333
 GameObject:
   m_ObjectHideFlags: 0

@@ -57,18 +57,17 @@ namespace TaxiGame3D
             };
             GameLogic.Instance.GameEndedEvent += (sender, isGoal) =>
             {
-                resultView.gameObject.SetActive(true);
+                resultView.Show(isGoal);
             };
         }
 
         IEnumerator ShowTalkView(float delay, int customerIndex, int talkIndex)
         {
-            talkView.Show(customerIndex, talkIndex);
             if (delay > 0)
                 yield return new WaitForSecondsRealtime(delay);
             else
                 yield return new WaitForEndOfFrame();
-            talkView.gameObject.SetActive(true);
+            talkView.Show(customerIndex, talkIndex);
             yield return new WaitForSecondsRealtime(2f);
             talkView.gameObject.SetActive(false);
         }

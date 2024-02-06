@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2190787793736914662}
   - component: {fileID: 2034662199700631362}
   - component: {fileID: 3764350516499090654}
+  - component: {fileID: 1163394266142319717}
   m_Layer: 0
   m_Name: Player_vz08
   m_TagString: Player
@@ -104,6 +105,18 @@ MonoBehaviour:
   brakeForce: 6
   <LeftPoint>k__BackingField: {fileID: 2743737795484883279}
   <RightPoint>k__BackingField: {fileID: 1329733803685097529}
+--- !u!114 &1163394266142319717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165046299995436451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e897d9219ec6c742a49506bf6bf1678, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1172049018439089992
 GameObject:
   m_ObjectHideFlags: 0

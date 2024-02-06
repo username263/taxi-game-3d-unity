@@ -20,6 +20,8 @@ namespace TaxiGame3D
         GameObject taken;
         [SerializeField]
         GameObject highlight;
+        [SerializeField]
+        AudioClip clickSfx;
 
         DailyRewardTemplate template;
 
@@ -73,14 +75,20 @@ namespace TaxiGame3D
             if (!userService.CheckEnableAttendance())
                 return;
 
-            var rewardCar = userService.User.DailyCarRewards[Template.Index];
-            var newCar = !userService.User.Cars.Contains(rewardCar);
+            SoundManager.Instance.PlaySfx(clickSfx);
 
-            userService.Attendance();
             if (Template.Type == DailyRewardType.Coin)
+            {
+                userService.Attendance();
                 gameUi.ShowRewardPopup(Template.Amount);
+            }
             else if (Template.Type == DailyRewardType.Car)
+            {
+                var rewardCar = userService.User.DailyCarRewards[Template.Index];
+                var newCar = !userService.User.Cars.Contains(rewardCar);
+                userService.Attendance();
                 gameUi.ShowRewardPopup(rewardCar.Id, newCar);
+            }
                 
             gameUi.Refresh();
         }

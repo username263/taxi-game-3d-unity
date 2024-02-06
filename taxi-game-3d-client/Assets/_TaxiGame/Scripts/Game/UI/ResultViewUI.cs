@@ -12,6 +12,8 @@ namespace TaxiGame3D
         TMP_Text coinText;
         [SerializeField]
         Button claimButton;
+        [SerializeField]
+        AudioSource goalSfxSource;
 
         void Start()
         {
@@ -22,14 +24,26 @@ namespace TaxiGame3D
             });
         }
 
-        void OnEnable()
-        {
-            coinText.text = GameLogic.Instance.RewardedCoin.ToString();
-        }
-
         void OnDisable()
         {
             coinText.text = "0";
+            SoundManager.Instance.ResumeBgm();
+        }
+
+        public void Show(bool isGoal)
+        {
+            coinText.text = GameLogic.Instance.RewardedCoin.ToString();
+            gameObject.SetActive(true);
+            if (isGoal && goalSfxSource != null)
+                StartCoroutine(PlayGoalSfx());
+        }
+
+        IEnumerator PlayGoalSfx()
+        {
+            SoundManager.Instance.PauseBgm();
+            goalSfxSource.Play();
+            yield return new WaitForSeconds(goalSfxSource.clip.length);
+            SoundManager.Instance.ResumeBgm();
         }
     }
 }

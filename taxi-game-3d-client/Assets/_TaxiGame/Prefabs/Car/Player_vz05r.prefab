@@ -178,6 +178,7 @@ GameObject:
   - component: {fileID: 6198024314987113000}
   - component: {fileID: 3263859917589255483}
   - component: {fileID: 2320083412840280726}
+  - component: {fileID: -316742015309552804}
   m_Layer: 0
   m_Name: Player_vz05r
   m_TagString: Player
@@ -270,6 +271,18 @@ MonoBehaviour:
   brakeForce: 6
   <LeftPoint>k__BackingField: {fileID: 4482432319044951412}
   <RightPoint>k__BackingField: {fileID: 9182253195595305989}
+--- !u!114 &-316742015309552804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2518952538889297259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e897d9219ec6c742a49506bf6bf1678, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2774858935086277984
 GameObject:
   m_ObjectHideFlags: 0
