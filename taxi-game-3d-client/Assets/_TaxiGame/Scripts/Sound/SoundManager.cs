@@ -99,6 +99,13 @@ namespace TaxiGame3D
                 sfxSource.PlayOneShot(clip);
         }
 
+        public AudioSource CreateSfxSource(string name, Transform parent = null)
+        {
+            var source = Instantiate(sfxSource, parent);
+            source.name = name;
+            return source;
+        }
+
         public static void CreateInstance()
         {
             if (Instance != null)

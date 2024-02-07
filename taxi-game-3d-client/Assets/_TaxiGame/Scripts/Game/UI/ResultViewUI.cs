@@ -13,7 +13,7 @@ namespace TaxiGame3D
         [SerializeField]
         Button claimButton;
         [SerializeField]
-        AudioSource goalSfxSource;
+        AudioClip goalSfx;
 
         void Start()
         {
@@ -34,15 +34,15 @@ namespace TaxiGame3D
         {
             coinText.text = GameLogic.Instance.RewardedCoin.ToString();
             gameObject.SetActive(true);
-            if (isGoal && goalSfxSource != null)
+            if (isGoal)
                 StartCoroutine(PlayGoalSfx());
         }
 
         IEnumerator PlayGoalSfx()
         {
             SoundManager.Instance.PauseBgm();
-            goalSfxSource.Play();
-            yield return new WaitForSeconds(goalSfxSource.clip.length);
+            SoundManager.Instance.PlaySfx(goalSfx);
+            yield return new WaitForSeconds(goalSfx.length);
             SoundManager.Instance.ResumeBgm();
         }
     }
