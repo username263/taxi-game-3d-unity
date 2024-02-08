@@ -31,6 +31,8 @@ namespace TaxiGame3D
         Button rouletteButton;
         [SerializeField]
         GameObject rouletteRedDot;
+        [SerializeField]
+        Button settingsButton;
 
         void Awake()
         {
@@ -60,6 +62,7 @@ namespace TaxiGame3D
                 Refresh();
             });
             rouletteButton.onClick.AddListener(GameUI.Instance.ShowRoulette);
+            settingsButton.onClick.AddListener(GameUI.Instance.ShowSettings);
         }
 
         void OnEnable()
