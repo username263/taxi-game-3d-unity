@@ -406,6 +406,7 @@ Transform:
   - {fileID: 5529395660795710723}
   - {fileID: 4603540215731565829}
   - {fileID: 6175803021146919939}
+  - {fileID: 6593188738540826823}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &4337930332616244836
@@ -489,6 +490,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 73c8316064dce7d49b8747db6237e82f, type: 3}
   doorSfx:
   - {fileID: 8300000, guid: 33f26031c4fbea84ba6bbbd2c68c16b6, type: 3}
+  incomeSfx:
+  - {fileID: 8300000, guid: 20dce9e31df4e674aaf451e5b5607502, type: 3}
   crashSfx:
   - {fileID: 8300000, guid: 12be12ee66110224888ea2224a89fd27, type: 3}
   hornSfx:
@@ -691,6 +694,72 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &7443528466833422021
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6593188738540826823}
+  - component: {fileID: 4311993711092889038}
+  - component: {fileID: 648589147120651083}
+  m_Layer: 0
+  m_Name: HornSfxTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6593188738540826823
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7443528466833422021}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 334585316916031650}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4311993711092889038
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7443528466833422021}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 2}
+  m_Center: {x: 0, y: 0.5, z: 0.5}
+--- !u!114 &648589147120651083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7443528466833422021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de26267872d69344583b3ddd0f42d40a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7583299138488681547
 GameObject:
   m_ObjectHideFlags: 0

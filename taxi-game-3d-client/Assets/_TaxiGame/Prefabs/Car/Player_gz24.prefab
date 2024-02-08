@@ -1,5 +1,71 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1328672752564028707
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7811741825620327319}
+  - component: {fileID: 4678856980695555649}
+  - component: {fileID: 5366880234116711032}
+  m_Layer: 0
+  m_Name: HornSfxTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7811741825620327319
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328672752564028707}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8141787887725654197}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4678856980695555649
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328672752564028707}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 2}
+  m_Center: {x: 0, y: 0.5, z: 0.5}
+--- !u!114 &5366880234116711032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328672752564028707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de26267872d69344583b3ddd0f42d40a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2151151979928710018
 GameObject:
   m_ObjectHideFlags: 0
@@ -719,6 +785,7 @@ Transform:
   - {fileID: 6956135045689861003}
   - {fileID: 7094036169964307121}
   - {fileID: 3991820008765607583}
+  - {fileID: 7811741825620327319}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &3717326241686967378
@@ -802,6 +869,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 73c8316064dce7d49b8747db6237e82f, type: 3}
   doorSfx:
   - {fileID: 8300000, guid: 33f26031c4fbea84ba6bbbd2c68c16b6, type: 3}
+  incomeSfx:
+  - {fileID: 8300000, guid: 20dce9e31df4e674aaf451e5b5607502, type: 3}
   crashSfx:
   - {fileID: 8300000, guid: 12be12ee66110224888ea2224a89fd27, type: 3}
   hornSfx:

@@ -30,6 +30,8 @@ namespace TaxiGame3D
 
         Rigidbody rb;
 
+        CarSFXController sfxController;
+
         public bool IsEnableMoving
         {
             get;
@@ -65,6 +67,25 @@ namespace TaxiGame3D
         void Awake()
         {
             rb = GetComponent<Rigidbody>();
+            sfxController = GetComponent<CarSFXController>();
+        }
+
+        void Start()
+        {
+            GameLogic.Instance.CustomerTakeInEvent += (sender, numOfCustomers) =>
+            {
+                sfxController.PlayDoorSfx();
+            };
+            GameLogic.Instance.CustomerTakeOutEvent += (sender, numOfCustomers) =>
+            {
+                sfxController.PlayDoorSfx();
+                sfxController.PlayIncomeSfx();
+            };
+            GetComponentInChildren<TriggerInvoker>().TriggerEnteredEvent += (sender, other) =>
+            {
+                if (other.gameObject.CompareTag("NpcCar"))
+                    sfxController.PlayHornSfx();
+            };
         }
 
         void Update()
@@ -83,7 +104,10 @@ namespace TaxiGame3D
         void OnCollisionEnter(Collision collision)
         {
             if (collision.gameObject.CompareTag("NpcCar"))
+            {
+                sfxController.PlayCrashSfx();
                 OnCrashed?.Invoke(this, EventArgs.Empty);
+            }
         }
 
         public void SetPath(VertexPath path)
@@ -104,18 +128,28 @@ namespace TaxiGame3D
         {
             IsEnableMoving = false;
             speed = 0f;
+            sfxController.StopBrakeSfx();
         }
 
         public void PressAccel()
         {
             if (IsEnableMoving)
+            {
                 speed = Mathf.Min(speed + Time.deltaTime * acceleration, maxSpeed);
+                sfxController.StopBrakeSfx();
+            }
         }
 
         public void PressBrake()
         {
             if (IsEnableMoving)
+            {
                 speed = Mathf.Max(speed - Time.deltaTime * brakeForce, minSpeed);
+                if (speed > minSpeed)
+                    sfxController.PlayBrakeSfx();
+                else
+                    sfxController.StopBrakeSfx();
+            }
         }
 
         public Transform SelectNearestPoint(Vector3 poisition)

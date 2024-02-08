@@ -11,6 +11,8 @@ namespace TaxiGame3D
         [SerializeField]
         AudioClip[] doorSfx;
         [SerializeField]
+        AudioClip[] incomeSfx;
+        [SerializeField]
         AudioClip[] crashSfx;
         [SerializeField]
         AudioClip[] hornSfx;
@@ -36,7 +38,7 @@ namespace TaxiGame3D
 
         public void StopBrakeSfx()
         {
-            if (brakeSfxSource == null)            
+            if (brakeSfxSource == null || !brakeSfxSource.isPlaying)            
                 return;
             brakeSfxSource.Stop();
         }
@@ -46,6 +48,13 @@ namespace TaxiGame3D
             if (doorSfx.Length == 0)
                 return;
             SoundManager.Instance.PlaySfx(doorSfx[Random.Range(0, doorSfx.Length)]);
+        }
+
+        public void PlayIncomeSfx()
+        {
+            if (incomeSfx.Length == 0)
+                return;
+            SoundManager.Instance.PlaySfx(incomeSfx[Random.Range(0, incomeSfx.Length)]);
         }
 
         public void PlayCrashSfx()
