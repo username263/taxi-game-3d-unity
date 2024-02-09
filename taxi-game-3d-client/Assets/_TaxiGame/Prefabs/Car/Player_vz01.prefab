@@ -719,6 +719,7 @@ GameObject:
   - component: {fileID: 3232778288052449136}
   - component: {fileID: 6674745932432483452}
   - component: {fileID: -3094463521318732470}
+  - component: {fileID: -5480632328066943499}
   m_Layer: 0
   m_Name: Player_vz01
   m_TagString: Player
@@ -835,6 +836,19 @@ MonoBehaviour:
   hornSfx:
   - {fileID: 8300000, guid: f1d4730ef890a8b4f88eaedac3f89f0f, type: 3}
   - {fileID: 8300000, guid: e69822b906ca4f340abe7dedbd66c457, type: 3}
+--- !u!114 &-5480632328066943499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7614482246610661260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72a21dc50d5ee844bb2599faef0bcc7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tireMarks: []
 --- !u!1 &8508256851569420523
 GameObject:
   m_ObjectHideFlags: 0
