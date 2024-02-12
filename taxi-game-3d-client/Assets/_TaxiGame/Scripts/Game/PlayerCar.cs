@@ -29,7 +29,7 @@ namespace TaxiGame3D
         float speed = minSpeed;
 
         Rigidbody rb;
-
+        CarVFXController vfxController;
         CarSFXController sfxController;
 
         public bool IsEnableMoving
@@ -67,6 +67,7 @@ namespace TaxiGame3D
         void Awake()
         {
             rb = GetComponent<Rigidbody>();
+            vfxController = GetComponent<CarVFXController>();
             sfxController = GetComponent<CarSFXController>();
         }
 
@@ -128,6 +129,8 @@ namespace TaxiGame3D
         {
             IsEnableMoving = false;
             speed = 0f;
+            vfxController.DisableBrakeLightsEmitting();
+            vfxController.DisableTireMarksEmitting();
             sfxController.StopBrakeSfx();
         }
 
@@ -136,6 +139,8 @@ namespace TaxiGame3D
             if (IsEnableMoving)
             {
                 speed = Mathf.Min(speed + Time.deltaTime * acceleration, maxSpeed);
+                vfxController.DisableBrakeLightsEmitting();
+                vfxController.DisableTireMarksEmitting();
                 sfxController.StopBrakeSfx();
             }
         }
@@ -146,9 +151,17 @@ namespace TaxiGame3D
             {
                 speed = Mathf.Max(speed - Time.deltaTime * brakeForce, minSpeed);
                 if (speed > minSpeed)
+                {
+                    vfxController.EnableBrakeLightsEmitting();
+                    vfxController.EnableTireMarksEmitting();
                     sfxController.PlayBrakeSfx();
+                }
                 else
+                {
+                    vfxController.DisableBrakeLightsEmitting();
+                    vfxController.DisableTireMarksEmitting();
                     sfxController.StopBrakeSfx();
+                }
             }
         }
 
