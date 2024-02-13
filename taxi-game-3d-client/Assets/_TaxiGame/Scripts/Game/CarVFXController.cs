@@ -10,6 +10,8 @@ namespace TaxiGame3D
         TrailRenderer[] brakeLights;
         [SerializeField]
         TrailRenderer[] tireMarks;
+        [SerializeField]
+        ParticleSystem[] tireSmoke;
 
         public void EnableBrakeLightsEmitting()
         {
@@ -33,6 +35,24 @@ namespace TaxiGame3D
         {
             foreach (var t in tireMarks)
                 t.emitting = false;
+        }
+
+        public void PlayTireSmokes()
+        {
+            foreach (var p in tireSmoke)
+            {
+                if (!p.isPlaying)
+                    p.Play();
+            }
+        }
+
+        public void StopTireSmokes()
+        {
+            foreach (var p in tireSmoke)
+            {
+                if (p.isPlaying)
+                    p.Stop();
+            }
         }
     }
 }

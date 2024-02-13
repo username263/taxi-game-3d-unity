@@ -131,6 +131,7 @@ namespace TaxiGame3D
             speed = 0f;
             vfxController.DisableBrakeLightsEmitting();
             vfxController.DisableTireMarksEmitting();
+            vfxController.StopTireSmokes();
             sfxController.StopBrakeSfx();
         }
 
@@ -141,6 +142,7 @@ namespace TaxiGame3D
                 speed = Mathf.Min(speed + Time.deltaTime * acceleration, maxSpeed);
                 vfxController.DisableBrakeLightsEmitting();
                 vfxController.DisableTireMarksEmitting();
+                vfxController.StopTireSmokes();
                 sfxController.StopBrakeSfx();
             }
         }
@@ -154,12 +156,14 @@ namespace TaxiGame3D
                 {
                     vfxController.EnableBrakeLightsEmitting();
                     vfxController.EnableTireMarksEmitting();
+                    vfxController.PlayTireSmokes();
                     sfxController.PlayBrakeSfx();
                 }
                 else
                 {
                     vfxController.DisableBrakeLightsEmitting();
                     vfxController.DisableTireMarksEmitting();
+                    vfxController.StopTireSmokes();
                     sfxController.StopBrakeSfx();
                 }
             }
