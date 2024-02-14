@@ -61,8 +61,8 @@ namespace TaxiGame3D
             private set;
         }
 
-        public event EventHandler OnCrashed;
-        public event EventHandler OnArrive;
+        public event EventHandler OnCrashedEvent;
+        public event EventHandler OnArriveEvent;
 
         void Awake()
         {
@@ -99,7 +99,7 @@ namespace TaxiGame3D
             rb.MoveRotation(path.GetRotationAtDistance(Movement, EndOfPathInstruction.Stop));
 
             if (IsArrive)
-                OnArrive?.Invoke(this, EventArgs.Empty);
+                OnArriveEvent?.Invoke(this, EventArgs.Empty);
         }
 
         void OnCollisionEnter(Collision collision)
@@ -111,7 +111,7 @@ namespace TaxiGame3D
                 dir.y = 0.1f;
                 collision.gameObject.GetComponent<Rigidbody>().AddForce(dir * 500);
                 collision.gameObject.GetComponent<Rigidbody>().AddTorque(Vector3.up * 100);
-                OnCrashed?.Invoke(this, EventArgs.Empty);
+                OnCrashedEvent?.Invoke(this, EventArgs.Empty);
             }
         }
 

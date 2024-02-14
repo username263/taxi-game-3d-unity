@@ -152,11 +152,11 @@ namespace TaxiGame3D
 
             PlayerCar = Instantiate(carPrefab)?.GetComponent<PlayerCar>();
             PlayerCar.SetPath(playerPath.path);
-            PlayerCar.OnCrashed += (sender, args) =>
+            PlayerCar.OnCrashedEvent += (sender, args) =>
             {
                 EndGame(false);
             };
-            PlayerCar.OnArrive += (sender, args) =>
+            PlayerCar.OnArriveEvent += (sender, args) =>
             {
                 EndGame(true);
             };

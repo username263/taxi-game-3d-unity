@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Game String Table Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Game String Table
+  m_TableCollectionNameGuidString: 7bdf6b698f8558f49b5a50f7fd8086de
+  m_Entries:
+  - m_Id: 10184133783552
+    m_Key: common/close
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5706739429376
+    m_Key: login/login
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5706772983808
+    m_Key: login/register
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5706772983809
+    m_Key: login/email-ph
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5706772983810
+    m_Key: login/pw-ph
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13349218496512
+    m_Key: ready/play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13349218496513
+    m_Key: ready/car-list
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10184133783553
+    m_Key: settings/logout
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11368064167936
+    m_Key: result/earned
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10995177959424
+    m_Key: result/claim
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12632479051776
+    m_Key: guide/1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12632479051777
+    m_Key: guide/2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16511249756161
+    m_Key: car-list/select
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16511249756162
+    m_Key: car-list/cancel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16976859443200
+    m_Key: roulette/spin
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 5738205273170640923
+  references:
+    version: 2
+    RefIds:
+    - rid: 5738205273170640923
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables,
+        asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1707892138570

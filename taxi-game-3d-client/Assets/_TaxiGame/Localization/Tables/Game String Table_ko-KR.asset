@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Game String Table_ko-KR
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: ko-KR
+  m_SharedData: {fileID: 11400000, guid: 7bdf6b698f8558f49b5a50f7fd8086de, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 5706739429376
+    m_Localized: "\uB85C\uADF8\uC778"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5706772983808
+    m_Localized: "\uD68C\uC6D0\uB4F1\uB85D"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5706772983809
+    m_Localized: "\uC774\uBA54\uC77C \uC785\uB825..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5706772983810
+    m_Localized: "\uBE44\uBC00\uBC88\uD638 \uC785\uB825..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10184133783552
+    m_Localized: "\uB2EB\uAE30"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10184133783553
+    m_Localized: "\uB85C\uADF8\uC544\uC6C3"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10995177959424
+    m_Localized: "\uD68D\uB4DD"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11368064167936
+    m_Localized: "\uC218\uC775\uAE08"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12632479051776
+    m_Localized: "1. \uD654\uBA74\uC744 \uB20C\uB7EC \uC774\uB3D9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12632479051777
+    m_Localized: "2. \uD654\uBA74\uC5D0 \uC190\uC744 \uB54C \uBA48\uCDA4"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13349218496512
+    m_Localized: "\uD50C\uB808\uC774"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13349218496513
+    m_Localized: "\uC790\uB3D9\uCC28"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16511249756161
+    m_Localized: "\uC120\uD0DD"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16511249756162
+    m_Localized: "\uCDE8\uC18C"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16976859443200
+    m_Localized: "\uD68C\uC804"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

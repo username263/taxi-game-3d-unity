@@ -68,4 +68,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_TaxiGame/Scenes/Map20.unity
     guid: a21a9107ae015a942ac0266ddd306605
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: e36e75d988f32c14eb341986f1fec441,
+      type: 2}
+    com.unity.localization.settings: {fileID: 11400000, guid: 4fde77e0214ef254f9cb6f8a9f84a987,
+      type: 2}

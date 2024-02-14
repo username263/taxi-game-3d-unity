@@ -1,0 +1,18 @@
+﻿Key,Id,Shared Comments,English(en),Korean (South Korea)(ko-KR)
+common/close,,,Close,닫기
+login/login,,,Login,로그인
+login/register,,,Register,회원등록
+login/email-ph,,,Enter email…,이메일 입력...
+login/pw-ph,,,Enter password…,비밀번호 입력...
+ready/play,,,Play,플레이
+ready/car-list,,,Car List,자동차
+settings/logout,,,Logout,로그아웃
+result/earned,,,You earned,수익금
+result/claim,,,Claim,획득
+guide/1,,,1. PRESS TO MOVE,1. 화면을 눌러 이동
+guide/2,,,2. RELEASE TO STOP,2. 화면에 손을 때 멈춤
+car-list/select,,,Select,선택
+car-list/cancel,,,Cancel,취소
+roulette/spin,,,Spin,회전
+rw-msg/car,,차동차 획득 메시지,Gain {0}.,{0}을(를) 획득하였습니다.
+rw-msg/coin,,코인 획득 메시지,Gain {0} coins.,{0} 코인을 획득하였습니다.
