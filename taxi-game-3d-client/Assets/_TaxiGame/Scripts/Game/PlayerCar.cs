@@ -107,6 +107,10 @@ namespace TaxiGame3D
             if (collision.gameObject.CompareTag("NpcCar"))
             {
                 sfxController.PlayCrashSfx();
+                var dir = (collision.rigidbody.position - rb.position).normalized;
+                dir.y = 0.1f;
+                collision.gameObject.GetComponent<Rigidbody>().AddForce(dir * 500);
+                collision.gameObject.GetComponent<Rigidbody>().AddTorque(Vector3.up * 100);
                 OnCrashed?.Invoke(this, EventArgs.Empty);
             }
         }
