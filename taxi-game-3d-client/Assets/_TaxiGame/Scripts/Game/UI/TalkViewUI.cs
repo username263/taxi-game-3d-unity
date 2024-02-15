@@ -23,7 +23,7 @@ namespace TaxiGame3D
             if (talk.Type == TalkType.Call)
                 SoundManager.Instance.PlaySfx(callSfx);
             customerIconImage.sprite = templateService.Customers[customerIndex].Icon;
-            talkContentText.text = talk.Content.Key;
+            talkContentText.text = talk.Content.GetLocalizedString();
             gameObject.SetActive(true);
         }
     }

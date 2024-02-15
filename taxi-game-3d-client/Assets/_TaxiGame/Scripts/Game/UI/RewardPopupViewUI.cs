@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Localization;
 using UnityEngine.UI;
 
 namespace TaxiGame3D
@@ -17,6 +18,12 @@ namespace TaxiGame3D
         UICarManager carManager;
         [SerializeField]
         TMP_Text contentText;
+        [SerializeField]
+        LocalizedString contentForCoin;
+        [SerializeField]
+        LocalizedString contentForCar;
+        [SerializeField]
+        LocalizedString contentForCarCost;
         [SerializeField]
         Button closeButton;
 
@@ -33,7 +40,7 @@ namespace TaxiGame3D
         {
             coinImage.gameObject.SetActive(true);
             carImage.gameObject.SetActive(false);
-            contentText.text = $"Gain {coin}";
+            contentText.text = contentForCoin.GetLocalizedString(coin);
             gameObject.SetActive(true);
         }
 
@@ -42,15 +49,12 @@ namespace TaxiGame3D
             coinImage.gameObject.SetActive(false);
             carImage.gameObject.SetActive(true);
             carManager.Select(carId);
+            var car = ClientManager.Instance.UserService.User.Cars.Find(e => e.Id == carId);
+            var carName = car.Name.GetLocalizedString();
             if (newCar)
-            {
-                contentText.text = $"Gain {carId}";
-            }
+                contentText.text = contentForCar.GetLocalizedString(carName);
             else
-            {
-                var car = ClientManager.Instance.UserService.User.Cars.Find(e => e.Id == carId);
-                contentText.text = $"{carId} is already exit. Gain {car.Cost}";
-            }
+                contentText.text = contentForCarCost.GetLocalizedString(carName, car.Cost);
             gameObject.SetActive(true);
         }
     }

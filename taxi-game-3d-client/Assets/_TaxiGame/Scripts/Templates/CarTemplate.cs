@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using UnityEngine;
+using UnityEngine.Localization;
 
 namespace TaxiGame3D
 {

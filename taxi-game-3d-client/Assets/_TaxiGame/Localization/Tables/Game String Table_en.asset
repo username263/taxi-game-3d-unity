@@ -78,6 +78,680 @@ MonoBehaviour:
     m_Localized: Spin
     m_Metadata:
       m_Items: []
+  - m_Id: 381156359745536
+    m_Localized: Gain {0}.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299968
+    m_Localized: Gain {0} coins.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299969
+    m_Localized: VZ01(Black)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299970
+    m_Localized: VZ01(Blue)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299971
+    m_Localized: VZ01(Gray)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299972
+    m_Localized: VZ01(Green)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299973
+    m_Localized: VZ01(Light Blue)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299974
+    m_Localized: VZ01(Purple)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299975
+    m_Localized: VZ01(Red)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299976
+    m_Localized: VZ01(Sand)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299977
+    m_Localized: VZ01(White)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299978
+    m_Localized: VZ01(Yellow)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299979
+    m_Localized: VZ02(Black)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299980
+    m_Localized: VZ02(Blue)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299981
+    m_Localized: VZ02(Gray)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299982
+    m_Localized: VZ02(Green)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299983
+    m_Localized: VZ02(Light Blue)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299984
+    m_Localized: VZ02(Purple)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299985
+    m_Localized: VZ02(Red)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299986
+    m_Localized: VZ02(Sand)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299987
+    m_Localized: VZ02(White)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299988
+    m_Localized: VZ02(Yellow)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299989
+    m_Localized: VZ03(Black)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299990
+    m_Localized: VZ03(Blue)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299991
+    m_Localized: VZ03(Gray)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299992
+    m_Localized: VZ03(Green)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299993
+    m_Localized: VZ03(Light Blue)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299994
+    m_Localized: VZ03(Purple)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299995
+    m_Localized: VZ03(Red)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299996
+    m_Localized: VZ03(Sand)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299997
+    m_Localized: VZ03(White)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299998
+    m_Localized: VZ03(Yellow)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299999
+    m_Localized: VZ04(Black)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300000
+    m_Localized: VZ04(Blue)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300001
+    m_Localized: VZ04(Gray)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300002
+    m_Localized: VZ04(Green)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300003
+    m_Localized: VZ04(Light Blue)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300004
+    m_Localized: VZ04(Purple)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300005
+    m_Localized: VZ04(Red)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300006
+    m_Localized: VZ04(Sand)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300007
+    m_Localized: VZ04(White)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300008
+    m_Localized: VZ04(Yellow)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300009
+    m_Localized: VZ05(Black)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300010
+    m_Localized: VZ05(Blue)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300011
+    m_Localized: VZ05(Gray)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300012
+    m_Localized: VZ05(Green)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300013
+    m_Localized: VZ05(Light Blue)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300014
+    m_Localized: VZ05(Purple)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300015
+    m_Localized: VZ05(Red)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300016
+    m_Localized: VZ05(Sand)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300017
+    m_Localized: VZ05(White)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300018
+    m_Localized: VZ05(Yellow)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300019
+    m_Localized: VZ05R(Black)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300020
+    m_Localized: VZ05R(Blue)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300021
+    m_Localized: VZ05R(Gray)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300022
+    m_Localized: VZ05R(Green)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300023
+    m_Localized: VZ05R(Light Blue)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300024
+    m_Localized: VZ05R(Purple)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300025
+    m_Localized: VZ05R(Red)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300026
+    m_Localized: VZ05R(Sand)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494272
+    m_Localized: VZ05R(White)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494273
+    m_Localized: VZ05R(Yellow)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494274
+    m_Localized: VZ06(Black)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494275
+    m_Localized: VZ06(Blue)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494276
+    m_Localized: VZ06(Gray)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494277
+    m_Localized: VZ06(Green)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494278
+    m_Localized: VZ06(Light Blue)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494279
+    m_Localized: VZ06(Purple)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494280
+    m_Localized: VZ06(Red)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494281
+    m_Localized: VZ06(Sand)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494282
+    m_Localized: VZ06(White)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494283
+    m_Localized: VZ06(Yellow)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494284
+    m_Localized: VZ07(Black)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494285
+    m_Localized: VZ07(Blue)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494286
+    m_Localized: VZ07(Gray)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494287
+    m_Localized: VZ07(Green)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494288
+    m_Localized: VZ07(Light Blue)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494289
+    m_Localized: VZ07(Purple)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494290
+    m_Localized: VZ07(Red)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494291
+    m_Localized: VZ07(Sand)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494292
+    m_Localized: VZ07(White)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494293
+    m_Localized: VZ07(Yellow)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494294
+    m_Localized: VZ08(Black)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494295
+    m_Localized: VZ08(Blue)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494296
+    m_Localized: VZ08(Gray)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494297
+    m_Localized: VZ08(Green)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494298
+    m_Localized: VZ08(Light Blue)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494299
+    m_Localized: VZ08(Purple)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494300
+    m_Localized: VZ08(Red)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494301
+    m_Localized: VZ08(Sand)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494302
+    m_Localized: VZ08(White)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494303
+    m_Localized: VZ08(Yellow)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494304
+    m_Localized: VZ09(Black)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494305
+    m_Localized: VZ09(Blue)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494306
+    m_Localized: VZ09(Gray)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494307
+    m_Localized: VZ09(Green)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494308
+    m_Localized: VZ09(Light Blue)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494309
+    m_Localized: VZ09(Purple)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494310
+    m_Localized: VZ09(Red)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494311
+    m_Localized: VZ09(Sand)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494312
+    m_Localized: VZ09(White)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494313
+    m_Localized: VZ09(Yellow)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494314
+    m_Localized: VZ21(Black)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494315
+    m_Localized: VZ21(Blue)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494316
+    m_Localized: VZ21(Gray)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494317
+    m_Localized: VZ21(Green)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494318
+    m_Localized: VZ21(Light Blue)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494319
+    m_Localized: VZ21(Purple)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494320
+    m_Localized: VZ21(Red)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494321
+    m_Localized: VZ21(Sand)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494322
+    m_Localized: VZ21(White)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494323
+    m_Localized: VZ21(Yellow)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494324
+    m_Localized: VZ31(Black)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494325
+    m_Localized: VZ31(Blue)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494326
+    m_Localized: VZ31(Gray)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494327
+    m_Localized: VZ31(Green)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494328
+    m_Localized: VZ31(Light Blue)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494329
+    m_Localized: VZ31(Purple)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494330
+    m_Localized: VZ31(Red)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494331
+    m_Localized: VZ31(Sand)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494332
+    m_Localized: VZ31(White)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494333
+    m_Localized: VZ31(Yellow)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494334
+    m_Localized: VZ99(Black)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494335
+    m_Localized: VZ99(Blue)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494336
+    m_Localized: VZ99(Gray)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494337
+    m_Localized: VZ99(Green)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494338
+    m_Localized: VZ99(Light Blue)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494339
+    m_Localized: VZ99(Purple)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494340
+    m_Localized: VZ99(Red)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494341
+    m_Localized: VZ99(Sand)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494342
+    m_Localized: VZ99(White)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494343
+    m_Localized: VZ99(Yellow)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494344
+    m_Localized: GZ21(Black)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494345
+    m_Localized: GZ21(Blue)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494346
+    m_Localized: GZ21(Gray)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494347
+    m_Localized: GZ21(Green)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494348
+    m_Localized: GZ21(Light Blue)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494349
+    m_Localized: GZ21(Purple)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494350
+    m_Localized: GZ21(Red)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494351
+    m_Localized: GZ21(Sand)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494352
+    m_Localized: GZ21(White)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494353
+    m_Localized: GZ21(Yellow)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494354
+    m_Localized: GZ24(Black)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494355
+    m_Localized: GZ24(Blue)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494356
+    m_Localized: GZ24(Gray)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494357
+    m_Localized: GZ24(Green)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494358
+    m_Localized: GZ24(Light Blue)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494359
+    m_Localized: GZ24(Purple)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494360
+    m_Localized: GZ24(Red)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494361
+    m_Localized: GZ24(Sand)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494362
+    m_Localized: GZ24(White)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494363
+    m_Localized: GZ24(Yellow)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494364
+    m_Localized: Go to the place where you spend the most.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494365
+    m_Localized: Go to the nearby Hilton hotel.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156401688576
+    m_Localized: Bro hurry up, I'm in a hurry.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156401688577
+    m_Localized: Master, are you an old driver?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156401688578
+    m_Localized: Master, how much do you earn per day?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156401688579
+    m_Localized: Master, keep up with that Ferrari.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156401688580
+    m_Localized: Take me to the nearest bank.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156401688581
+    m_Localized: Help me keep up with the car in front!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156401688582
+    m_Localized: Go to the railway station, I'll catch the bus!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156401688583
+    m_Localized: I'll wait for you at the gate of the hotel lobby.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156401688584
+    m_Localized: It's going to rain, you come quickly!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156401688585
+    m_Localized: Master, hurry up, I have to catch the plane.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156401688586
+    m_Localized: Master, can you be there in 5 minutes?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156401688587
+    m_Localized: Hello, please meet me across the street.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156401688588
+    m_Localized: Stop the car, please! Stop the car, please!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 383994552987648
+    m_Localized: '{0} is already exit.
+
+      Gain {1} coins.'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

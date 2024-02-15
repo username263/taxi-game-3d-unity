@@ -75,6 +75,681 @@ MonoBehaviour:
     m_Key: roulette/spin
     m_Metadata:
       m_Items: []
+  - m_Id: 381156359745536
+    m_Key: rw-msg/car
+    m_Metadata:
+      m_Items:
+      - rid: 5738205297299947522
+  - m_Id: 383994552987648
+    m_Key: rw-msg/car-cost
+    m_Metadata:
+      m_Items:
+      - rid: 5738205297299947524
+  - m_Id: 381156393299968
+    m_Key: rw-msg/coin
+    m_Metadata:
+      m_Items:
+      - rid: 5738205297299947523
+  - m_Id: 381156393299969
+    m_Key: car/vz01_black
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299970
+    m_Key: car/vz01_blue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299971
+    m_Key: car/vz01_gray
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299972
+    m_Key: car/vz01_green
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299973
+    m_Key: car/vz01_lightblue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299974
+    m_Key: car/vz01_purple
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299975
+    m_Key: car/vz01_red
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299976
+    m_Key: car/vz01_sand
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299977
+    m_Key: car/vz01_white
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299978
+    m_Key: car/vz01_yellow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299979
+    m_Key: car/vz02_black
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299980
+    m_Key: car/vz02_blue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299981
+    m_Key: car/vz02_gray
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299982
+    m_Key: car/vz02_green
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299983
+    m_Key: car/vz02_lightblue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299984
+    m_Key: car/vz02_purple
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299985
+    m_Key: car/vz02_red
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299986
+    m_Key: car/vz02_sand
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299987
+    m_Key: car/vz02_white
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299988
+    m_Key: car/vz02_yellow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299989
+    m_Key: car/vz03_black
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299990
+    m_Key: car/vz03_blue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299991
+    m_Key: car/vz03_gray
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299992
+    m_Key: car/vz03_green
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299993
+    m_Key: car/vz03_lightblue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299994
+    m_Key: car/vz03_purple
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299995
+    m_Key: car/vz03_red
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299996
+    m_Key: car/vz03_sand
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299997
+    m_Key: car/vz03_white
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299998
+    m_Key: car/vz03_yellow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393299999
+    m_Key: car/vz04_black
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300000
+    m_Key: car/vz04_blue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300001
+    m_Key: car/vz04_gray
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300002
+    m_Key: car/vz04_green
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300003
+    m_Key: car/vz04_lightblue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300004
+    m_Key: car/vz04_purple
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300005
+    m_Key: car/vz04_red
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300006
+    m_Key: car/vz04_sand
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300007
+    m_Key: car/vz04_white
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300008
+    m_Key: car/vz04_yellow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300009
+    m_Key: car/vz05_black
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300010
+    m_Key: car/vz05_blue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300011
+    m_Key: car/vz05_gray
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300012
+    m_Key: car/vz05_green
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300013
+    m_Key: car/vz05_lightblue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300014
+    m_Key: car/vz05_purple
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300015
+    m_Key: car/vz05_red
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300016
+    m_Key: car/vz05_sand
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300017
+    m_Key: car/vz05_white
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300018
+    m_Key: car/vz05_yellow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300019
+    m_Key: car/vz05r_black
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300020
+    m_Key: car/vz05r_blue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300021
+    m_Key: car/vz05r_gray
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300022
+    m_Key: car/vz05r_green
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300023
+    m_Key: car/vz05r_lightblue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300024
+    m_Key: car/vz05r_purple
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300025
+    m_Key: car/vz05r_red
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156393300026
+    m_Key: car/vz05r_sand
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494272
+    m_Key: car/vz05r_white
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494273
+    m_Key: car/vz05r_yellow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494274
+    m_Key: car/vz06_black
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494275
+    m_Key: car/vz06_blue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494276
+    m_Key: car/vz06_gray
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494277
+    m_Key: car/vz06_green
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494278
+    m_Key: car/vz06_lightblue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494279
+    m_Key: car/vz06_purple
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494280
+    m_Key: car/vz06_red
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494281
+    m_Key: car/vz06_sand
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494282
+    m_Key: car/vz06_white
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494283
+    m_Key: car/vz06_yellow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494284
+    m_Key: car/vz07_black
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494285
+    m_Key: car/vz07_blue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494286
+    m_Key: car/vz07_gray
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494287
+    m_Key: car/vz07_green
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494288
+    m_Key: car/vz07_lightblue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494289
+    m_Key: car/vz07_purple
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494290
+    m_Key: car/vz07_red
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494291
+    m_Key: car/vz07_sand
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494292
+    m_Key: car/vz07_white
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494293
+    m_Key: car/vz07_yellow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494294
+    m_Key: car/vz08_black
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494295
+    m_Key: car/vz08_blue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494296
+    m_Key: car/vz08_gray
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494297
+    m_Key: car/vz08_green
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494298
+    m_Key: car/vz08_lightblue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494299
+    m_Key: car/vz08_purple
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494300
+    m_Key: car/vz08_red
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494301
+    m_Key: car/vz08_sand
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494302
+    m_Key: car/vz08_white
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494303
+    m_Key: car/vz08_yellow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494304
+    m_Key: car/vz09_black
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494305
+    m_Key: car/vz09_blue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494306
+    m_Key: car/vz09_gray
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494307
+    m_Key: car/vz09_green
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494308
+    m_Key: car/vz09_lightblue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494309
+    m_Key: car/vz09_purple
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494310
+    m_Key: car/vz09_red
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494311
+    m_Key: car/vz09_sand
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494312
+    m_Key: car/vz09_white
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494313
+    m_Key: car/vz09_yellow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494314
+    m_Key: car/vz21_black
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494315
+    m_Key: car/vz21_blue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494316
+    m_Key: car/vz21_gray
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494317
+    m_Key: car/vz21_green
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494318
+    m_Key: car/vz21_lightblue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494319
+    m_Key: car/vz21_purple
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494320
+    m_Key: car/vz21_red
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494321
+    m_Key: car/vz21_sand
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494322
+    m_Key: car/vz21_white
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494323
+    m_Key: car/vz21_yellow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494324
+    m_Key: car/vz31_black
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494325
+    m_Key: car/vz31_blue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494326
+    m_Key: car/vz31_gray
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494327
+    m_Key: car/vz31_green
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494328
+    m_Key: car/vz31_lightblue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494329
+    m_Key: car/vz31_purple
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494330
+    m_Key: car/vz31_red
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494331
+    m_Key: car/vz31_sand
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494332
+    m_Key: car/vz31_white
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494333
+    m_Key: car/vz31_yellow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494334
+    m_Key: car/vz099_black
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494335
+    m_Key: car/vz099_blue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494336
+    m_Key: car/vz099_gray
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494337
+    m_Key: car/vz099_green
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494338
+    m_Key: car/vz099_lightblue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494339
+    m_Key: car/vz099_purple
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494340
+    m_Key: car/vz099_red
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494341
+    m_Key: car/vz099_sand
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494342
+    m_Key: car/vz099_white
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494343
+    m_Key: car/vz099_yellow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494344
+    m_Key: car/gz21_black
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494345
+    m_Key: car/gz21_blue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494346
+    m_Key: car/gz21_gray
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494347
+    m_Key: car/gz21_green
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494348
+    m_Key: car/gz21_lightblue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494349
+    m_Key: car/gz21_purple
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494350
+    m_Key: car/gz21_red
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494351
+    m_Key: car/gz21_sand
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494352
+    m_Key: car/gz21_white
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494353
+    m_Key: car/gz21_yellow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494354
+    m_Key: car/gz24_black
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494355
+    m_Key: car/gz24_blue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494356
+    m_Key: car/gz24_gray
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494357
+    m_Key: car/gz24_green
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494358
+    m_Key: car/gz24_lightblue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494359
+    m_Key: car/gz24_purple
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494360
+    m_Key: car/gz24_red
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494361
+    m_Key: car/gz24_sand
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494362
+    m_Key: car/gz24_white
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494363
+    m_Key: car/gz24_yellow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494364
+    m_Key: talk/1-1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156397494365
+    m_Key: talk/1-2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156401688576
+    m_Key: talk/1-3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156401688577
+    m_Key: talk/1-4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156401688578
+    m_Key: talk/1-5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156401688579
+    m_Key: talk/1-6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156401688580
+    m_Key: talk/1-7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156401688581
+    m_Key: talk/1-8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156401688582
+    m_Key: talk/1-9
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156401688583
+    m_Key: talk/2-1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156401688584
+    m_Key: talk/2-2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156401688585
+    m_Key: talk/2-3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156401688586
+    m_Key: talk/2-4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156401688587
+    m_Key: talk/2-5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381156401688588
+    m_Key: talk/2-6
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
@@ -87,3 +762,16 @@ MonoBehaviour:
         asm: Unity.Localization}
       data:
         m_CustomEpoch: 1707892138570
+    - rid: 5738205297299947522
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "\uCC28\uB3D9\uCC28 \uD68D\uB4DD \uBA54\uC2DC\uC9C0(\uCD5C\uCD08\uD68D\uB4DD)"
+    - rid: 5738205297299947523
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "\uCF54\uC778 \uD68D\uB4DD \uBA54\uC2DC\uC9C0"
+    - rid: 5738205297299947524
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "\uCC28\uB3D9\uCC28 \uD68D\uB4DD \uBA54\uC2DC\uC9C0(\uCF54\uC778
+          \uB300\uC2E0 \uD68D\uB4DD)"
