@@ -750,6 +750,10 @@ MonoBehaviour:
       \uCF54\uC778\uC744 \uD68D\uB4DD\uD558\uC600\uC2B5\uB2C8\uB2E4."
     m_Metadata:
       m_Items: []
+  - m_Id: 761718991826944
+    m_Localized: "\uC5B8\uC5B4"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

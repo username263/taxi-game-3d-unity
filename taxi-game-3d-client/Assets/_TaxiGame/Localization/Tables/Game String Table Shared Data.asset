@@ -43,6 +43,10 @@ MonoBehaviour:
     m_Key: ready/car-list
     m_Metadata:
       m_Items: []
+  - m_Id: 761718991826944
+    m_Key: settings/language
+    m_Metadata:
+      m_Items: []
   - m_Id: 10184133783553
     m_Key: settings/logout
     m_Metadata:

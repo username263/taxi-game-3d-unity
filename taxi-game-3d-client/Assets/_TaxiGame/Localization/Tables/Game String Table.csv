@@ -6,6 +6,7 @@ login/email-ph,,,Enter email…,이메일 입력...
 login/pw-ph,,,Enter password…,비밀번호 입력...
 ready/play,,,Play,플레이
 ready/car-list,,,Car List,자동차
+settings/language,,,Language,언어
 settings/logout,,,Logout,로그아웃
 result/earned,,,You earned,수익금
 result/claim,,,Claim,획득

@@ -1,7 +1,9 @@
 ﻿using Cysharp.Threading.Tasks;
 using System.Collections;
 using System.Net;
+using UnityEditor.Localization.Platform.Android;
 using UnityEngine;
+using UnityEngine.Localization.Settings;
 
 namespace TaxiGame3D
 {
@@ -27,8 +29,20 @@ namespace TaxiGame3D
             SoundManager.Instance.StopBgm();
 
             ClientManager.CreateInstance();
-            yield return new WaitForEndOfFrame();
+
+            yield return LocalizationSettings.InitializationOperation;
+            
+            SelectLocale();
             Loading();
+        }
+
+        void SelectLocale()
+        {
+            var index = PlayerPrefs.GetInt("SelctedLocale", -1);
+            var locales = LocalizationSettings.AvailableLocales.Locales;
+            if (index < 0 || index >= locales.Count)
+                return;
+            LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[index];
         }
 
         async void Loading()
