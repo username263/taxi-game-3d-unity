@@ -1,3 +1,6 @@
 .vs
+TaxiGame3D.Server/appsettings.AzureDev.json
 TaxiGame3D.Server/bin
 TaxiGame3D.Server/obj
+TaxiGame3D.Server/Properties/PublishProfiles
+TaxiGame3D.Server/Properties/ServiceDependencies

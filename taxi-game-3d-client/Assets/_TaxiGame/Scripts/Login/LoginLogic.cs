@@ -1,7 +1,6 @@
 ﻿using Cysharp.Threading.Tasks;
 using System.Collections;
 using System.Net;
-using UnityEditor.Localization.Platform.Android;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
 

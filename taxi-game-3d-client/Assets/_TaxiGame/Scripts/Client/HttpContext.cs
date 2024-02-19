@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using UnityEngine;
 using UnityEngine.Networking;
 
 namespace TaxiGame3D
@@ -37,9 +38,16 @@ namespace TaxiGame3D
         {
             using (var req = UnityWebRequest.Get($"{BaseUri}{subUri}"))
             {
-                foreach (var h in Headers)
-                    req.SetRequestHeader(h.Key, h.Value);
-                await req.SendWebRequest();
+                try
+                {
+                    foreach (var h in Headers)
+                        req.SetRequestHeader(h.Key, h.Value);
+                    await req.SendWebRequest();
+                }
+                catch (Exception e)
+                {
+                    Debug.LogException(e);
+                }
                 return (HttpStatusCode)req.responseCode;
             }
         }
@@ -48,9 +56,16 @@ namespace TaxiGame3D
         {
             using (var req = UnityWebRequest.Get($"{BaseUri}{subUri}"))
             {
-                foreach (var h in Headers)
-                    req.SetRequestHeader(h.Key, h.Value);
-                await req.SendWebRequest();
+                try
+                {
+                    foreach (var h in Headers)
+                        req.SetRequestHeader(h.Key, h.Value);
+                    await req.SendWebRequest();
+                }
+                catch (Exception e)
+                {
+                    Debug.LogException(e);
+                }
                 return (
                     (HttpStatusCode)req.responseCode,
                     FromJsonSafety<T>(req.downloadHandler.text)
@@ -62,9 +77,16 @@ namespace TaxiGame3D
         {
             using (var req = UnityWebRequest.Post($"{BaseUri}{subUri}", ToJsonSafety(data), "application/json"))
             {
-                foreach (var h in Headers)
-                    req.SetRequestHeader(h.Key, h.Value);
-                await req.SendWebRequest();
+                try
+                {
+                    foreach (var h in Headers)
+                        req.SetRequestHeader(h.Key, h.Value);
+                    await req.SendWebRequest();
+                }
+                catch (Exception e)
+                {
+                    Debug.LogException(e);
+                }
                 return (HttpStatusCode)req.responseCode;
             }
         }
@@ -73,9 +95,16 @@ namespace TaxiGame3D
         {
             using (var req = UnityWebRequest.Post($"{BaseUri}{subUri}", ToJsonSafety(data), "application/json"))
             {
-                foreach (var h in Headers)
-                    req.SetRequestHeader(h.Key, h.Value);
-                await req.SendWebRequest();
+                try
+                {
+                    foreach (var h in Headers)
+                        req.SetRequestHeader(h.Key, h.Value);
+                    await req.SendWebRequest();
+                }
+                catch (Exception e)
+                {
+                    Debug.LogException(e);
+                }
                 return (
                     (HttpStatusCode)req.responseCode,
                     FromJsonSafety<T>(req.downloadHandler.text)
@@ -87,10 +116,17 @@ namespace TaxiGame3D
         {
             using (var req = UnityWebRequest.Put($"{BaseUri}{subUri}", ToJsonSafety(data)))
             {
-                foreach (var h in Headers)
-                    req.SetRequestHeader(h.Key, h.Value);
-                req.SetRequestHeader("Content-Type", "application/json");
-                await req.SendWebRequest();
+                try
+                {
+                    foreach (var h in Headers)
+                        req.SetRequestHeader(h.Key, h.Value);
+                    req.SetRequestHeader("Content-Type", "application/json");
+                    await req.SendWebRequest();
+                }
+                catch (Exception e)
+                {
+                    Debug.LogException(e);
+                }
                 return (HttpStatusCode)req.responseCode;
             }
         }
@@ -99,10 +135,17 @@ namespace TaxiGame3D
         {
             using (var req = UnityWebRequest.Put($"{BaseUri}{subUri}", ToJsonSafety(data)))
             {
-                foreach (var h in Headers)
-                    req.SetRequestHeader(h.Key, h.Value);
-                req.SetRequestHeader("Content-Type", "application/json");
-                await req.SendWebRequest();
+                try
+                {
+                    foreach (var h in Headers)
+                        req.SetRequestHeader(h.Key, h.Value);
+                    req.SetRequestHeader("Content-Type", "application/json");
+                    await req.SendWebRequest();
+                }
+                catch (Exception e)
+                {
+                    Debug.LogException(e);
+                }
                 return (
                     (HttpStatusCode)req.responseCode,
                     FromJsonSafety<T>(req.downloadHandler.text)
@@ -114,9 +157,16 @@ namespace TaxiGame3D
         {
             using (var req = UnityWebRequest.Delete($"{BaseUri}{subUri}"))
             {
-                foreach (var h in Headers)
-                    req.SetRequestHeader(h.Key, h.Value);
-                await req.SendWebRequest();
+                try
+                {
+                    foreach (var h in Headers)
+                        req.SetRequestHeader(h.Key, h.Value);
+                    await req.SendWebRequest();
+                }
+                catch (Exception e)
+                {
+                    Debug.LogException(e);
+                }
                 return (HttpStatusCode)req.responseCode;
             }
         }
@@ -125,9 +175,16 @@ namespace TaxiGame3D
         {
             using (var req = UnityWebRequest.Delete($"{BaseUri}{subUri}"))
             {
-                foreach (var h in Headers)
-                    req.SetRequestHeader(h.Key, h.Value);
-                await req.SendWebRequest();
+                try
+                {
+                    foreach (var h in Headers)
+                        req.SetRequestHeader(h.Key, h.Value);
+                    await req.SendWebRequest();
+                }
+                catch (Exception e)
+                {
+                    Debug.LogException(e);
+                }
                 return (
                     (HttpStatusCode)req.responseCode,
                     FromJsonSafety<T>(req.downloadHandler.text)

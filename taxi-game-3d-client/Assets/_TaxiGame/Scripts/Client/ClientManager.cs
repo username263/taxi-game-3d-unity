@@ -1,15 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 namespace TaxiGame3D
 {
     public class ClientManager : MonoBehaviour
     {
         [SerializeField]
-        string enviroment = "Development";
-        [SerializeField]
-        string serverUri;
+        ClientSettings settings;
 
         public static ClientManager Instance
         {
@@ -17,7 +17,7 @@ namespace TaxiGame3D
             private set;
         }
 
-        public string Enviroment => enviroment;
+        public string Enviroment => settings.Enviroment;
 
         public HttpContext Http
         {
@@ -49,7 +49,7 @@ namespace TaxiGame3D
             Instance = this;
             DontDestroyOnLoad(gameObject);
 
-            Http = new(serverUri);
+            Http = new(settings.ServerUri);
             
             AuthService = gameObject.AddComponent<AuthService>();
             UserService = gameObject.AddComponent<UserService>();
@@ -64,7 +64,7 @@ namespace TaxiGame3D
         }
 
         [ContextMenu("Reset Template Versions")]
-        void ResetTemplateVersions() => TemplateService.ResetTemplateVersions(enviroment);
+        void ResetTemplateVersions() => TemplateService.ResetTemplateVersions(Enviroment);
 
         [ContextMenu("Reset Saved Auth")]
         void ResetSavedAuth() => AuthService.ResetSavedAuth();

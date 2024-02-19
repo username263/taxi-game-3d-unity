@@ -44,5 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 636c384aae5ce3e4ca2487e1baa7327e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enviroment: Development
-  serverUri: https://localhost:7170
+  settings: {fileID: 11400000, guid: 93a7e9532d8fb684980ad48472c4b676, type: 2}
