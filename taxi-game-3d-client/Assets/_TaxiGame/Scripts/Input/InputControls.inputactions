@@ -26,6 +26,17 @@
                     "action": "Accelerate",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9c49f4fd-c411-4ac8-b520-e43e42a3bf40",
+                    "path": "<Touchscreen>/Press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Accelerate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
