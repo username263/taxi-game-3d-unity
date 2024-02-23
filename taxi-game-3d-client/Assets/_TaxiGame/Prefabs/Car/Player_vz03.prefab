@@ -517,7 +517,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   brakeLights:
-  - {fileID: 1757255445453915759}
+  - {fileID: 4494873583169972734}
   - {fileID: 1757255445453915759}
   tireMarks:
   - {fileID: 4717447139215717561}
@@ -1731,6 +1731,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7079a75dc5898de429b763830b40cfaf, type: 3}
+--- !u!96 &4494873583169972734 stripped
+TrailRenderer:
+  m_CorrespondingSourceObject: {fileID: 4826549305555439800, guid: 7079a75dc5898de429b763830b40cfaf,
+    type: 3}
+  m_PrefabInstance: {fileID: 8978953561025575238}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5303962781500651613 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3819281992677409051, guid: 7079a75dc5898de429b763830b40cfaf,
