@@ -4,3 +4,5 @@
 
 개발과정은 제 개인블로그에 정리하겠습니다.<br/>
 https://blog134.tistory.com/
+
+![](https://youtu.be/36f9b_TZE9Q)
